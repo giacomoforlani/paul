@@ -30,7 +30,8 @@
     }
 
     &--secondary {
-        background-image: $color--white;
+        background-image: unset;
+        background-color: $color--white;
     }
 
     &__Icon {

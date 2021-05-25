@@ -47,7 +47,12 @@ const Presentation = () => (
       new journey, new stories, your stories.
     </Text>
 
-    <Button kind="secondary">My portfolio</Button>
+    <Button
+      className={styles.Presentation__Cta}
+      kind="secondary"
+    >
+      My portfolio
+    </Button>
   </div>
 );
 

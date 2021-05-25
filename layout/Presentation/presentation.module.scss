@@ -4,6 +4,8 @@
     $color: rgba($color--blue-dark, 0.8);
 
     background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
+    display: flex;
+    flex-direction: column;
     padding: 5.8rem 3.8rem;
 
     &__Highlight {
@@ -23,5 +25,9 @@
     &__Third {
         color: $color--gray-light;
         margin-bottom: 5.8rem;
+    }
+
+    &__Cta {
+        align-self: center;
     }
 }
