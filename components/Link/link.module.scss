@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.Link {
+    border-bottom: 2px solid $color--green;
+    color: $color--gray;
+    font-family: $font--secondary;
+    font-size: 2rem;
+    padding-bottom: 5px;
+    text-decoration: none;
+}

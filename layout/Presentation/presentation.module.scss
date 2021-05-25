@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.Presentation {
+    $color: rgba($color--blue-dark, 0.8);
+
+    background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
+    padding: 5.8rem 3.8rem;
+
+    &__Highlight {
+        color: $color--green;
+    }
+
+    &__First {
+        color: $color--white;
+        margin-bottom: 4rem;
+    }
+
+    &__Second {
+        color: $color--white;
+        margin-bottom: 3.6rem;
+    }
+
+    &__Third {
+        color: $color--gray-light;
+        margin-bottom: 5.8rem;
+    }
+}

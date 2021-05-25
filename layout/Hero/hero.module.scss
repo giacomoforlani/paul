@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.Hero {
+    $color: rgba($color--gray-light, 0.8);
+
+    align-items: center;
+    background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+
+    &__Greetings {
+        margin: 21.55rem 3.6rem 4rem 3.6rem;
+    }
+
+    &__Cta {
+        margin-bottom: 15.75rem;
+    }
+
+    &__Links {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 49rem;
+        width: 100%;
+    }
+}

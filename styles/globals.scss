@@ -1,0 +1,55 @@
+@import "./variables.scss";
+
+:root {
+  --font--primary: $font--primary;
+  --font--secondary: $font--secondary;
+
+  --color--blue-dark: #{$color--blue-dark};
+  --color--cyan: #{$color--cyan};
+  --color--gray-light: #{$color--gray-light};
+  --color--gray: #{$color--gray};
+  --color--green: #{$color--green};
+  --color--pink: #{$color--pink};
+  --color--white: #{$color--white};
+}
+
+@font-face {
+  font-family: $font--secondary;
+  src: url("/fonts/JosefinSans-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: $font--secondary;
+  src: url("/fonts/JosefinSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: $font--secondary;
+  src: url("/fonts/JosefinSans-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: $font--primary;
+  src: url("/fonts/YesevaOne-Regular.ttf");
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  color: $color--blue-dark;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $font--primary;
+}
+
+body {
+  box-sizing: border-box;
+  height: 4722px;
+}

@@ -1,0 +1,100 @@
+@import "../../styles/variables";
+
+.figure {
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.Button {
+    align-items: center;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-family: $font--secondary;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 5.5rem;
+    justify-content: space-between;
+    letter-spacing: 0.6rem;
+    padding: 2.2rem;
+    text-transform: uppercase;
+
+    &--primary {
+        background-image: linear-gradient(to right, $color--cyan, $color--pink);
+        color: $color--white;
+    }
+
+    &--secondary {
+        background-image: $color--white;
+    }
+
+    &__Icon {
+        display: inline-block;
+        height: 3rem;
+        margin-left: 0.8rem;
+        position: relative;
+        width: 5rem;
+    }
+
+    &__Triangle {
+        @extend .figure;
+
+        &::before {
+            background-color: $color--white;
+            content: "";
+            height: 2px;
+            left: 1rem;
+            position: absolute;
+            top: 0.7rem;
+            transform: rotate(30deg);
+            width: 2.8rem;
+        }
+
+        &::after {
+            background-color: $color--white;
+            content: "";
+            height: 2px;
+            left: 1rem;
+            position: absolute;
+            top: 2.1rem;
+            transform: rotate(-30deg);
+            width: 2.8rem;
+        }
+    }
+
+    &__Circle {
+        @extend .figure;
+
+        &::before {
+            border-radius: 50%;
+            border: 2px solid $color--white;
+            content: "";
+            height: 3rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 3rem;
+        }
+    }
+
+    &--secondary &__Triangle {
+        &::before {
+            background-color: $color--green;
+        }
+
+        &::after {
+            background-color: $color--green;
+        }
+    }
+
+    &--secondary &__Circle {
+        &::before {
+            border-color: $color--green;
+        }
+    }
+}
