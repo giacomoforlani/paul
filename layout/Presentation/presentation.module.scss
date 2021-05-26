@@ -3,7 +3,9 @@
 .Presentation {
     $color: rgba($color--blue-dark, 0.8);
 
+    background-attachment: fixed;
     background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
+    background-size: cover;
     display: flex;
     flex-direction: column;
     padding: 5.8rem 3.8rem;

@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.Projects {
+    &__Card {
+        align-items: flex-start;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        padding: 6.9rem 3.5rem 5.5rem 3.5rem;
+        position: relative;
+    }
+
+    &__Label {
+        color: $color--green;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    &__Title {
+        margin-bottom: 2.7rem;
+        color: $color--white;
+    }
+
+    &__Description {
+        margin-bottom: 5rem;
+        color: $color--white;
+    }
+
+    &__ComingSoon {
+        background-color: $color--blue-dark;
+        color: $color--green;
+        padding: 6.4rem 0 25rem 0;
+        text-align: center;
+    }
+}

@@ -11,13 +11,17 @@ type TextProps = PropsWithChildren<PropsWithClass<{
 const Text = ({
   children,
   className,
-  size: Size = 'h1',
-}: TextProps) => (
-  <Size
-    className={[style.Text, style[`Text--${Size}`], className].join(' ')}
-  >
-    {children}
-  </Size>
-);
+  size = 'h1',
+}: TextProps) => {
+  const Element = size;
+
+  return (
+    <Element
+      className={[style.Text, style[`Text--${size}`], className].join(' ')}
+    >
+      {children}
+    </Element>
+  );
+};
 
 export { Text };

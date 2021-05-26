@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.Footer {
+    $color: rgba($color--gray-light, 0.8);
+
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 21.6rem 3.6rem 2.9rem 3.6rem;
+
+    &__Title {
+        margin-bottom: 1.3rem;
+    }
+
+    &__Email {
+        align-self: flex-start;
+        margin-bottom: 19.6rem;
+    }
+
+    &__Contacts {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2.8rem;
+    }
+
+    &__Rights {
+        align-self: center;
+        color: $color--gray;
+    }
+}

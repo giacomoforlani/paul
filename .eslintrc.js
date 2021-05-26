@@ -27,6 +27,7 @@ module.exports = {
     'no-undef': 0,
     'no-unused-vars': 0,
     'no-use-before-define': 0,
+    'react/button-has-type': 0,
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-props-no-spreading': 0,
   },
