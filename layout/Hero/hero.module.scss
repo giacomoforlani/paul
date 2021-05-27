@@ -1,14 +1,39 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
 .Hero {
-    $color: rgba($color--gray-light, 0.8);
+    @include gradientNoise($color--gray-light);
 
     align-items: center;
-    background-attachment: fixed;
-    background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
-    background-size: cover;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    > * {
+        z-index: 1;
+    }
+
+    &__Sphere {
+        @extend .sphere;
+
+        &--01 {
+            height: 32rem;
+            right: 0;
+            top: 0;
+            transform: translate(35%, -15%);
+            width: 32rem;
+        }
+
+        &--02 {
+            bottom: 0;
+            height: 60rem;
+            left: 0;
+            transform: translate(-40%, 0);
+            width: 60rem;
+        }
+    }
 
     &__Greetings {
         margin: 21.5rem 3.6rem 4rem 3.6rem;

@@ -1,10 +1,14 @@
 import React from 'react';
+
 import styles from './footer.module.scss';
+
 import { Text } from '../../components/Text';
 import { Link } from '../../components/Link';
 
 const Footer = () => (
   <footer className={styles.Footer}>
+    <div className={[styles.Footer__Sphere, styles['Footer__Sphere--01']].join(' ')} />
+
     <Text
       className={styles.Footer__Title}
       size="h1"

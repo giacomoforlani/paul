@@ -1,7 +1,8 @@
 import React from 'react';
-import { projects } from '../../data/projects';
 
 import styles from './projects.module.scss';
+
+import { projects } from '../../data/projects';
 
 import { Text } from '../../components/Text';
 import { Button } from '../../components/Button';

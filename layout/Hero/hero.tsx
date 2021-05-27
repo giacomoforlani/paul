@@ -1,11 +1,15 @@
 import React from 'react';
+
+import styles from './hero.module.scss';
+
 import { Button } from '../../components/Button';
 import { Link } from '../../components/Link';
 import { Text } from '../../components/Text';
-import styles from './hero.module.scss';
 
 const Hero = () => (
   <div className={styles.Hero}>
+    <div className={[styles.Hero__Sphere, styles['Hero__Sphere--01']].join(' ')} />
+
     <div className={styles.Hero__Greetings}>
       <Text size="h1">
         Hi,
@@ -27,6 +31,8 @@ const Hero = () => (
       <Link>Linkedin</Link>
       <Link>Vimeo</Link>
     </div>
+
+    <div className={[styles.Hero__Sphere, styles['Hero__Sphere--02']].join(' ')} />
   </div>
 );
 

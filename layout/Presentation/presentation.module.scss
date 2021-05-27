@@ -1,11 +1,9 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .Presentation {
-    $color: rgba($color--blue-dark, 0.8);
+    @include gradientNoise($color--blue-dark);
 
-    background-attachment: fixed;
-    background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
-    background-size: cover;
     display: flex;
     flex-direction: column;
     padding: 5.8rem 3.8rem;

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+
 import { Footer } from '../layout/Footer';
 import { Hero } from '../layout/Hero';
 import { Presentation } from '../layout/Presentation';

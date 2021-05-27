@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+.sphere {
+    background-color: $color--white;
+    border-radius: 50%;
+    filter: blur(0.5px);
+    opacity: 0.4;
+    position: absolute;
+    z-index: 0;
+}

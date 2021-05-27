@@ -1,3 +1,4 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .Projects {
@@ -28,7 +29,8 @@
     }
 
     &__ComingSoon {
-        background-color: $color--blue-dark;
+        @include gradientNoise($color--blue-dark);
+        
         color: $color--green;
         padding: 6.4rem 0 25rem 0;
         text-align: center;
