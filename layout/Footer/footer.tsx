@@ -7,7 +7,11 @@ import { Link } from '../../components/Link';
 
 const Footer = () => (
   <footer className={styles.Footer}>
-    <div className={[styles.Footer__Sphere, styles['Footer__Sphere--01']].join(' ')} />
+    <img
+      className={[styles.Footer__Sphere, styles['Footer__Sphere--01']].join(' ')}
+      src="/images/sphere.png"
+      alt="sphere-01"
+    />
 
     <Text
       className={styles.Footer__Title}

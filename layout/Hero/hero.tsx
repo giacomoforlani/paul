@@ -8,7 +8,11 @@ import { Text } from '../../components/Text';
 
 const Hero = () => (
   <div className={styles.Hero}>
-    <div className={[styles.Hero__Sphere, styles['Hero__Sphere--01']].join(' ')} />
+    <img
+      className={[styles.Hero__Sphere, styles['Hero__Sphere--01']].join(' ')}
+      src="/images/sphere.png"
+      alt="sphere-01"
+    />
 
     <div className={styles.Hero__Greetings}>
       <Text size="h1">
@@ -32,7 +36,11 @@ const Hero = () => (
       <Link>Vimeo</Link>
     </div>
 
-    <div className={[styles.Hero__Sphere, styles['Hero__Sphere--02']].join(' ')} />
+    <img
+      className={[styles.Hero__Sphere, styles['Hero__Sphere--02']].join(' ')}
+      src="/images/sphere.png"
+      alt="sphere-02"
+    />
   </div>
 );
 
