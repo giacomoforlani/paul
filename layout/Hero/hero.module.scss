@@ -1,11 +1,9 @@
-@import "../../styles/mixins.scss";
 @import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
 .Hero {
-    @include gradientNoise($color--gray-light);
-
     align-items: center;
+    background-color: $color--gray-light;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -46,7 +44,11 @@
     &__Links {
         display: flex;
         justify-content: space-evenly;
-        margin-bottom: 49rem;
+        margin-bottom: 10rem;
         width: 100%;
+    }
+
+    &__Waves {
+        @extend .waves;
     }
 }

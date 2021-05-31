@@ -59,6 +59,12 @@ const Projects = () => (
     >
       (More projects coming soon)
     </Text>
+
+    <img
+      className={styles.Projects__Waves}
+      src="/images/waves.svg"
+      alt="waves"
+    />
   </div>
 );
 

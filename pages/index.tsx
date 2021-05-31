@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import { GradientNoise } from '../components/GradientNoise/gradient-noise';
 
 import { Footer } from '../layout/Footer';
 import { Hero } from '../layout/Hero';
@@ -19,6 +20,7 @@ export default function Home() {
         <Presentation />
         <Projects />
         <Footer />
+        <GradientNoise />
       </main>
     </>
   );

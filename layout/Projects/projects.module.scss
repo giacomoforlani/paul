@@ -1,7 +1,14 @@
-@import "../../styles/mixins.scss";
+@import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
 .Projects {
+    overflow: hidden;
+    position: relative;
+
+    > * {
+        z-index: 1;
+    }
+
     &__Card {
         align-items: flex-start;
         background-repeat: no-repeat;
@@ -29,10 +36,14 @@
     }
 
     &__ComingSoon {
-        @include gradientNoise($color--blue-dark);
-        
+        background-color: $color--blue-dark;
         color: $color--green;
-        padding: 6.4rem 0 25rem 0;
+        padding: 6.5rem 0 0 0;
         text-align: center;
+    }
+
+    &__Waves {
+        @extend .waves;
+        transform: rotateX(180deg);
     }
 }

@@ -41,6 +41,12 @@ const Hero = () => (
       src="/images/sphere.png"
       alt="sphere-02"
     />
+
+    <img
+      className={styles.Hero__Waves}
+      src="/images/waves.svg"
+      alt="waves"
+    />
   </div>
 );
 

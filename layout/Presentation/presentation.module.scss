@@ -1,12 +1,15 @@
-@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .Presentation {
-    @include gradientNoise($color--blue-dark);
-
+    background-color: $color--blue-dark;
     display: flex;
     flex-direction: column;
     padding: 5.8rem 3.8rem;
+    position: relative;
+
+    > * {
+        z-index: 1;
+    }
 
     &__Highlight {
         color: $color--green;
