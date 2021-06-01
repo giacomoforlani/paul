@@ -18,10 +18,13 @@ const Footer = () => (
       size="h1"
     >
       Nice
+      {' '}
       <br />
       to
+      {' '}
       <br />
       meet
+      {' '}
       <br />
       you
     </Text>
@@ -33,18 +36,20 @@ const Footer = () => (
       <Text size="h2">info@paolodata.com</Text>
     </Link>
 
-    <div className={styles.Footer__Contacts}>
-      <Link>Instagram</Link>
-      <Link>Linkedin</Link>
-      <Link>Vimeo</Link>
-    </div>
+    <div className={styles.Footer__Bottom}>
+      <div className={styles.Footer__Contacts}>
+        <Link>Instagram</Link>
+        <Link>Linkedin</Link>
+        <Link>Vimeo</Link>
+      </div>
 
-    <Text
-      className={styles.Footer__Rights}
-      size="h5"
-    >
-      All Rights Reserved © 2020
-    </Text>
+      <Text
+        className={styles.Footer__Rights}
+        size="h5"
+      >
+        All Rights Reserved © 2020
+      </Text>
+    </div>
   </footer>
 );
 

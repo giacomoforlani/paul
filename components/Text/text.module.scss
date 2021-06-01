@@ -1,35 +1,40 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .Text {
     font-weight: 500;
 
     &--h1 {
-        font-size: 7rem;
+        font-size: $size--xl;
+
+        @include largeScreen {
+            font-size: $size--xxl;
+        }
     }
 
     &--h2 {
-        font-size: 3rem;
+        font-size: $size--md;
     }
 
     &--h3 {
-        font-size: 2rem;
+        font-size: $size--sm;
     }
 
     &--h4 {
         font-family: $font--secondary;
-        font-size: 2rem;
+        font-size: $size--sm;
         font-weight: 700;
     }
 
     &--h5 {
         font-family: $font--secondary;
-        font-size: 2rem;
+        font-size: $size--sm;
         font-weight: 300;
     }
 
     &--h6 {
         font-family: $font--secondary;
-        font-size: 1rem;
+        font-size: $size--xxs;
         letter-spacing: 0.3rem;
     }
 }

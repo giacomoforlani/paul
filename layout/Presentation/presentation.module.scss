@@ -1,14 +1,24 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .Presentation {
     background-color: $color--blue-dark;
-    display: flex;
-    flex-direction: column;
-    padding: 5.8rem 3.8rem;
+    display: grid;
+    padding: 6rem 4rem;
     position: relative;
 
-    > * {
-        z-index: 1;
+    @include largeScreen {
+        column-gap: 5rem;
+        grid-template-columns: 1.5fr 1fr;
+        padding: 6rem 20%;
+    }
+
+    br {
+        display: none;
+
+        @include largeScreen {
+            display: block;
+        }
     }
 
     &__Highlight {
@@ -18,19 +28,41 @@
     &__First {
         color: $color--white;
         margin-bottom: 4rem;
+
+        @include largeScreen {
+            font-size: $size--xxl;
+            grid-column: 1 / 2;
+        }
     }
 
     &__Second {
         color: $color--white;
-        margin-bottom: 3.6rem;
+        margin-bottom: 3.5rem;
+
+        @include largeScreen {
+            align-self: flex-end;
+            grid-column: 2 / 3;
+            transform: translateY(-10rem);
+        }
     }
 
     &__Third {
         color: $color--gray-light;
-        margin-bottom: 5.8rem;
+        margin-bottom: 6rem;
+
+        @include largeScreen {
+            grid-column: 2 / 3;
+            transform: translateY(-10rem);
+        }
     }
 
     &__Cta {
-        align-self: center;
+        justify-self: center;
+
+        @include largeScreen {
+            grid-column: 2 / 3;
+            justify-self: flex-start;
+            transform: translateY(-10rem);
+        }
     }
 }

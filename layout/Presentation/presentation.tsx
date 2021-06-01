@@ -12,16 +12,25 @@ const Presentation = () => (
       size="h2"
     >
       I’m a
+      <br />
       {' '}
       <span className={styles.Presentation__Highlight}>creative mind</span>
       {' '}
+      <br />
       in love with
       {' '}
+      <br />
       <span className={styles.Presentation__Highlight}>art direction</span>
       {' '}
+      <br />
       and
       {' '}
-      <span className={styles.Presentation__Highlight}>motion design.</span>
+      <span className={styles.Presentation__Highlight}>
+        motion
+        {' '}
+        <br />
+        design.
+      </span>
     </Text>
 
     <Text

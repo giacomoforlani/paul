@@ -61,3 +61,7 @@ html {
 body {
   box-sizing: border-box;
 }
+
+main > * > * {
+  z-index: 2;
+}

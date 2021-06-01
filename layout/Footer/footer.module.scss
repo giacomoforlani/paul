@@ -1,3 +1,4 @@
+@import "../../styles/mixins";
 @import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
@@ -6,11 +7,11 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding: 30rem 3.6rem 2.9rem 3.6rem;
+    padding: 30rem 3.5rem 3rem 3.5rem;
     position: relative;
 
-    > * {
-        z-index: 1;
+    @include largeScreen {
+        padding: 45rem 3.5rem 3rem 3.5rem;
     }
 
     &__Sphere {
@@ -22,22 +23,56 @@
             top: 0;
             transform: translate(35%, 15%);
             width: 32rem;
+
+            @include largeScreen {
+                transform: translate(-100%, 15%);
+            }
         }
     }
 
     &__Title {
-        margin-bottom: 1.3rem;
+        margin-bottom: 1.5rem;
+
+        br {
+            display: none;
+        }
+
+        @include largeScreen {
+            margin-left: 20%;
+        }
     }
 
     &__Email {
         align-self: flex-start;
-        margin-bottom: 19.6rem;
+        margin-bottom: 20rem;
+
+        @include largeScreen {
+            margin-left: 20%;
+            margin-bottom: 45rem;
+        }
+    }
+
+    &__Bottom {
+        display: flex;
+        flex-direction: column;
+
+        @include largeScreen {
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
     }
 
     &__Contacts {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 2.8rem;
+        margin-bottom: 3rem;
+
+        @include largeScreen {
+            > * {
+                margin-right: 2rem;
+            }
+        }
     }
 
     &__Rights {

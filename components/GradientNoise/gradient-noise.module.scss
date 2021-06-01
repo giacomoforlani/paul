@@ -1,9 +1,18 @@
+@import "../../styles/mixins.scss";
+
 .GradientNoise {
-    background-image: url(/images/gradient-noise.png);
+    background-image: url(/images/gradient-noise-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     left: 0;
     mix-blend-mode: soft-light;
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 0;
+
+    @include largeScreen {
+        background-image: url(/images/gradient-noise.png);
+    }
 }

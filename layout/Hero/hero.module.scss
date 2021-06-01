@@ -1,3 +1,4 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
@@ -6,11 +7,19 @@
     background-color: $color--gray-light;
     display: flex;
     flex-direction: column;
+    padding-top: 21.5rem;
     overflow: hidden;
     position: relative;
 
-    > * {
-        z-index: 1;
+    @include largeScreen {
+        align-items: flex-start;
+        padding-top: 50rem;
+
+        &__Greetings,
+        &__Cta,
+        &__Links {
+            margin-left: 20%;
+        }
     }
 
     &__Sphere {
@@ -22,6 +31,12 @@
             top: 0;
             transform: translate(35%, -15%);
             width: 32rem;
+
+            @include largeScreen {
+                left: 0;
+                right: unset;
+                transform: translate(80%, 50%);
+            }
         }
 
         &--02 {
@@ -30,15 +45,33 @@
             left: 0;
             transform: translate(-40%, 0);
             width: 60rem;
+
+            @include largeScreen {
+                height: 120rem;
+                left: unset;
+                right: 0;
+                transform: translate(20%, 0);
+                width: 120rem;
+            }
         }
     }
 
     &__Greetings {
-        margin: 21.5rem 3.6rem 4rem 3.6rem;
+        margin-bottom: 4rem;
+
+        @include largeScreen {
+            br {
+                display: none;
+            }
+        }
     }
 
     &__Cta {
         margin-bottom: 15.8rem;
+
+        @include largeScreen {
+            margin-bottom: 29rem;
+        }
     }
 
     &__Links {
@@ -46,6 +79,14 @@
         justify-content: space-evenly;
         margin-bottom: 10rem;
         width: 100%;
+
+        @include largeScreen {
+            justify-content: unset;
+
+            > * {
+                margin-right: 2rem;
+            }
+        }
     }
 
     &__Waves {

@@ -4,11 +4,12 @@
 .sphere {
     mix-blend-mode: screen;
     position: absolute;
-    z-index: 0 !important;
+    z-index: 1 !important;
 }
 
 .waves {
     background-color: $color--blue-dark;
     position: relative;
+    width: 100%;
     z-index: 0 !important;
 }

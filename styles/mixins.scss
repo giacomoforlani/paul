@@ -1,7 +1,5 @@
-@mixin gradientNoise($color) {
-    $color: rgba($color, 0.8);
-
-    background-attachment: fixed;
-    background-image: linear-gradient(to bottom, $color, $color), url("/images/gradient-noise.png");
-    background-size: cover;
+@mixin largeScreen {
+  @media only screen and (min-width: 60em) {
+    @content;
   }
+}

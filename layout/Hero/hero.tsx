@@ -17,12 +17,14 @@ const Hero = () => (
     <div className={styles.Hero__Greetings}>
       <Text size="h1">
         Hi,
+        {' '}
         <br />
         I&apos;m Paolo
       </Text>
 
       <Text size="h2">
         But you can
+        {' '}
         <br />
         call me Paul
       </Text>
