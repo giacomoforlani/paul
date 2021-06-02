@@ -1,11 +1,11 @@
-import Head from 'next/head';
 import React from 'react';
-import { GradientNoise } from '../components/GradientNoise/gradient-noise';
-
+import Head from 'next/head';
+import { Noise } from '../components/Noise';
 import { Footer } from '../layout/Footer';
 import { Hero } from '../layout/Hero';
 import { Presentation } from '../layout/Presentation';
 import { Projects } from '../layout/Projects';
+import { Bubbles } from '../components/Bubbles';
 
 export default function Home() {
   return (
@@ -16,11 +16,12 @@ export default function Home() {
       </Head>
 
       <main>
+        <Bubbles />
         <Hero />
         <Presentation />
         <Projects />
         <Footer />
-        <GradientNoise />
+        <Noise />
       </main>
     </>
   );
