@@ -20,7 +20,7 @@ const Bubbles = () => (
           speed: 1,
         },
         number: {
-          value: 50,
+          value: 20,
         },
         size: {
           anim: {

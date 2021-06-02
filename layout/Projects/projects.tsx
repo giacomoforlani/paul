@@ -15,7 +15,7 @@ const Projects = () => {
 
   const [activeProject, setActiveProject] = useState<Project | undefined>();
 
-  const selectProject = (project: Project) => {
+  const selectProject = (project: Project | undefined) => {
     setActiveProject(project);
   };
 
@@ -25,7 +25,10 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className={styles.Projects__Card}
+            className={[
+              styles.Projects__Card,
+              activeProject?.id === project.id ? styles['Projects__Card--Active'] : '',
+            ].join(' ')}
             style={{
               backgroundImage: `${activeProject?.id === project.id
                 ? `linear-gradient(
@@ -37,39 +40,42 @@ const Projects = () => {
               url(${project.image})`,
             }}
             onClick={() => selectProject(project)}
+            onMouseEnter={() => selectProject(project)}
+            onMouseLeave={() => selectProject(undefined)}
           >
-            {activeProject?.id === project.id && (
-              <>
-                <Text
-                  className={styles.Projects__Label}
-                  size="h6"
-                >
-                  {project.label}
-                </Text>
+            <div className={styles.Projects__Main}>
+              <Text
+                className={styles.Projects__Label}
+                size="h6"
+              >
+                {project.label}
+              </Text>
 
-                <Text
-                  className={styles.Projects__Title}
-                  size="h2"
-                >
-                  {project.name}
-                </Text>
+              <Text
+                className={styles.Projects__Title}
+                size="h2"
+              >
+                {project.name}
+              </Text>
+            </div>
 
-                <Text
-                  className={styles.Projects__Description}
-                  size="h5"
-                >
-                  {project.description}
-                </Text>
+            <div className={styles.Projects__Secondary}>
+              <Text
+                className={styles.Projects__Description}
+                size="h5"
+              >
+                {project.description}
+              </Text>
 
-                <Button
-                  kind="secondary"
-                  target="_blank"
-                  url={project.link}
-                >
-                  Play
-                </Button>
-              </>
-            )}
+              <Button
+                className={styles.Projects__Cta}
+                kind="secondary"
+                target="_blank"
+                url={project.link}
+              >
+                Play
+              </Button>
+            </div>
           </div>
         ))}
       </div>
