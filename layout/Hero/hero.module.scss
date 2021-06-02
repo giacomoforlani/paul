@@ -93,7 +93,7 @@
         margin: 0 $indent;
         width: 100%;
 
-        > * {
+        > *:not(:last-of-type) {
             margin-right: 2rem;
         }
 
