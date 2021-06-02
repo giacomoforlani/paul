@@ -8,10 +8,14 @@
     position: relative;
 
     &__Cards {
-        @include largeScreen {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            padding: 0 20%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 $indent;
+
+        @include smallScreen {
+            display: block;
+            grid-template-columns: unset;
+            padding: unset;
         }
     }
 
@@ -22,21 +26,21 @@
         display: flex;
         flex-direction: column;
         height: 40rem;
-        padding: 7rem 3.5rem 3.5rem 3.5rem;
+        padding: 5rem 3.5rem 5rem 3.5rem;
         position: relative;
 
-        @include largeScreen {
-            padding: 5rem 3.5rem 5rem 3.5rem;
+        @include smallScreen {
+            padding: 7rem 3.5rem 3.5rem 3.5rem;
         }
 
         &:not(&--Active) {
-            > *:not(.Projects__Main) {
+            > * {
                 display: none;
             }
 
-            @include largeScreen {
+            @include smallScreen {
                 .Projects__Main {
-                    display: none;
+                    display: block;
                 }
             }
 
@@ -45,7 +49,7 @@
                 bottom: 0;
                 height: 20rem;
                 left: 0;
-                padding: 5rem;
+                padding: 4rem;
                 position: absolute;
                 width: 100%;
             }
@@ -63,47 +67,49 @@
     }
 
     &__Title {
-        margin-bottom: 2.5rem;
         color: $color--white;
+        margin-bottom: 2.5rem;
     }
 
     &__Secondary {
+        align-items: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex: 1;
 
-        @include largeScreen {
-            align-items: center;
-            flex-direction: row;
+        @include smallScreen {
+            align-items: unset;
+            flex-direction: column;
         }
     }
 
     &__Description {
+        align-self: flex-end;
         color: $color--white;
-        margin-bottom: 5rem;
 
-        @include largeScreen {
-            align-self: flex-end;
-            margin: 0;
+        @include smallScreen {
+            align-self: unset;
+            margin-bottom: 5rem;
         }
     }
 
     &__Cta {
-        align-self: flex-start;
+        align-self: flex-end;
 
-        @include largeScreen {
-            align-self: flex-end;
+        @include smallScreen {
+            align-self: flex-start;
         }
     }
 
     &__ComingSoon {
         color: $color--green;
-        padding-top: 6.5rem;
+        padding-top: 10rem;
         text-align: center;
+        width: 100%;
 
-        @include largeScreen {
-            padding-top: 20%;
-            width: 100%;
+        @include smallScreen {
+            padding-top: 6.5rem;
+            width: unset;
         }
     }
 

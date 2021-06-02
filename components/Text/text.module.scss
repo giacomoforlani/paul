@@ -6,10 +6,6 @@
 
     &--h1 {
         font-size: $size--xl;
-
-        @include largeScreen {
-            font-size: $size--xxl;
-        }
     }
 
     &--h2 {

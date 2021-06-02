@@ -7,59 +7,73 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding: 30rem 3.5rem 3rem 3.5rem;
+    padding: 45rem 0 3rem 0;
     position: relative;
 
-    @include largeScreen {
-        padding: 45rem 3.5rem 3rem 3.5rem;
+    @include smallScreen {
+        padding: 20rem 4rem 2rem 4rem;
     }
 
     &__Sphere {
         @extend .sphere;
 
         &--01 {
-            height: 32rem;
+            height: 25rem;
             right: 0;
             top: 0;
-            transform: translate(35%, 15%);
-            width: 32rem;
+            transform: translate(-100%, 15%);
+            width: 25rem;
 
-            @include largeScreen {
-                transform: translate(-100%, 15%);
+            @include smallScreen {
+                transform: translate(35%, 15%);
+            }
+
+            @include xlargeScreen {
+                height: 32rem;
+                width: 32rem;
             }
         }
     }
 
+    &__Top {
+        margin: 0 $indent;
+        margin-bottom: 45rem;
+    }
+
     &__Title {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
 
         br {
             display: none;
         }
 
-        @include largeScreen {
-            margin-left: 20%;
+        @include smallScreen {
+            margin-bottom: 1.5rem;
+            margin-left: unset;
         }
     }
 
     &__Email {
         align-self: flex-start;
-        margin-bottom: 20rem;
 
-        @include largeScreen {
-            margin-left: 20%;
-            margin-bottom: 45rem;
+        @include smallScreen {
+            margin-bottom: 20rem;
+            margin-left: unset;
         }
     }
 
     &__Bottom {
+        align-items: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 0 10rem;
 
-        @include largeScreen {
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row-reverse;
+        @include smallScreen {
+            align-items: unset;
+            flex-direction: column;
+            justify-content: unset;
+            padding: unset;
         }
     }
 
@@ -68,7 +82,7 @@
         justify-content: space-between;
         margin-bottom: 3rem;
 
-        @include largeScreen {
+        @include smallScreen {
             > * {
                 margin-right: 2rem;
             }

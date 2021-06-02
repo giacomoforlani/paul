@@ -3,21 +3,23 @@
 
 .Presentation {
     background-color: $color--blue-dark;
+    column-gap: 5rem;
     display: grid;
-    padding: 6rem 4rem;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 6rem $indent;
     position: relative;
 
-    @include largeScreen {
-        column-gap: 5rem;
-        grid-template-columns: 1.5fr 1fr;
-        padding: 6rem 20%;
+    @include smallScreen {
+        column-gap: unset;
+        grid-template-columns: unset;
+        padding: 6rem 4rem;
     }
 
     br {
-        display: none;
+        display: block;
 
-        @include largeScreen {
-            display: block;
+        @include smallScreen {
+            display: none;
         }
     }
 
@@ -27,42 +29,51 @@
 
     &__First {
         color: $color--white;
+        font-size: $size--xl;
+        grid-column: 1 / 2;
         margin-bottom: 4rem;
 
-        @include largeScreen {
-            font-size: $size--xxl;
-            grid-column: 1 / 2;
+        @include smallScreen {
+            font-size: $size--md;
+            grid-column: unset;
         }
     }
 
     &__Second {
+        align-self: flex-end;
         color: $color--white;
+        grid-column: 2 / 3;
         margin-bottom: 3.5rem;
+        transform: translateY(-10rem);
 
-        @include largeScreen {
-            align-self: flex-end;
-            grid-column: 2 / 3;
-            transform: translateY(-10rem);
+        @include smallScreen {
+            align-self: unset;
+            grid-column: unset;
+            transform: unset;
         }
     }
 
     &__Third {
         color: $color--gray-light;
         margin-bottom: 6rem;
+        grid-column: 2 / 3;
+        transform: translateY(-10rem);
 
-        @include largeScreen {
-            grid-column: 2 / 3;
-            transform: translateY(-10rem);
+        @include smallScreen {
+            grid-column: unset;
+            transform: unset;
         }
     }
 
     &__Cta {
-        justify-self: center;
+        grid-column: 2 / 3;
+        justify-self: flex-start;
+        transform: translateY(-10rem);
 
-        @include largeScreen {
-            grid-column: 2 / 3;
-            justify-self: flex-start;
-            transform: translateY(-10rem);
+        @include smallScreen {
+            grid-column: unset;
+            justify-self: center;
+            transform: unset;
         }
     }
 }

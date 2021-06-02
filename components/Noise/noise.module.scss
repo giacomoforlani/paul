@@ -1,7 +1,7 @@
 @import "../../styles/mixins.scss";
 
-.GradientNoise {
-    background-image: url(/images/gradient-noise-mobile.png);
+.Noise {
+    background-image: url(/images/gradient-noise.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -12,7 +12,7 @@
     width: 100vw;
     z-index: 0;
 
-    @include largeScreen {
-        background-image: url(/images/gradient-noise.png);
+    @include smallScreen {
+        background-image: url(/images/gradient-noise-mobile.png);
     }
 }

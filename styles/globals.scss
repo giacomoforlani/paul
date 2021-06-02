@@ -1,4 +1,5 @@
 @import "./functions.scss";
+@import "./mixins.scss";
 @import "./variables.scss";
 
 :root {
@@ -54,12 +55,24 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 75%;
   font-family: $font--primary;
+
+  @include smallScreen {
+    font-size: 62.5%;
+  }
+
+  @include xsmallScreen {
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
+}
+
+main {
+  position: relative;
 }
 
 main > * * {

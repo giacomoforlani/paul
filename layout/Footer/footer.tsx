@@ -13,28 +13,30 @@ const Footer = () => (
       alt="sphere-01"
     />
 
-    <Text
-      className={styles.Footer__Title}
-      size="h1"
-    >
-      Nice
-      {' '}
-      <br />
-      to
-      {' '}
-      <br />
-      meet
-      {' '}
-      <br />
-      you
-    </Text>
+    <div className={styles.Footer__Top}>
+      <Text
+        className={styles.Footer__Title}
+        size="h1"
+      >
+        Nice
+        {' '}
+        <br />
+        to
+        {' '}
+        <br />
+        meet
+        {' '}
+        <br />
+        you
+      </Text>
 
-    <Link
-      className={styles.Footer__Email}
-      url="mailto:info@paolodata.co"
-    >
-      <Text size="h2">info@paolodata.com</Text>
-    </Link>
+      <Link
+        className={styles.Footer__Email}
+        url="mailto:info@paolodata.co"
+      >
+        <Text size="h2">info@paolodata.com</Text>
+      </Link>
+    </div>
 
     <div className={styles.Footer__Bottom}>
       <div className={styles.Footer__Contacts}>

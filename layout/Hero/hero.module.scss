@@ -3,88 +3,105 @@
 @import "../../styles/variables.scss";
 
 .Hero {
-    align-items: center;
+    align-items: flex-start;
     background-color: $color--gray-light;
     display: flex;
     flex-direction: column;
-    padding-top: 21.5rem;
     overflow: hidden;
+    padding-top: 15vh;
     position: relative;
 
-    @include largeScreen {
-        align-items: flex-start;
-        padding-top: 50rem;
+    @include smallScreen {
+        align-items: center;
+        padding: 15vh 4rem 0 4rem;
+    }
 
-        &__Greetings,
-        &__Cta,
-        &__Links {
-            margin-left: 20%;
-        }
+    @include xlargeScreen {
+        padding-top: 35vh;
     }
 
     &__Sphere {
         @extend .sphere;
 
         &--01 {
-            height: 32rem;
-            right: 0;
+            height: 25rem;
+            left: 0;
             top: 0;
-            transform: translate(35%, -15%);
-            width: 32rem;
+            width: 25rem;
+            transform: translate(-30%, -15%);
 
-            @include largeScreen {
-                left: 0;
-                right: unset;
-                transform: translate(80%, 50%);
+            @include smallScreen {
+                left: unset;
+                right: 0;
+                transform: translate(35%, -15%);
+            }
+
+            @include xlargeScreen {
+                transform: translate(50%, 20%);
             }
         }
 
         &--02 {
             bottom: 0;
-            height: 60rem;
-            left: 0;
-            transform: translate(-40%, 0);
-            width: 60rem;
+            height: 70rem;
+            right: 0;
+            transform: translate(20%, 0);
+            width: 70rem;
 
-            @include largeScreen {
-                height: 120rem;
-                left: unset;
-                right: 0;
-                transform: translate(20%, 0);
-                width: 120rem;
+            @include smallScreen {
+                height: 60rem;
+                left: 0;
+                right: unset;
+                transform: translate(-40%, 0);
+                width: 60rem;
+            }
+
+            @include xlargeScreen {
+                height: 100rem;
+                width: 100rem;
             }
         }
     }
 
     &__Greetings {
+        margin: 0 $indent;
         margin-bottom: 4rem;
 
-        @include largeScreen {
+        br {
+            display: none;
+        }
+
+        @include smallScreen {
             br {
-                display: none;
+                display: block;
             }
         }
     }
 
     &__Cta {
-        margin-bottom: 15.8rem;
+        margin: 0 $indent;
+        margin-bottom: 29rem;
 
-        @include largeScreen {
-            margin-bottom: 29rem;
+        @include smallScreen {
+            margin-bottom: 15.8rem;
         }
     }
 
     &__Links {
         display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 10rem;
+        justify-content: unset;
+        margin: 0 $indent;
         width: 100%;
 
-        @include largeScreen {
-            justify-content: unset;
+        > * {
+            margin-right: 2rem;
+        }
+
+        @include smallScreen {
+            justify-content: space-evenly;
 
             > * {
-                margin-right: 2rem;
+                margin-right: unset;
             }
         }
     }
