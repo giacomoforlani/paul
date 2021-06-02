@@ -72,32 +72,32 @@
     }
 
     &__Secondary {
-        align-items: center;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex: 1;
 
-        @include smallScreen {
-            align-items: unset;
-            flex-direction: column;
+        @include xlargeScreen {
+            align-items: center;
+            flex-direction: row;
         }
     }
 
     &__Description {
         align-self: flex-end;
         color: $color--white;
+        margin-bottom: 5rem;
 
-        @include smallScreen {
-            align-self: unset;
-            margin-bottom: 5rem;
+        @include xlargeScreen {
+            align-self: flex-end;
+            margin: unset;
         }
     }
 
     &__Cta {
-        align-self: flex-end;
+        align-self: flex-start;
 
-        @include smallScreen {
-            align-self: flex-start;
+        @include xlargeScreen {
+            align-self: flex-end;
         }
     }
 

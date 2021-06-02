@@ -61,6 +61,8 @@ const Presentation = () => (
     <Button
       className={styles.Presentation__Cta}
       kind="secondary"
+      target="_blank"
+      url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"
     >
       My portfolio
     </Button>

@@ -32,7 +32,7 @@ const Footer = () => (
 
       <Link
         className={styles.Footer__Email}
-        url="mailto:info@paolodata.co"
+        url="mailto:info@paolodata.com"
       >
         <Text size="h2">info@paolodata.com</Text>
       </Link>
@@ -40,9 +40,24 @@ const Footer = () => (
 
     <div className={styles.Footer__Bottom}>
       <div className={styles.Footer__Contacts}>
-        <Link>Instagram</Link>
-        <Link>Linkedin</Link>
-        <Link>Vimeo</Link>
+        <Link
+          target="_blank"
+          url="https://www.instagram.com/paolodata"
+        >
+          Instagram
+        </Link>
+        <Link
+          target="_blank"
+          url="https://www.linkedin.com/in/paolodata/"
+        >
+          Linkedin
+        </Link>
+        <Link
+          target="_blank"
+          url="https://vimeo.com/paolodata"
+        >
+          Vimeo
+        </Link>
       </div>
 
       <Text

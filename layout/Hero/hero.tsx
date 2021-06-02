@@ -30,12 +30,33 @@ const Hero = () => (
       </Text>
     </div>
 
-    <Button className={styles.Hero__Cta}>Play showreel</Button>
+    <Button
+      className={styles.Hero__Cta}
+      target="_blank"
+      url="https://vimeo.com/547504346"
+    >
+      Play showreel
+    </Button>
 
     <div className={styles.Hero__Links}>
-      <Link>Instagram</Link>
-      <Link>Linkedin</Link>
-      <Link>Vimeo</Link>
+      <Link
+        target="_blank"
+        url="https://www.instagram.com/paolodata"
+      >
+        Instagram
+      </Link>
+      <Link
+        target="_blank"
+        url="https://www.linkedin.com/in/paolodata/"
+      >
+        Linkedin
+      </Link>
+      <Link
+        target="_blank"
+        url="https://vimeo.com/paolodata"
+      >
+        Vimeo
+      </Link>
     </div>
 
     <img
