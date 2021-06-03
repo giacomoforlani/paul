@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-
 import Vimeo from '@u-wave/react-vimeo';
 
 import { useWindowSize } from 'react-use';
 import { projects } from '../../data/projects';
-
 import { Text } from '../../components/Text';
 import { Button } from '../../components/Button';
-
-import { useMediaQuery } from '../../core/hooks';
+import { Modal } from '../../components/Modal';
 
 import styles from './projects.module.scss';
-import { Modal } from '../../components/Modal';
 
 type Project = typeof projects[0];
 
@@ -92,16 +88,6 @@ const Projects = () => {
         ))}
       </div>
 
-      {showModal && (
-        <Modal onBackdrop={() => openProject(undefined)}>
-          <Vimeo
-            autoplay
-            video={projectOpened!.video}
-            width={width * 0.8}
-          />
-        </Modal>
-      )}
-
       <Text
         className={styles.Projects__ComingSoon}
         size="h5"
@@ -114,6 +100,19 @@ const Projects = () => {
         src="/images/waves.svg"
         alt="waves"
       />
+
+      {showModal && (
+        <Modal
+          className={styles.Projects__Player}
+          onBackdrop={() => openProject(undefined)}
+        >
+          <Vimeo
+            autoplay
+            video={projectOpened!.video}
+            width={width * 0.8}
+          />
+        </Modal>
+      )}
     </div>
   );
 };

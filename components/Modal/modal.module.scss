@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .Modal {
-    background: $color--white;
+    background-color: $color--white;
     left: 50%;
     position: fixed;
     top: 50%;
@@ -9,12 +9,13 @@
     z-index: 4;
 
     &__Overlay {
-        background-color: rgba($color--black, 0.8);
+        backdrop-filter: blur(30px);
+        background-color: rgba($color--blue-dark, 0.9);
+        height: 100%;
         left: 0;
         position: fixed;
         top: 0;
-        z-index: 3;
         width: 100%;
-        height: 100%;
+        z-index: 3;
     }
 }

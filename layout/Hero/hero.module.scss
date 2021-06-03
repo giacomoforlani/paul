@@ -119,4 +119,8 @@
     &__Waves {
         @extend .waves;
     }
+    
+    &__Player {
+        background-color: transparent;
+    }
 }

@@ -116,4 +116,8 @@
         @extend .waves;
         transform: rotateX(180deg) scale(1.001);
     }
+
+    &__Player {
+        background-color: transparent;
+    }
 }
