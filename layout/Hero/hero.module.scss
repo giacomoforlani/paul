@@ -11,12 +11,12 @@
     padding-top: 15vh;
     position: relative;
 
-    @include smallScreen {
+    @include smScreen {
         align-items: center;
         padding: 15vh 4rem 0 4rem;
     }
 
-    @include xlargeScreen {
+    @include xlScreen {
         padding-top: 35vh;
     }
 
@@ -30,13 +30,13 @@
             width: 25rem;
             transform: translate(-30%, -15%);
 
-            @include smallScreen {
+            @include smScreen {
                 left: unset;
                 right: 0;
                 transform: translate(35%, -15%);
             }
 
-            @include xlargeScreen {
+            @include xlScreen {
                 transform: translate(50%, 20%);
             }
         }
@@ -48,7 +48,7 @@
             transform: translate(20%, 0);
             width: 70rem;
 
-            @include smallScreen {
+            @include smScreen {
                 height: 60rem;
                 left: 0;
                 right: unset;
@@ -56,7 +56,7 @@
                 width: 60rem;
             }
 
-            @include xlargeScreen {
+            @include xlScreen {
                 height: 100rem;
                 width: 100rem;
             }
@@ -64,14 +64,17 @@
     }
 
     &__Greetings {
-        margin: 0 $indent;
-        margin-bottom: 4rem;
+        margin: 0 $indent 4rem $indent;
+
+        @include smScreen {
+            margin: 0 0 4rem 0;
+        }
 
         br {
             display: none;
         }
 
-        @include smallScreen {
+        @include smScreen {
             br {
                 display: block;
             }
@@ -79,10 +82,13 @@
     }
 
     &__Cta {
-        margin: 0 $indent;
-        margin-bottom: 29rem;
+        margin: 0 $indent 29rem $indent;
 
-        @include smallScreen {
+        @include smScreen {
+            margin: 0 0 29rem 0;
+        }
+
+        @include smScreen {
             margin-bottom: 15.8rem;
         }
     }
@@ -93,11 +99,15 @@
         margin: 0 $indent;
         width: 100%;
 
+        @include smScreen {
+            margin: 0;
+        }
+
         > *:not(:last-of-type) {
             margin-right: 2rem;
         }
 
-        @include smallScreen {
+        @include smScreen {
             justify-content: space-evenly;
 
             > * {

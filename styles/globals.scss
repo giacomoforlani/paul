@@ -58,11 +58,11 @@ html {
   font-size: 75%;
   font-family: $font--primary;
 
-  @include smallScreen {
+  @include smScreen {
     font-size: 62.5%;
   }
 
-  @include xsmallScreen {
+  @include xsScreen {
     font-size: 50%;
   }
 }

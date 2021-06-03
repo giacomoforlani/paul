@@ -9,7 +9,11 @@
     padding: 6rem $indent;
     position: relative;
 
-    @include smallScreen {
+    @include smScreen {
+        padding: 6rem 0;
+    }
+
+    @include smScreen {
         column-gap: unset;
         grid-template-columns: unset;
         padding: 6rem 4rem;
@@ -18,7 +22,7 @@
     br {
         display: block;
 
-        @include smallScreen {
+        @include smScreen {
             display: none;
         }
     }
@@ -33,7 +37,7 @@
         grid-column: 1 / 2;
         margin-bottom: 4rem;
 
-        @include smallScreen {
+        @include smScreen {
             font-size: $size--md;
             grid-column: unset;
         }
@@ -46,7 +50,7 @@
         margin-bottom: 3.5rem;
         transform: translateY(-10rem);
 
-        @include smallScreen {
+        @include smScreen {
             align-self: unset;
             grid-column: unset;
             transform: unset;
@@ -59,7 +63,7 @@
         grid-column: 2 / 3;
         transform: translateY(-10rem);
 
-        @include smallScreen {
+        @include smScreen {
             grid-column: unset;
             transform: unset;
         }
@@ -70,7 +74,7 @@
         justify-self: flex-start;
         transform: translateY(-10rem);
 
-        @include smallScreen {
+        @include smScreen {
             grid-column: unset;
             justify-self: center;
             transform: unset;

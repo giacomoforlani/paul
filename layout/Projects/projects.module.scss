@@ -12,7 +12,7 @@
         grid-template-columns: repeat(2, 1fr);
         padding: 0 $indent;
 
-        @include smallScreen {
+        @include smScreen {
             display: block;
             grid-template-columns: unset;
             padding: unset;
@@ -29,7 +29,7 @@
         padding: 5rem 3.5rem 5rem 3.5rem;
         position: relative;
 
-        @include smallScreen {
+        @include smScreen {
             padding: 7rem 3.5rem 3.5rem 3.5rem;
         }
 
@@ -38,7 +38,7 @@
                 display: none;
             }
 
-            @include smallScreen {
+            @include smScreen {
                 .Projects__Main {
                     display: block;
                 }
@@ -76,7 +76,7 @@
         flex-direction: column;
         flex: 1;
 
-        @include xlargeScreen {
+        @include xlScreen {
             align-items: center;
             flex-direction: row;
         }
@@ -87,7 +87,7 @@
         color: $color--white;
         margin-bottom: 5rem;
 
-        @include xlargeScreen {
+        @include xlScreen {
             align-self: flex-end;
             margin: unset;
         }
@@ -96,7 +96,7 @@
     &__Cta {
         align-self: flex-start;
 
-        @include xlargeScreen {
+        @include xlScreen {
             align-self: flex-end;
         }
     }
@@ -107,7 +107,7 @@
         text-align: center;
         width: 100%;
 
-        @include smallScreen {
+        @include smScreen {
             padding-top: 6.5rem;
             width: unset;
         }
