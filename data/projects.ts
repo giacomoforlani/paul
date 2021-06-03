@@ -5,7 +5,7 @@ const projects = [
     label: 'Motion design',
     name: 'EisworldHorizons',
     description: 'An emotional visual journey for a company becoming a group.',
-    link: 'https://vimeo.com/505399976',
+    video: '505399976',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const projects = [
     label: 'Motion design',
     name: 'L\'AnnéeTrailer',
     description: 'An emotional visual journey for a company becoming a group.',
-    link: 'https://vimeo.com/526057531',
+    video: '526057531',
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const projects = [
     label: 'Motion design',
     name: 'ProjectLoading',
     description: 'An emotional visual journey for a company becoming a group.',
-    link: 'https://vimeo.com/524531147',
+    video: '524531147',
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const projects = [
     label: 'Motion design',
     name: '7 Secondson the Moon',
     description: 'An emotional visual journey for a company becoming a group.',
-    link: 'https://vimeo.com/530079360',
+    video: '530079360',
   },
 ];
 

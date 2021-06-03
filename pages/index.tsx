@@ -6,7 +6,6 @@ import { Hero } from '../layout/Hero';
 import { Presentation } from '../layout/Presentation';
 import { Projects } from '../layout/Projects';
 import { Bubbles } from '../components/Bubbles';
-import { Line } from '../components/Line';
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
 
       <main>
         <Bubbles />
-        <Line />
 
         <Hero />
         <Presentation />

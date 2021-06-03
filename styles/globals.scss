@@ -69,12 +69,21 @@ html {
 
 body {
   box-sizing: border-box;
+
+  &.no-overflow {
+    overflow: hidden;
+  }
 }
 
 main {
   position: relative;
+  overflow: auto;
 }
 
 main > * * {
   z-index: 2;
+}
+
+iframe {
+  display: flex;
 }

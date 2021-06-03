@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
 
-import styles from './projects.module.scss';
+import Vimeo from '@u-wave/react-vimeo';
 
+import { useWindowSize } from 'react-use';
 import { projects } from '../../data/projects';
 
 import { Text } from '../../components/Text';
 import { Button } from '../../components/Button';
+
 import { useMediaQuery } from '../../core/hooks';
+
+import styles from './projects.module.scss';
+import { Modal } from '../../components/Modal';
 
 type Project = typeof projects[0];
 
 const Projects = () => {
-  const mediaType = useMediaQuery();
+  const { width } = useWindowSize();
 
-  const [activeProject, setActiveProject] = useState<Project | undefined>();
+  const [projectFocused, setProjectFocused] = useState<Project | undefined>();
+
+  const [showModal, setShowModal] = useState(true);
+  const [projectSelected, setProjectSelected] = useState<Project | undefined>(projects[0]);
+
+  const focusProject = (project: Project | undefined) => {
+    setProjectFocused(project);
+  };
 
   const selectProject = (project: Project | undefined) => {
-    setActiveProject(project);
+    setShowModal(!!project);
+    setProjectSelected(project);
   };
 
   return (
@@ -27,10 +40,10 @@ const Projects = () => {
             key={project.id}
             className={[
               styles.Projects__Card,
-              activeProject?.id === project.id ? styles['Projects__Card--Active'] : '',
+              projectFocused?.id === project.id ? styles['Projects__Card--Active'] : '',
             ].join(' ')}
             style={{
-              backgroundImage: `${activeProject?.id === project.id
+              backgroundImage: `${projectFocused?.id === project.id
                 ? `linear-gradient(
                     to bottom, 
                     rgba(var(--rgb--blue-dark), 0.8), 
@@ -39,9 +52,9 @@ const Projects = () => {
                 : ''} 
               url(${project.image})`,
             }}
-            onClick={() => selectProject(project)}
-            onMouseEnter={() => selectProject(project)}
-            onMouseLeave={() => selectProject(undefined)}
+            onClick={() => focusProject(project)}
+            onMouseEnter={() => focusProject(project)}
+            onMouseLeave={() => focusProject(undefined)}
           >
             <div className={styles.Projects__Main}>
               <Text
@@ -70,8 +83,7 @@ const Projects = () => {
               <Button
                 className={styles.Projects__Cta}
                 kind="secondary"
-                target="_blank"
-                url={project.link}
+                onClick={() => selectProject(project)}
               >
                 Play
               </Button>
@@ -79,6 +91,16 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      {showModal && (
+        <Modal onBackdrop={() => selectProject(undefined)}>
+          <Vimeo
+            autoplay
+            video={projectSelected!.video}
+            width={width * 0.8}
+          />
+        </Modal>
+      )}
 
       <Text
         className={styles.Projects__ComingSoon}

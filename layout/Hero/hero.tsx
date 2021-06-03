@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './hero.module.scss';
-
 import { Button } from '../../components/Button';
 import { Link } from '../../components/Link';
 import { Text } from '../../components/Text';
+
+import styles from './hero.module.scss';
 
 const Hero = () => (
   <div className={styles.Hero}>

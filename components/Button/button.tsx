@@ -6,6 +6,7 @@ type ButtonProps = PropsWithChildren<PropsWithClass<{
   kind?: 'primary' | 'secondary';
   target?: string;
   url?: string;
+  onClick?: () => void;
 }>>;
 
 const Button = ({
@@ -14,6 +15,7 @@ const Button = ({
   kind = 'primary',
   target,
   url,
+  onClick = () => {},
 }: ButtonProps) => {
   const Element = url ? 'a' : 'button';
 
@@ -22,6 +24,7 @@ const Button = ({
       className={[styles.Button, styles[`Button--${kind}`], className].join(' ')}
       href={url}
       target={target}
+      onClick={onClick}
     >
       {children}
 

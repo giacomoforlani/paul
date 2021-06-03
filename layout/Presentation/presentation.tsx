@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './presentation.module.scss';
-
 import { Text } from '../../components/Text';
 import { Button } from '../../components/Button';
+
+import styles from './presentation.module.scss';
 
 const Presentation = () => (
   <div className={styles.Presentation}>
