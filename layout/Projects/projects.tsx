@@ -20,8 +20,8 @@ const Projects = () => {
 
   const [projectFocused, setProjectFocused] = useState<Project | undefined>();
 
-  const [showModal, setShowModal] = useState(true);
-  const [projectSelected, setProjectSelected] = useState<Project | undefined>(projects[0]);
+  const [showModal, setShowModal] = useState(false);
+  const [projectSelected, setProjectSelected] = useState<Project | undefined>();
 
   const focusProject = (project: Project | undefined) => {
     setProjectFocused(project);
