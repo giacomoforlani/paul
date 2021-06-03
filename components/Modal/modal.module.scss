@@ -9,7 +9,7 @@
     z-index: 4;
 
     &__Overlay {
-        backdrop-filter: blur(30px);
+        backdrop-filter: blur(2rem);
         background-color: rgba($color--blue-dark, 0.9);
         height: 100%;
         left: 0;
