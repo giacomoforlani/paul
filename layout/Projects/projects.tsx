@@ -21,15 +21,15 @@ const Projects = () => {
   const [projectFocused, setProjectFocused] = useState<Project | undefined>();
 
   const [showModal, setShowModal] = useState(false);
-  const [projectSelected, setProjectSelected] = useState<Project | undefined>();
+  const [projectOpened, setProjectOpened] = useState<Project | undefined>();
 
   const focusProject = (project: Project | undefined) => {
     setProjectFocused(project);
   };
 
-  const selectProject = (project: Project | undefined) => {
+  const openProject = (project: Project | undefined) => {
     setShowModal(!!project);
-    setProjectSelected(project);
+    setProjectOpened(project);
   };
 
   return (
@@ -83,7 +83,7 @@ const Projects = () => {
               <Button
                 className={styles.Projects__Cta}
                 kind="secondary"
-                onClick={() => selectProject(project)}
+                onClick={() => openProject(project)}
               >
                 Play
               </Button>
@@ -93,10 +93,10 @@ const Projects = () => {
       </div>
 
       {showModal && (
-        <Modal onBackdrop={() => selectProject(undefined)}>
+        <Modal onBackdrop={() => openProject(undefined)}>
           <Vimeo
             autoplay
-            video={projectSelected!.video}
+            video={projectOpened!.video}
             width={width * 0.8}
           />
         </Modal>
