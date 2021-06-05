@@ -35,7 +35,7 @@ const Presentation = () => (
 
     <Text
       className={styles.Presentation__Second}
-      size="h3"
+      size="h4"
     >
       My goal is to communicate
       using beautiful design
@@ -51,6 +51,7 @@ const Presentation = () => (
       and an amateur actor who loves to
       solve problems with storytelling,
       polished design, motion and emotions.
+      {' '}
       <br />
       <br />
       Always dreaming of new, unexplored

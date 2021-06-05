@@ -42,8 +42,8 @@ const Projects = () => {
               backgroundImage: `${projectFocused?.id === project.id
                 ? `linear-gradient(
                     to bottom, 
-                    rgba(var(--rgb--blue-dark), 0.8), 
-                    rgba(var(--rgb--blue-dark), 0.8)
+                    rgba(var(--rgb--blue-dark), 0.9), 
+                    rgba(var(--rgb--blue-dark), 0.9)
                   ),`
                 : ''} 
               url(${project.image})`,
@@ -64,7 +64,10 @@ const Projects = () => {
                 className={styles.Projects__Title}
                 size="h2"
               >
-                {project.name}
+                {/* {project.description} */}
+                Project
+                <br />
+                Loading
               </Text>
             </div>
 
@@ -108,6 +111,7 @@ const Projects = () => {
         >
           <Vimeo
             autoplay
+            responsive
             video={projectOpened!.video}
             width={width * 0.8}
           />

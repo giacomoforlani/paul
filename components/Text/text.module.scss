@@ -5,11 +5,13 @@
     font-weight: 500;
 
     &--h1 {
-        font-size: $size--xl;
+        font-size: $size--xxl;
+        line-height: 8rem;
     }
 
     &--h2 {
         font-size: $size--md;
+        line-height: 3.2rem;
     }
 
     &--h3 {
@@ -20,17 +22,20 @@
         font-family: $font--secondary;
         font-size: $size--sm;
         font-weight: 700;
+        line-height: 2.2rem;
     }
 
     &--h5 {
         font-family: $font--secondary;
         font-size: $size--sm;
         font-weight: 300;
+        line-height: 2.2rem;
     }
 
     &--h6 {
         font-family: $font--secondary;
         font-size: $size--xxs;
         letter-spacing: 0.3rem;
+        line-height: 2.2rem;
     }
 }

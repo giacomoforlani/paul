@@ -11,7 +11,7 @@
     position: relative;
 
     @include smScreen {
-        padding: 20rem 4rem 2rem 4rem;
+        padding: 4rem;
     }
 
     &__Sphere {
@@ -44,25 +44,15 @@
     }
 
     &__Title {
-        margin-bottom: 2rem;
+        margin-bottom: 3.5rem;
 
         br {
             display: none;
-        }
-
-        @include smScreen {
-            margin-bottom: 1.5rem;
-            margin-left: unset;
         }
     }
 
     &__Email {
         align-self: flex-start;
-
-        @include smScreen {
-            margin-bottom: 20rem;
-            margin-left: unset;
-        }
     }
 
     &__Bottom {

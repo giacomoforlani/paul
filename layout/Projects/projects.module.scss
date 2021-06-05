@@ -9,7 +9,8 @@
     &__Cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 $indent;
+        max-width: 108rem;
+        margin: auto;
 
         @include smScreen {
             display: block;
@@ -20,15 +21,18 @@
 
     &__Card {
         align-items: flex-start;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         flex-direction: column;
         height: 40rem;
+        margin: 2rem;
         padding: 5rem 3.5rem 5rem 3.5rem;
         position: relative;
 
         @include smScreen {
+            margin: 0;
             padding: 7rem 3.5rem 3.5rem 3.5rem;
         }
 
@@ -39,16 +43,17 @@
 
             @include smScreen {
                 .Projects__Main {
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
                 }
             }
 
             .Projects__Main {
-                background-color: rgba($color--blue-dark, 0.8);
+                background-color: rgba($color--blue-dark, 0.9);
                 bottom: 0;
-                height: 20rem;
                 left: 0;
-                padding: 4rem;
+                padding: 3rem;
+                height: 16rem;
                 position: absolute;
                 width: 100%;
             }
@@ -67,7 +72,6 @@
 
     &__Title {
         color: $color--white;
-        margin-bottom: 2.5rem;
     }
 
     &__Secondary {

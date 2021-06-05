@@ -55,16 +55,8 @@
 }
 
 html {
-  font-size: 75%;
+  font-size: 62.5%;
   font-family: $font--primary;
-
-  @include smScreen {
-    font-size: 62.5%;
-  }
-
-  @include xsScreen {
-    font-size: 50%;
-  }
 }
 
 body {

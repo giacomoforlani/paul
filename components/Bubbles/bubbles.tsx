@@ -29,7 +29,7 @@ const Bubbles = () => (
             speed: 4,
           },
           random: true,
-          value: 10,
+          value: 5,
         },
       },
     }}

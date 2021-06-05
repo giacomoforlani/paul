@@ -33,8 +33,9 @@
 
     &__First {
         color: $color--white;
-        font-size: $size--xl;
+        font-size: $size--xxl;
         grid-column: 1 / 2;
+        line-height: 8rem;
         margin-bottom: 4rem;
 
         @include smScreen {
@@ -76,7 +77,6 @@
 
         @include smScreen {
             grid-column: unset;
-            justify-self: center;
             transform: unset;
         }
     }

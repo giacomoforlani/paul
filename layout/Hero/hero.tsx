@@ -84,6 +84,7 @@ const Hero = () => {
         >
           <Vimeo
             autoplay
+            responsive
             video="547504346"
             width={width * 0.8}
           />
