@@ -1,46 +1,20 @@
 @import "../../styles/mixins";
-@import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
 .Footer {
     background-color: $color--gray-light;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     overflow: hidden;
-    padding: 45rem 0 3rem 0;
+    padding-bottom: 2rem;
     position: relative;
 
-    @include smScreen {
-        padding: 4rem;
-    }
-
-    &__Sphere {
-        @extend .sphere;
-
-        &--01 {
-            height: 25rem;
-            right: 0;
-            top: 0;
-            transform: translate(-100%, 15%);
-            width: 25rem;
-
-            @include smScreen {
-                transform: translate(35%, 15%);
-            }
-
-            @include xlScreen {
-                height: 32rem;
-                width: 32rem;
-            }
-        }
-    }
-
     &__Top {
-        margin: 0 $indent 45rem $indent;
-
-        @include smScreen {
-            margin: 0 0 45rem 0;
-        }
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
     }
 
     &__Title {
@@ -60,23 +34,24 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        padding: 0 10rem;
 
         @include smScreen {
             align-items: unset;
             flex-direction: column;
             justify-content: unset;
-            padding: unset;
         }
     }
 
     &__Contacts {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 3rem;
 
         > *:not(:last-of-type) {
             margin-right: 2rem;
+        }
+
+        @include smScreen {
+            margin-bottom: 3rem;
         }
     }
 

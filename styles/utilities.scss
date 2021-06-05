@@ -1,11 +1,7 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 
-.sphere {
-    mix-blend-mode: screen;
-    position: absolute;
-    z-index: 1 !important;
-}
+
 
 .waves {
     background-color: $color--blue-dark;

@@ -1,0 +1,65 @@
+@import "../../styles/mixins.scss";
+
+.Spheres {
+    &__Image {
+        mix-blend-mode: screen;
+        padding: 0;
+        position: absolute;
+
+        &--01 {
+            height: 25rem;
+            left: 0;
+            top: 0;
+            width: 25rem;
+            transform: translate(-30%, -15%);
+
+            @include smScreen {
+                left: unset;
+                right: 0;
+                transform: translate(35%, -15%);
+            }
+
+            @include xlScreen {
+                transform: translate(50%, 20%);
+            }
+        }
+
+        &--02 {
+            top: 100vh;
+            height: 70rem;
+            right: 0;
+            transform: translate(20%, -50%);
+            width: 70rem;
+
+            @include smScreen {
+                height: 60rem;
+                left: 0;
+                right: unset;
+                transform: translate(-40%, -30%);
+                width: 60rem;
+            }
+
+            @include xlScreen {
+                height: 100rem;
+                width: 100rem;
+            }
+        }
+
+        &--03 {
+                height: 25rem;
+                right: 0;
+                bottom: 100vh;
+                transform: translate(-100%, 100%);
+                width: 25rem;
+
+                @include smScreen {
+                    transform: translate(35%, 15%);
+                }
+
+                @include xlScreen {
+                    height: 32rem;
+                    width: 32rem;
+                }
+        }
+    }
+}

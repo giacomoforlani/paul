@@ -1,21 +1,22 @@
 @import "../../styles/mixins.scss";
-@import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
 .Projects {
     background-color: $color--blue-dark;
     overflow: hidden;
 
+    @include smScreen {
+        padding: 0;
+    }
+
     &__Cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        max-width: 108rem;
-        margin: auto;
+        padding: 0;
 
         @include smScreen {
             display: block;
             grid-template-columns: unset;
-            padding: unset;
         }
     }
 
@@ -106,19 +107,15 @@
 
     &__ComingSoon {
         color: $color--green;
+        left: 50%;
         padding-top: 10rem;
+        position: absolute;
         text-align: center;
-        width: 100%;
+        transform: translateX(-50%);
 
         @include smScreen {
             padding-top: 6.5rem;
-            width: unset;
         }
-    }
-
-    &__Waves {
-        @extend .waves;
-        transform: rotateX(180deg) scale(1.001);
     }
 
     &__Player {

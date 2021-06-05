@@ -1,26 +1,28 @@
+/* eslint-disable react/no-danger */
 import React, { useState } from 'react';
-import Vimeo from '@u-wave/react-vimeo';
 
-import { useWindowSize } from 'react-use';
 import { projects } from '../../data/projects';
 import { Text } from '../../components/Text';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
 
 import styles from './projects.module.scss';
+import { Player } from '../../components/Player';
 
 type Project = typeof projects[0];
 
 const Projects = () => {
-  const { width } = useWindowSize();
-
   const [projectFocused, setProjectFocused] = useState<Project | undefined>();
 
   const [showModal, setShowModal] = useState(false);
   const [projectOpened, setProjectOpened] = useState<Project | undefined>();
 
   const focusProject = (project: Project | undefined) => {
-    setProjectFocused(project);
+    setTimeout(() => setProjectFocused(
+      projectFocused?.id === project?.id
+        ? undefined
+        : project,
+    ));
   };
 
   const openProject = (project: Project | undefined) => {
@@ -60,14 +62,11 @@ const Projects = () => {
                 {project.label}
               </Text>
 
-              <Text
-                className={styles.Projects__Title}
-                size="h2"
-              >
-                {/* {project.description} */}
-                Project
-                <br />
-                Loading
+              <Text size="h2">
+                <span
+                  className={styles.Projects__Title}
+                  dangerouslySetInnerHTML={(() => ({ __html: project.name }))()}
+                />
               </Text>
             </div>
 
@@ -98,23 +97,12 @@ const Projects = () => {
         (More projects coming soon)
       </Text>
 
-      <img
-        className={styles.Projects__Waves}
-        src="/images/waves.svg"
-        alt="waves"
-      />
-
       {showModal && (
         <Modal
           className={styles.Projects__Player}
           onBackdrop={() => openProject(undefined)}
         >
-          <Vimeo
-            autoplay
-            responsive
-            video={projectOpened!.video}
-            width={width * 0.8}
-          />
+          <Player video={projectOpened!.video} />
         </Modal>
       )}
     </div>

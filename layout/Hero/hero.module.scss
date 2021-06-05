@@ -1,5 +1,4 @@
 @import "../../styles/mixins.scss";
-@import "../../styles/utilities.scss";
 @import "../../styles/variables.scss";
 
 .Hero {
@@ -7,71 +6,23 @@
     background-color: $color--gray-light;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     overflow: hidden;
-    padding-top: 20vh;
+    padding-bottom: 2rem;
     position: relative;
 
-    @include xlScreen {
-        padding-top: 35vh;
-    }
-
-    &__Sphere {
-        @extend .sphere;
-
-        &--01 {
-            height: 25rem;
-            left: 0;
-            top: 0;
-            width: 25rem;
-            transform: translate(-30%, -15%);
-
-            @include smScreen {
-                left: unset;
-                right: 0;
-                transform: translate(35%, -15%);
-            }
-
-            @include xlScreen {
-                transform: translate(50%, 20%);
-            }
-        }
-
-        &--02 {
-            bottom: 0;
-            height: 70rem;
-            right: 0;
-            transform: translate(20%, 0);
-            width: 70rem;
-
-            @include smScreen {
-                height: 60rem;
-                left: 0;
-                right: unset;
-                transform: translate(-40%, -30%);
-                width: 60rem;
-            }
-
-            @include xlScreen {
-                height: 100rem;
-                width: 100rem;
-            }
-        }
-    }
-
     &__Greetings {
-        margin: 0 $indent 4rem $indent;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
 
-        > *:first-child {
+        > *:not(:last-child) {
             margin-bottom: 2rem;
         }
 
         br {
             display: none;
-        }
-
-        @include smScreen {
-            margin: 0 0 4rem 0;
-            padding: 0 4rem;
         }
 
         @include smScreen {
@@ -82,42 +33,26 @@
     }
 
     &__Cta {
-        margin: 0 $indent 29rem $indent;
-
-        @include smScreen {
-            margin: 0 4rem 29rem 4rem;
-        }
-
-        @include smScreen {
-            margin-bottom: 15.8rem;
-        }
+        align-self: flex-start;
     }
 
     &__Links {
         display: flex;
         justify-content: unset;
-        margin: 0 $indent;
         width: 100%;
-
-        @include smScreen {
-            margin: 0;
-        }
 
         > *:not(:last-of-type) {
             margin-right: 2rem;
         }
 
         @include smScreen {
+            margin: 0;
             justify-content: space-evenly;
 
             > * {
                 margin-right: unset;
             }
         }
-    }
-
-    &__Waves {
-        @extend .waves;
     }
 
     &__Player {

@@ -3,6 +3,7 @@ import React, { PropsWithChildren } from 'react';
 import styles from './button.module.scss';
 
 type ButtonProps = PropsWithChildren<PropsWithClass<{
+  disabled?: boolean;
   kind?: 'primary' | 'secondary';
   target?: string;
   url?: string;
@@ -12,16 +13,18 @@ type ButtonProps = PropsWithChildren<PropsWithClass<{
 const Button = ({
   children,
   className,
+  disabled = false,
   kind = 'primary',
   target,
   url,
-  onClick = () => {},
+  onClick = () => { },
 }: ButtonProps) => {
   const Element = url ? 'a' : 'button';
 
   return (
     <Element
       className={[styles.Button, styles[`Button--${kind}`], className].join(' ')}
+      disabled={disabled}
       href={url}
       target={target}
       onClick={onClick}

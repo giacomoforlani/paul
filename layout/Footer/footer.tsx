@@ -7,12 +7,6 @@ import styles from './footer.module.scss';
 
 const Footer = () => (
   <footer className={styles.Footer}>
-    <img
-      className={[styles.Footer__Sphere, styles['Footer__Sphere--01']].join(' ')}
-      src="/images/sphere.png"
-      alt="sphere-01"
-    />
-
     <div className={styles.Footer__Top}>
       <Text
         className={styles.Footer__Title}
