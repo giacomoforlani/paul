@@ -10,10 +10,6 @@
     padding-bottom: 2rem;
     position: relative;
 
-    > * {
-        z-index: $index--bubbles;
-    }
-
     &__Top {
         display: flex;
         flex-direction: column;
