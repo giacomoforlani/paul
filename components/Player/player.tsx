@@ -16,7 +16,6 @@ const Player = ({
     <Vimeo
       className={className}
       autoplay
-      responsive
       video={video}
       width={width * 0.8}
     />
