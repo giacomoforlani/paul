@@ -1,10 +1,12 @@
 @import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 .Spheres {
     &__Image {
         mix-blend-mode: screen;
         padding: 0;
         position: absolute;
+        z-index: $index--sphere;
 
         &--01 {
             height: 25rem;

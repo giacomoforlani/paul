@@ -9,7 +9,7 @@ const Bubbles = () => (
     params={{
       particles: {
         color: {
-          value: '#fff',
+          value: '#eaeef1',
         },
         line_linked: {
           enable: false,

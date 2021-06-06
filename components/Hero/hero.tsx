@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import { Button } from '../../components/Button';
-import { Link } from '../../components/Link';
-import { Modal } from '../../components/Modal';
-import { Text } from '../../components/Text';
+import { Button } from '../../lib/Button';
+import { Link } from '../../lib/Link';
+import { Modal } from '../../lib/Modal';
+import { Text } from '../../lib/Text';
+import { Player } from '../../lib/Player';
 
 import styles from './hero.module.scss';
-import { Player } from '../../components/Player';
 
 const Hero = () => {
   const [showModal, setShowModal] = useState(false);

@@ -1,4 +1,5 @@
 @import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 .Noise {
     background-image: url(/images/gradient-noise.png);
@@ -10,7 +11,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 0;
+    z-index: $index--noise;
 
     @include smScreen {
         background-image: url(/images/gradient-noise-mobile.png);

@@ -6,7 +6,7 @@
     position: fixed;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
+    z-index: $index--modal;
 
     &__Overlay {
         backdrop-filter: blur(2rem);
@@ -16,6 +16,6 @@
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 3;
+        z-index: $index--modal;
     }
 }

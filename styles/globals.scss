@@ -55,8 +55,8 @@
 }
 
 html {
-  font-size: 62.5%;
   font-family: $font--primary;
+  font-size: 62.5%;
 }
 
 body {
@@ -72,14 +72,37 @@ main {
   overflow: hidden;
 }
 
+* {
+  cursor: none;
+  user-select: none;
+}
+
 main > * {
   padding: 0 max(4rem, calc((100vw - 108rem) / 2));
 }
 
 main > * * {
-  z-index: 2;
+  z-index: $index--default;
 }
 
 iframe {
   display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color--white;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color--green;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken($color--green, 10);
 }

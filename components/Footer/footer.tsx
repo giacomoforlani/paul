@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Text } from '../../components/Text';
-import { Link } from '../../components/Link';
+import { Text } from '../../lib/Text';
+import { Link } from '../../lib/Link';
 
 import styles from './footer.module.scss';
 

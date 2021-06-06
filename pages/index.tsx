@@ -1,14 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { Noise } from '../layout/Noise';
-import { Footer } from '../layout/Footer';
-import { Hero } from '../layout/Hero';
-import { Presentation } from '../layout/Presentation';
-import { Bubbles } from '../layout/Bubbles';
-import { Projects } from '../layout/Projects';
-import { Spheres } from '../layout/Spheres';
-import { Waves } from '../layout/Waves';
+import { Noise } from '../components/Noise';
+import { Footer } from '../components/Footer';
+import { Hero } from '../components/Hero';
+import { Presentation } from '../components/Presentation';
+import { Bubbles } from '../components/Bubbles';
+import { Projects } from '../components/Projects';
+import { Spheres } from '../components/Spheres';
+import { Waves } from '../components/Waves';
+import { Cursor } from '../components/Cursor';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Waves reverse />
         <Footer />
 
+        <Cursor />
         <Bubbles />
         <Spheres />
         <Noise />
