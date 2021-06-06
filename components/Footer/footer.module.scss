@@ -62,5 +62,25 @@
     &__Rights {
         align-self: center;
         color: $color--gray;
+
+        br {
+            display: none;
+        }
+
+        @include smScreen {
+            text-align: center;
+
+            a {
+                margin-bottom: 1rem;
+            }
+
+            span {
+                display: none;
+            }
+
+            br {
+                display: block;
+            }
+        }
     }
 }

@@ -1,6 +1,5 @@
 import Vimeo from '@u-wave/react-vimeo';
 import React from 'react';
-import { useWindowSize } from 'react-use';
 
 type PlayerProps = PropsWithClass<{
   video: string;
@@ -9,17 +8,13 @@ type PlayerProps = PropsWithClass<{
 const Player = ({
   className,
   video,
-}: PlayerProps) => {
-  const { width } = useWindowSize();
-
-  return (
-    <Vimeo
-      className={className}
-      autoplay
-      video={video}
-      width={width * 0.8}
-    />
-  );
-};
+}: PlayerProps) => (
+  <Vimeo
+    className={className}
+    autoplay
+    video={video}
+    width={window.innerWidth * 0.8}
+  />
+);
 
 export { Player };

@@ -66,8 +66,9 @@ const Footer = () => (
         >
           Giacomo Forlani
         </Link>
-        {' '}
-        - All Rights Reserved © 2020
+        <span> - </span>
+        <br />
+        All Rights Reserved © 2020
       </Text>
     </div>
   </footer>

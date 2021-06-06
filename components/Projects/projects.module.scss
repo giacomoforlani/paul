@@ -126,6 +126,7 @@
         position: absolute;
         text-align: center;
         transform: translateX(-50%);
+        width: 100%;
 
         @include smScreen {
             padding-top: 6.5rem;

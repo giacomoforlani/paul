@@ -1,20 +1,30 @@
 @import "../../styles/variables.scss";
 
-.Cursor {
+.pointer {
     border-radius: 50%;
     padding: 0;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     transform: translate(-50%, -50%);
     z-index: $index--cursor;
 
+    @media (hover: none) and (pointer: coarse) {
+        display: none;
+    }
+}
+
+.Cursor {
     &__Out {
+        @extend .pointer;
+
         border: 1px solid $color--green;
         height: 12rem;
         width: 12rem;
     }
 
     &__In {
+        @extend .pointer;
+
         background-color: $color--green;
         height: 1.5rem;
         width: 1.5rem;
