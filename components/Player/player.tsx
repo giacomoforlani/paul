@@ -3,7 +3,7 @@ import React from 'react';
 import { useWindowSize } from 'react-use';
 
 type PlayerProps = PropsWithClass<{
-    video: string;
+  video: string;
 }>
 
 const Player = ({
@@ -14,6 +14,7 @@ const Player = ({
 
   return (
     <Vimeo
+      className={className}
       autoplay
       responsive
       video={video}

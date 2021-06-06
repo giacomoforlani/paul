@@ -14,18 +14,33 @@ const Hero = () => {
   return (
     <div className={styles.Hero}>
       <div className={styles.Hero__Greetings}>
-        <Text size="h1">
+        <Text
+          className={styles.Hero__Name}
+          size="h1"
+        >
           Hi,
           {' '}
           <br />
           I&apos;m Paolo
         </Text>
 
-        <Text size="h2">
+        <Text
+          className={styles.Hero__Nickname}
+          size="h2"
+        >
           But you can
           {' '}
           <br />
-          call me Paul
+          call me
+          {' '}
+          <span>
+            Paul
+            <img
+              className={styles.Hero__Sign}
+              src="/images/sign.svg"
+              alt="sign"
+            />
+          </span>
         </Text>
 
         <Button

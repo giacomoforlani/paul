@@ -8,7 +8,7 @@
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
-    padding-bottom: 2rem;
+    padding-bottom: 5vh;
     position: relative;
 
     &__Greetings {
@@ -16,10 +16,6 @@
         flex-direction: column;
         flex: 1;
         justify-content: center;
-
-        > *:not(:last-child) {
-            margin-bottom: 2rem;
-        }
 
         br {
             display: none;
@@ -30,6 +26,31 @@
                 display: block;
             }
         }
+    }
+
+    &__Name {
+        margin-bottom: 2rem;
+    }
+
+    &__Nickname {
+        margin-bottom: 4rem;
+        z-index: 1;
+
+        span {
+            position: relative;
+        }
+
+        @include smScreen {
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__Sign {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-20%, -20%);
+        z-index: -1;
     }
 
     &__Cta {

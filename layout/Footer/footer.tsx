@@ -58,7 +58,16 @@ const Footer = () => (
         className={styles.Footer__Rights}
         size="h5"
       >
-        All Rights Reserved © 2020
+        Developed by
+        {' '}
+        <Link
+          url="https://www.linkedin.com/in/giacomo-forlani/"
+          target="_blank"
+        >
+          Giacomo Forlani
+        </Link>
+        {' '}
+        - All Rights Reserved © 2020
       </Text>
     </div>
   </footer>

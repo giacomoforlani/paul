@@ -54,37 +54,39 @@ const Projects = () => {
             onMouseEnter={() => focusProject(project)}
             onMouseLeave={() => focusProject(undefined)}
           >
-            <div className={styles.Projects__Main}>
-              <Text
-                className={styles.Projects__Label}
-                size="h6"
-              >
-                {project.label}
-              </Text>
+            <div className={styles.Projects__Info}>
+              <div className={styles.Projects__Main}>
+                <Text
+                  className={styles.Projects__Label}
+                  size="h6"
+                >
+                  {project.label}
+                </Text>
 
-              <Text size="h2">
-                <span
-                  className={styles.Projects__Title}
-                  dangerouslySetInnerHTML={(() => ({ __html: project.name }))()}
-                />
-              </Text>
-            </div>
+                <Text size="h2">
+                  <span
+                    className={styles.Projects__Title}
+                    dangerouslySetInnerHTML={(() => ({ __html: project.name }))()}
+                  />
+                </Text>
+              </div>
 
-            <div className={styles.Projects__Secondary}>
-              <Text
-                className={styles.Projects__Description}
-                size="h5"
-              >
-                {project.description}
-              </Text>
+              <div className={styles.Projects__Secondary}>
+                <Text
+                  className={styles.Projects__Description}
+                  size="h5"
+                >
+                  {project.description}
+                </Text>
 
-              <Button
-                className={styles.Projects__Cta}
-                kind="secondary"
-                onClick={() => openProject(project)}
-              >
-                Play
-              </Button>
+                <Button
+                  className={styles.Projects__Cta}
+                  kind="secondary"
+                  onClick={() => openProject(project)}
+                >
+                  Play
+                </Button>
+              </div>
             </div>
           </div>
         ))}
