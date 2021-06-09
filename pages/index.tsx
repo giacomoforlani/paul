@@ -28,7 +28,7 @@ export default function Home() {
         <Footer />
 
         <Cursor />
-        {/* <Bubbles /> */}
+        <Bubbles />
         <Spheres />
         <Noise />
       </main>
