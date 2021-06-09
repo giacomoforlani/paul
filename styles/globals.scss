@@ -27,22 +27,26 @@
   font-family: $font--secondary;
   src: url("/fonts/JosefinSans-Bold.ttf");
   font-weight: 700;
+  font-display: fallback;
 }
 
 @font-face {
   font-family: $font--secondary;
   src: url("/fonts/JosefinSans-Regular.ttf");
+  font-display: fallback;
 }
 
 @font-face {
   font-family: $font--secondary;
   src: url("/fonts/JosefinSans-Light.ttf");
   font-weight: 300;
+  font-display: fallback;
 }
 
 @font-face {
   font-family: $font--primary;
   src: url("/fonts/YesevaOne-Regular.ttf");
+  font-display: fallback;
 }
 
 *,
