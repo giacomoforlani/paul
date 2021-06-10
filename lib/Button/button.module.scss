@@ -23,15 +23,44 @@
     padding: 2.2rem;
     text-decoration: none;
     text-transform: uppercase;
+    transition: all 0.4s ease-out;
+
+    &:hover {
+        transform: scale(1.01);
+    }
 
     &--primary {
         background-image: linear-gradient(to right, $color--cyan, $color--pink);
         color: $color--white;
+
+        &:hover {
+            background-image: linear-gradient(to left, $color--cyan, $color--pink);
+        }
     }
 
     &--secondary {
         background-image: unset;
         background-color: $color--white;
+
+        &:hover {
+            background-color: rgba($color--green, 0.8);
+            color: $color--white;
+
+            .Button {
+                &__Triangle {
+                    &::before,
+                    &::after {
+                        background-color: $color--white;
+                    }
+                }
+
+                &__Circle {
+                    &::before {
+                        border-color: $color--white;
+                    }
+                }
+            }
+        }
     }
 
     &__Icon {

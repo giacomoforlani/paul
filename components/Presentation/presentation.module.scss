@@ -1,6 +1,20 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+.slide-top {
+    position: relative;
+    top: -30rem;
+
+    @include smScreen {
+        top: -20rem;
+    }
+}
+
+.slide-top-sm {
+    position: relative;
+    top: -20rem;
+}
+
 .Presentation {
     background-color: $color--blue-dark;
     column-gap: 5rem;
@@ -26,12 +40,13 @@
     }
 
     &__First {
+        @extend .slide-top-sm;
+
         color: $color--white;
         font-size: $size--xxl;
         grid-column: 1 / 2;
         line-height: 8rem;
         margin-bottom: 4rem;
-        transform: translateY(-20rem);
 
         @include smScreen {
             font-size: $size--md;
@@ -41,39 +56,39 @@
     }
 
     &__Second {
+        @extend .slide-top;
+
         align-self: flex-end;
         color: $color--white;
         grid-column: 2 / 3;
         margin-bottom: 3.5rem;
-        transform: translateY(-30rem);
 
         @include smScreen {
             align-self: unset;
             grid-column: unset;
-            transform: translateY(-20rem);
         }
     }
 
     &__Third {
+        @extend .slide-top;
+
         color: $color--gray-light;
         margin-bottom: 6rem;
         grid-column: 2 / 3;
-        transform: translateY(-30rem);
 
         @include smScreen {
             grid-column: unset;
-            transform: translateY(-20rem);
         }
     }
 
     &__Cta {
+        @extend .slide-top;
+
         grid-column: 2 / 3;
         justify-self: flex-start;
-        transform: translateY(-30rem);
 
         @include smScreen {
             grid-column: unset;
-            transform: translateY(-20rem);
         }
     }
 }

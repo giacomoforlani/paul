@@ -1,11 +1,31 @@
 @import "../../styles/variables.scss";
 
 .Link {
-    border-bottom: 2px solid $color--green;
     color: $color--gray;
     display: inline-block;
     font-family: $font--secondary;
     font-size: 2rem;
     padding-bottom: 5px;
+    position: relative;
     text-decoration: none;
+
+    &::before {
+        background: $color--green;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        transform-origin: left;
+        transform: scaleX(1);
+        transition: transform 0.4s ease-out;
+        width: 100%;
+    }
+
+    &:hover {
+        &::before {
+            transform-origin: right;
+            transform: scaleX(0);
+        }
+    }
 }
