@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Text } from '../../lib/Text';
 import { Button } from '../../lib/Button';
+import { Text } from '../../lib/Text';
 
 import styles from './presentation.module.scss';
 
 const Presentation = () => (
-  <div className={styles.Presentation}>
+  <section className={styles.Presentation}>
     <Text
       className={styles.Presentation__First}
       size="h2"
@@ -67,7 +67,7 @@ const Presentation = () => (
     >
       My portfolio
     </Button>
-  </div>
+  </section>
 );
 
 export { Presentation };

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Text } from '../../lib/Text';
 import { Link } from '../../lib/Link';
+import { Text } from '../../lib/Text';
 
 import styles from './footer.module.scss';
 
 const Footer = () => (
-  <footer className={styles.Footer}>
+  <section className={styles.Footer}>
     <div className={styles.Footer__Top}>
       <Text
         className={styles.Footer__Title}
@@ -71,7 +71,7 @@ const Footer = () => (
         All Rights Reserved © 2020
       </Text>
     </div>
-  </footer>
+  </section>
 );
 
 export { Footer };

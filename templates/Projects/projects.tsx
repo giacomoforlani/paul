@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 
 import { projects } from '../../data/projects';
 
-import { Text } from '../../lib/Text';
 import { Button } from '../../lib/Button';
 import { Modal } from '../../lib/Modal';
 import { Player } from '../../lib/Player';
+import { Text } from '../../lib/Text';
 
 import styles from './projects.module.scss';
 
@@ -32,7 +32,7 @@ const Projects = () => {
   };
 
   return (
-    <div className={styles.Projects}>
+    <section className={styles.Projects}>
       <div className={styles.Projects__Cards}>
         {projects.map((project) => (
           <div
@@ -108,7 +108,7 @@ const Projects = () => {
           <Player video={projectOpened!.video} />
         </Modal>
       )}
-    </div>
+    </section>
   );
 };
 

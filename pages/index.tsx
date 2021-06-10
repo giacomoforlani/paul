@@ -1,15 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { Noise } from '../components/Noise';
-import { Footer } from '../components/Footer';
-import { Hero } from '../components/Hero';
-import { Presentation } from '../components/Presentation';
 import { Bubbles } from '../components/Bubbles';
-import { Projects } from '../components/Projects';
+import { Cursor } from '../components/Cursor';
+import { Noise } from '../components/Noise';
 import { Spheres } from '../components/Spheres';
 import { Waves } from '../components/Waves';
-import { Cursor } from '../components/Cursor';
+
+import { Footer } from '../templates/Footer';
+import { Hero } from '../templates/Hero';
+import { Presentation } from '../templates/Presentation';
+import { Projects } from '../templates/Projects';
 
 export default function Home() {
   return (

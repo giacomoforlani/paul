@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Button } from '../../lib/Button';
 import { Link } from '../../lib/Link';
 import { Modal } from '../../lib/Modal';
-import { Text } from '../../lib/Text';
 import { Player } from '../../lib/Player';
+import { Text } from '../../lib/Text';
 
 import styles from './hero.module.scss';
 
@@ -12,7 +12,7 @@ const Hero = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className={styles.Hero}>
+    <section className={styles.Hero}>
       <div className={styles.Hero__Greetings}>
         <Text
           className={styles.Hero__Name}
@@ -80,7 +80,7 @@ const Hero = () => {
           <Player video="547504346" />
         </Modal>
       )}
-    </div>
+    </section>
   );
 };
 
