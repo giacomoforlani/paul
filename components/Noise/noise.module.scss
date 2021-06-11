@@ -2,18 +2,24 @@
 @import "../../styles/variables.scss";
 
 .Noise {
-    background-image: url(/images/gradient-noise.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100vh;
     left: 0;
     mix-blend-mode: soft-light;
     position: fixed;
     top: 0;
+    transform: translateZ(0);
     width: 100vw;
     z-index: $index--noise;
 
-    @include smScreen {
-        background-image: url(/images/gradient-noise-mobile.png);
+    &__Background {
+        background-image: url(/images/gradient-noise.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+
+        @include smScreen {
+            background-image: url(/images/gradient-noise-mobile.png);
+        }
     }
 }
