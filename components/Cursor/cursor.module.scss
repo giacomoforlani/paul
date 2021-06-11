@@ -2,6 +2,7 @@
 
 .pointer {
     border-radius: 50%;
+    pointer-events: none;
     position: fixed;
     z-index: $index--cursor;
 
@@ -25,13 +26,13 @@
             content: "";
             height: 100%;
             position: absolute;
-            transition: border-width 0.3s ease-out, transform 0.3s ease-out;
+            transition: background-color 0.3s ease-out, transform 0.3s ease-out;
             width: 100%;
         }
 
         &--Full {
             &::before {
-                border-width: 4rem;
+                background-color: $color--green;
                 transform: scale(0.5);
             }
         }
