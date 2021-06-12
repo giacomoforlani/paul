@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, {
+  useCallback, useEffect, useRef, useState,
+} from 'react';
 
 import { Button } from '../../lib/Button';
 import { Link } from '../../lib/Link';
@@ -9,68 +11,125 @@ import { Text } from '../../lib/Text';
 import styles from './hero.module.scss';
 
 const Hero = () => {
+  const imageRef = useRef<HTMLImageElement>(null);
+  const wavesRef = useRef<HTMLImageElement>(null);
+  const [sectionHeight, setSectionHeight] = useState<number | string>('100vh');
+
   const [showModal, setShowModal] = useState(false);
 
+  const onWindowResize = useCallback(() => {
+    const imageHeight = imageRef.current?.clientHeight || 0;
+
+    setSectionHeight(imageHeight);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('load', onWindowResize);
+    window.addEventListener('resize', onWindowResize);
+
+    return () => {
+      window.removeEventListener('load', onWindowResize);
+      window.removeEventListener('resize', onWindowResize);
+    };
+  }, [onWindowResize]);
+
   return (
-    <section className={styles.Hero}>
-      <div className={styles.Hero__Greetings}>
-        <Text
-          className={styles.Hero__Name}
-          size="h1"
-        >
-          Hi,
-          {' '}
-          <br />
-          I&apos;m Paolo
-        </Text>
+    <section
+      className={styles.Hero}
+      style={{ height: sectionHeight }}
+    >
+      <img
+        ref={imageRef}
+        className={styles.Hero__Image}
+        src="/images/hero.jpg"
+        alt="hero"
+      />
 
-        <Text
-          className={styles.Hero__Nickname}
-          size="h2"
-        >
-          But you can
-          {' '}
-          <br />
-          call me
-          {' '}
-          <span>
-            Paul
-            <img
-              className={styles.Hero__Sign}
-              src="/images/sign.svg"
-              alt="sign"
-            />
-          </span>
-        </Text>
+      <img
+        className={[
+          styles.Hero__Sphere,
+          styles['Hero__Sphere--01'],
+        ].join(' ')}
+        src="/images/sphere.png"
+        alt="sphere-01"
+      />
 
-        <Button
-          className={styles.Hero__Cta}
-          onClick={() => setShowModal(true)}
-        >
-          Play showreel
-        </Button>
+      <img
+        className={[
+          styles.Hero__Sphere,
+          styles['Hero__Sphere--02'],
+        ].join(' ')}
+        src="/images/sphere.png"
+        alt="sphere-02"
+      />
+
+      <div className={styles.Hero__Main}>
+        <div className={styles.Hero__Greetings}>
+          <Text
+            className={styles.Hero__Name}
+            size="h1"
+          >
+            Hi,
+            {' '}
+            <br />
+            I&apos;m Paolo
+          </Text>
+
+          <Text
+            className={styles.Hero__Nickname}
+            size="h2"
+          >
+            But you can
+            {' '}
+            <br />
+            call me
+            {' '}
+            <span>
+              Paul
+              <img
+                className={styles.Hero__Sign}
+                src="/images/sign.svg"
+                alt="sign"
+              />
+            </span>
+          </Text>
+
+          <Button
+            className={styles.Hero__Cta}
+            onClick={() => setShowModal(true)}
+          >
+            Play showreel
+          </Button>
+        </div>
+
+        <div className={styles.Hero__Links}>
+          <Link
+            target="_blank"
+            url="https://www.instagram.com/paolodata"
+          >
+            Instagram
+          </Link>
+          <Link
+            target="_blank"
+            url="https://www.linkedin.com/in/paolodata/"
+          >
+            Linkedin
+          </Link>
+          <Link
+            target="_blank"
+            url="https://vimeo.com/paolodata"
+          >
+            Vimeo
+          </Link>
+        </div>
       </div>
 
-      <div className={styles.Hero__Links}>
-        <Link
-          target="_blank"
-          url="https://www.instagram.com/paolodata"
-        >
-          Instagram
-        </Link>
-        <Link
-          target="_blank"
-          url="https://www.linkedin.com/in/paolodata/"
-        >
-          Linkedin
-        </Link>
-        <Link
-          target="_blank"
-          url="https://vimeo.com/paolodata"
-        >
-          Vimeo
-        </Link>
-      </div>
+      <img
+        ref={wavesRef}
+        className={styles.Hero__Waves}
+        src="/images/waves.svg"
+        alt="waves"
+      />
 
       {showModal && (
         <Modal

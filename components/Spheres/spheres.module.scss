@@ -31,7 +31,7 @@
         animation-name: fluctuation;
         animation-timing-function: ease-in-out;
 
-        mix-blend-mode: screen;
+        mix-blend-mode: soft-light;
         position: absolute;
         z-index: $index--sphere;
 
@@ -57,7 +57,7 @@
             top: 100vh;
             height: 70rem;
             right: 0;
-            transform: translate(20%, -50%);
+            transform: translate(-5%, -55%);
             width: 70rem;
 
             @include smScreen {
@@ -69,8 +69,8 @@
             }
 
             @include xlScreen {
-                height: 100rem;
-                width: 100rem;
+                height: 120rem;
+                width: 120rem;
             }
         }
 

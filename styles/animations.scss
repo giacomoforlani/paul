@@ -1,0 +1,21 @@
+@keyframes fluctuation {
+    0% {
+        margin: 0 0;
+    }
+
+    25% {
+        margin: -0.3rem 0;
+    }
+
+    50% {
+        margin: 0.3rem 0;
+    }
+
+    75% {
+        margin: -0.4rem 0;
+    }
+
+    100% {
+        margin: 0.2rem 0;
+    }
+}

@@ -120,11 +120,8 @@
 
     &__ComingSoon {
         color: $color--green;
-        left: 50%;
         padding-top: 10rem;
-        position: absolute;
         text-align: center;
-        transform: translateX(-50%);
         width: 100%;
 
         @include smScreen {

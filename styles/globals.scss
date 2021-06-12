@@ -83,10 +83,11 @@ main {
 
 section {
   padding: 0 max(4rem, calc((100vw - 108rem) / 2));
+  position: relative;
 }
 
 section * {
-  z-index: $index--default;
+  z-index: $index--content;
 }
 
 iframe {

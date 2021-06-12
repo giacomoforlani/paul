@@ -4,8 +4,6 @@ import Head from 'next/head';
 import { Bubbles } from '../components/Bubbles';
 import { Cursor } from '../components/Cursor';
 import { Noise } from '../components/Noise';
-import { Spheres } from '../components/Spheres';
-import { Waves } from '../components/Waves';
 
 import { Footer } from '../templates/Footer';
 import { Hero } from '../templates/Hero';
@@ -22,15 +20,12 @@ export default function Home() {
 
       <main>
         <Hero />
-        <Waves />
         <Presentation />
         <Projects />
-        <Waves reverse />
         <Footer />
 
         <Cursor />
         <Bubbles />
-        <Spheres />
         <Noise />
       </main>
     </>

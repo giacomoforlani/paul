@@ -1,26 +1,12 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-.slide-top {
-    position: relative;
-    top: -30rem;
-
-    @include smScreen {
-        top: -20rem;
-    }
-}
-
-.slide-top-sm {
-    position: relative;
-    top: -20rem;
-}
-
 .Presentation {
     background-color: $color--blue-dark;
     column-gap: 5rem;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    position: relative;
+    padding-bottom: 20rem;
 
     @include smScreen {
         column-gap: unset;
@@ -40,8 +26,6 @@
     }
 
     &__First {
-        @extend .slide-top-sm;
-
         color: $color--white;
         font-size: $size--xxl;
         grid-column: 1 / 2;
@@ -56,8 +40,6 @@
     }
 
     &__Second {
-        @extend .slide-top;
-
         align-self: flex-end;
         color: $color--white;
         grid-column: 2 / 3;
@@ -70,8 +52,6 @@
     }
 
     &__Third {
-        @extend .slide-top;
-
         color: $color--gray-light;
         margin-bottom: 6rem;
         grid-column: 2 / 3;
@@ -82,8 +62,6 @@
     }
 
     &__Cta {
-        @extend .slide-top;
-
         grid-column: 2 / 3;
         justify-self: flex-start;
 
