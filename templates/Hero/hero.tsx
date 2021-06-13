@@ -13,7 +13,7 @@ import styles from './hero.module.scss';
 const Hero = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const wavesRef = useRef<HTMLImageElement>(null);
-  const [sectionHeight, setSectionHeight] = useState<number | string>('100vh');
+  const [sectionHeight, setSectionHeight] = useState<number | string>('150rem');
 
   const [showModal, setShowModal] = useState(false);
 
