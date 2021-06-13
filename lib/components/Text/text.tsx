@@ -12,12 +12,16 @@ const Text = ({
   children,
   className,
   size = 'h1',
+  ...attributes
 }: TextProps) => {
   const Element = size;
 
   return (
     <Element
+      {...attributes}
       className={[style.Text, style[`Text--${size}`], className].join(' ')}
+      data-aos="fade-up"
+      data-aos-once="true"
     >
       {children}
     </Element>

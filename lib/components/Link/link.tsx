@@ -12,9 +12,13 @@ const Link = ({
   className,
   target,
   url,
+  ...attributes
 }: LinkProps) => (
   <a
+    {...attributes}
     className={[style.Link, className].join(' ')}
+    data-aos="fade-up"
+    data-aos-once="true"
     href={url || '#'}
     target={target}
   >

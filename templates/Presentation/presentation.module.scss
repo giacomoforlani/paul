@@ -6,7 +6,8 @@
     column-gap: 5rem;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    padding-bottom: 20rem;
+    padding-top: 5rem;
+    padding-bottom: 10rem;
 
     @include smScreen {
         column-gap: unset;

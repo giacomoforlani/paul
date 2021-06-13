@@ -3,6 +3,7 @@
 
 .Projects {
     background-color: $color--blue-dark;
+    padding-bottom: 10rem;
 
     @include smScreen {
         padding: 0;

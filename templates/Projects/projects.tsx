@@ -38,7 +38,11 @@ const Projects = () => {
 
   return (
     <section className={styles.Projects}>
-      <div className={styles.Cards}>
+      <div
+        data-aos="fade-up"
+        data-aos-once="true"
+        className={styles.Cards}
+      >
         {projects.map((project) => (
           <div
             key={project.id}
