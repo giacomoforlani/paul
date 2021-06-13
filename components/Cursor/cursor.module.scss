@@ -1,12 +1,14 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .pointer {
     border-radius: 50%;
+    display: none;
     pointer-events: none;
     position: fixed;
     z-index: $index--cursor;
 
-    @media (hover: hover) and (pointer: fine) {
+    @include isHoverEnable {
         display: block;
     }
 }
@@ -26,7 +28,7 @@
             content: "";
             height: 100%;
             position: absolute;
-            transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+            transition: background-color 0.2s ease-out, transform 0.2s ease-out;
             width: 100%;
         }
 

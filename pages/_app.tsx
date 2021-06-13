@@ -6,6 +6,8 @@ import '../styles/globals.scss';
 
 gsap.registerPlugin(CSSPlugin);
 
-const App = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
+const App = ({ Component, pageProps }: AppProps) => (
+  <Component {...pageProps} />
+);
 
 export default App;

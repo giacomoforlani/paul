@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 
 import { projects } from '../../data/projects';
 
-import { Button } from '../../lib/Button';
-import { Modal } from '../../lib/Modal';
-import { Player } from '../../lib/Player';
-import { Text } from '../../lib/Text';
+import { Button } from '../../lib/components/Button';
+import { Modal } from '../../lib/components/Modal';
+import { Player } from '../../lib/components/Player';
+import { Text } from '../../lib/components/Text';
 
 import styles from './projects.module.scss';
 
@@ -100,14 +100,13 @@ const Projects = () => {
         (More projects coming soon)
       </Text>
 
-      {showModal && (
-        <Modal
-          className={styles.Projects__Player}
-          onBackdrop={() => openProject(undefined)}
-        >
-          <Player video={projectOpened!.video} />
-        </Modal>
-      )}
+      <Modal
+        className={styles.Projects__Player}
+        visible={showModal}
+        onBackdrop={() => openProject(undefined)}
+      >
+        {projectOpened && <Player video={projectOpened!.video} />}
+      </Modal>
     </section>
   );
 };

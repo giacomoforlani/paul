@@ -2,8 +2,8 @@ import React, {
   useCallback, useEffect, useRef, useState,
 } from 'react';
 
-import { Link } from '../../lib/Link';
-import { Text } from '../../lib/Text';
+import { Link } from '../../lib/components/Link';
+import { Text } from '../../lib/components/Text';
 
 import styles from './footer.module.scss';
 

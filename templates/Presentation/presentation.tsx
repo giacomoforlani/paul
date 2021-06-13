@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Button } from '../../lib/Button';
-import { Text } from '../../lib/Text';
+import { Button } from '../../lib/components/Button';
+import { Text } from '../../lib/components/Text';
 
 import styles from './presentation.module.scss';
 

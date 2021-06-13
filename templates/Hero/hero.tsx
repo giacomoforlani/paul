@@ -2,11 +2,11 @@ import React, {
   useCallback, useEffect, useRef, useState,
 } from 'react';
 
-import { Button } from '../../lib/Button';
-import { Link } from '../../lib/Link';
-import { Modal } from '../../lib/Modal';
-import { Player } from '../../lib/Player';
-import { Text } from '../../lib/Text';
+import { Button } from '../../lib/components/Button';
+import { Link } from '../../lib/components/Link';
+import { Modal } from '../../lib/components/Modal';
+import { Player } from '../../lib/components/Player';
+import { Text } from '../../lib/components/Text';
 
 import styles from './hero.module.scss';
 
@@ -131,14 +131,13 @@ const Hero = () => {
         alt="waves"
       />
 
-      {showModal && (
-        <Modal
-          className={styles.Hero__Player}
-          onBackdrop={() => setShowModal(false)}
-        >
-          <Player video="547504346" />
-        </Modal>
-      )}
+      <Modal
+        className={styles.Hero__Player}
+        visible={showModal}
+        onBackdrop={() => setShowModal(false)}
+      >
+        <Player video="547504346" />
+      </Modal>
     </section>
   );
 };

@@ -1,46 +1,23 @@
-import { TweenLite, Linear } from 'gsap';
 import React, {
   useCallback, useEffect, useRef, useState,
 } from 'react';
 
 import styles from './cursor.module.scss';
+import { useMouseMove } from './hooks';
 
 const Cursor = () => {
-  const bigCursorRef = useRef(null);
-  const smallCursorRef = useRef(null);
+  const bigCursorRef = useRef<HTMLDivElement>(null);
+  const smallCursorRef = useRef<HTMLDivElement>(null);
 
+  const onMouseMove = useMouseMove(bigCursorRef, smallCursorRef);
   const [isMouseDown, setIsMouseDown] = useState(false);
-
-  const onMouseMove = useCallback(
-    (e: MouseEvent) => {
-      if (bigCursorRef.current) {
-        TweenLite.to(bigCursorRef.current, 0.4, {
-          x: e.clientX,
-          y: e.clientY,
-          force3D: true,
-          rotation: 0.01,
-        });
-      }
-
-      if (smallCursorRef.current) {
-        TweenLite.to(smallCursorRef.current, 0, {
-          x: e.clientX,
-          y: e.clientY,
-          force3D: true,
-          rotation: 0.01,
-          ease: Linear.easeNone,
-        });
-      }
-    },
-    [],
-  );
 
   const onMouseDown = useCallback(() => {
     setIsMouseDown(true);
   }, []);
 
   const onMouseUp = useCallback(() => {
-    setTimeout(() => setIsMouseDown(false), 300);
+    setTimeout(() => setIsMouseDown(false), 250);
   }, []);
 
   useEffect(() => {
