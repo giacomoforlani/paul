@@ -98,6 +98,8 @@ const Projects = () => {
 
       <Text
         className={styles.ComingSoon}
+        data-aos="fade-up"
+        data-aos-once="true"
         size="h5"
       >
         (More projects coming soon)

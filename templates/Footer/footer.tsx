@@ -64,6 +64,8 @@ const Footer = () => {
       <div className={styles.Footer__Top}>
         <Text
           className={styles.Footer__Title}
+          data-aos="fade-up"
+          data-aos-once="true"
           size="h1"
         >
           Nice
@@ -80,6 +82,8 @@ const Footer = () => {
 
         <Link
           className={styles.Footer__Email}
+          data-aos="fade-up"
+          data-aos-once="true"
           url="mailto:info@paolodata.com"
         >
           <Text size="h2">info@paolodata.com</Text>

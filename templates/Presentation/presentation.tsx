@@ -9,6 +9,8 @@ const Presentation = () => (
   <section className={styles.Presentation}>
     <Text
       className={styles.Presentation__First}
+      data-aos="fade-up"
+      data-aos-once="true"
       size="h2"
     >
       I’m a
@@ -35,6 +37,8 @@ const Presentation = () => (
 
     <Text
       className={styles.Presentation__Second}
+      data-aos="fade-up"
+      data-aos-once="true"
       size="h4"
     >
       My goal is to communicate
@@ -44,6 +48,8 @@ const Presentation = () => (
 
     <Text
       className={styles.Presentation__Third}
+      data-aos="fade-up"
+      data-aos-once="true"
       size="h5"
     >
       I’m a goosebumps seeker, a true
@@ -61,6 +67,8 @@ const Presentation = () => (
 
     <Button
       className={styles.Presentation__Cta}
+      data-aos="fade-up"
+      data-aos-once="true"
       kind="secondary"
       target="_blank"
       url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"

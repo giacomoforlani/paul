@@ -26,8 +26,6 @@ const Button = ({
     <Element
       {...attributes}
       className={[styles.Button, styles[`Button--${kind}`], className].join(' ')}
-      data-aos="fade-up"
-      data-aos-once="true"
       disabled={disabled}
       href={url}
       target={target}
