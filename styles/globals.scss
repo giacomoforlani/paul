@@ -2,27 +2,6 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 
-:root {
-  --font--primary: $font--primary;
-  --font--secondary: $font--secondary;
-
-  --color--blue-dark: #{$color--blue-dark};
-  --color--cyan: #{$color--cyan};
-  --color--gray-light: #{$color--gray-light};
-  --color--gray: #{$color--gray};
-  --color--green: #{$color--green};
-  --color--pink: #{$color--pink};
-  --color--white: #{$color--white};
-
-  --rgb--blue-dark: #{toRGB($color--blue-dark)};
-  --rgb--cyan: #{toRGB($color--cyan)};
-  --rgb--gray-light: #{toRGB($color--gray-light)};
-  --rgb--gray: #{toRGB($color--gray)};
-  --rgb--green: #{toRGB($color--green)};
-  --rgb--pink: #{toRGB($color--pink)};
-  --rgb--white: #{toRGB($color--white)};
-}
-
 @font-face {
   font-family: $font--secondary;
   src: url("/fonts/JosefinSans-Bold.ttf");

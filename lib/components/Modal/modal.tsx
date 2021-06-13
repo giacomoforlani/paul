@@ -38,7 +38,7 @@ const Modal = ({
             className={styles.Modal__Overlay}
             variants={fade}
             key="overlay"
-            initial="fadeIn"
+            initial="fadeOut"
             animate="fadeIn"
             exit="fadeOut"
             onClick={onBackdrop}
@@ -48,7 +48,7 @@ const Modal = ({
             className={[styles.Modal, className].join(' ')}
             variants={fade}
             key="content"
-            initial="fadeIn"
+            initial="fadeOut"
             animate="fadeIn"
             exit="fadeOut"
           >

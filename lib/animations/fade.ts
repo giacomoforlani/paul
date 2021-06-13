@@ -1,7 +1,7 @@
 import { Variants } from 'framer-motion';
 
 const fade: Variants = {
-  fadeId: {
+  fadeIn: {
     opacity: 1,
     transition: {
       duration: 0.2,

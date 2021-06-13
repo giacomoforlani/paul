@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import { isTouchDevice } from '../../core/utilities';
 
 import { projects } from '../../data/projects';
 
@@ -13,52 +14,50 @@ import styles from './projects.module.scss';
 type Project = typeof projects[0];
 
 const Projects = () => {
-  const [projectFocused, setProjectFocused] = useState<Project | undefined>();
+  const [focused, setFocused] = useState<Project | undefined>();
 
   const [showModal, setShowModal] = useState(false);
-  const [projectOpened, setProjectOpened] = useState<Project | undefined>();
+  const [opened, setOpened] = useState<Project | undefined>();
 
-  const focusProject = (project: Project | undefined) => {
-    setTimeout(() => setProjectFocused(
-      projectFocused?.id === project?.id
+  const focus = useCallback((project: Project | undefined) => {
+    setFocused(
+      focused?.id === project?.id
         ? undefined
         : project,
-    ));
-  };
+    );
+  }, [focused]);
 
-  const openProject = (project: Project | undefined) => {
+  const open = useCallback((project: Project | undefined) => {
     setShowModal(!!project);
-    setProjectOpened(project);
-  };
+    setOpened(project);
+  }, []);
+
+  const clickHandler = useMemo(() => (isTouchDevice ? focus : () => {}), [focus]);
+
+  const hoverHandler = useMemo(() => (isTouchDevice ? () => {} : focus), [focus]);
 
   return (
     <section className={styles.Projects}>
-      <div className={styles.Projects__Cards}>
+      <div className={styles.Cards}>
         {projects.map((project) => (
           <div
             key={project.id}
-            className={[
-              styles.Projects__Card,
-              projectFocused?.id === project.id ? styles['Projects__Card--Active'] : '',
-            ].join(' ')}
-            style={{
-              backgroundImage: `${projectFocused?.id === project.id
-                ? `linear-gradient(
-                    to bottom, 
-                    rgba(var(--rgb--blue-dark), 0.9), 
-                    rgba(var(--rgb--blue-dark), 0.9)
-                  ),`
-                : ''} 
-              url(${project.image})`,
-            }}
-            onClick={() => focusProject(project)}
-            onMouseEnter={() => focusProject(project)}
-            onMouseLeave={() => focusProject(undefined)}
+            className={[styles.Card, focused?.id === project.id ? styles.Focus : ''].join(' ')}
+            style={{ backgroundImage: `url(${project.image})` }}
+            onClick={() => clickHandler(project)}
+            onMouseEnter={() => hoverHandler(project)}
+            onMouseLeave={() => hoverHandler(undefined)}
           >
-            <div className={styles.Projects__Info}>
-              <div className={styles.Projects__Main}>
+            <img
+              className={styles.Card__Waves}
+              src="/images/waves-little.svg"
+              alt="waves-little"
+            />
+
+            <div className={styles.Card__Info}>
+              <div className={styles.Card__Top}>
                 <Text
-                  className={styles.Projects__Label}
+                  className={styles.Card__Label}
                   size="h6"
                 >
                   {project.label}
@@ -66,24 +65,24 @@ const Projects = () => {
 
                 <Text size="h2">
                   <span
-                    className={styles.Projects__Title}
+                    className={styles.Card__Title}
                     dangerouslySetInnerHTML={(() => ({ __html: project.name }))()}
                   />
                 </Text>
               </div>
 
-              <div className={styles.Projects__Secondary}>
+              <div className={styles.Card__Bottom}>
                 <Text
-                  className={styles.Projects__Description}
+                  className={styles.Card__Description}
                   size="h5"
                 >
                   {project.description}
                 </Text>
 
                 <Button
-                  className={styles.Projects__Cta}
+                  className={styles.Card__Cta}
                   kind="secondary"
-                  onClick={() => openProject(project)}
+                  onClick={() => open(project)}
                 >
                   Play
                 </Button>
@@ -94,18 +93,18 @@ const Projects = () => {
       </div>
 
       <Text
-        className={styles.Projects__ComingSoon}
+        className={styles.ComingSoon}
         size="h5"
       >
         (More projects coming soon)
       </Text>
 
       <Modal
-        className={styles.Projects__Player}
+        className={styles.Player}
         visible={showModal}
-        onBackdrop={() => openProject(undefined)}
+        onBackdrop={() => open(undefined)}
       >
-        {projectOpened && <Player video={projectOpened!.video} />}
+        {opened && <Player video={opened!.video} />}
       </Modal>
     </section>
   );
