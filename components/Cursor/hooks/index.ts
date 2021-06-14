@@ -2,7 +2,7 @@ import { TweenLite, Linear } from 'gsap';
 import React, { useCallback, useRef, useState } from 'react';
 
 const OFFSET = 500;
-const MULTIPLIER = 1.3;
+const MULTIPLIER = 1.1;
 const DURATION = 0.4;
 
 export const useMouseMove = (

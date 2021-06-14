@@ -3,14 +3,16 @@
 @import "../../styles/variables.scss";
 
 .Hero {
+    background-color: $color--gray-light;
+
     &__Sphere {
         animation-direction: alternate;
-        animation-duration: 3s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
         animation-name: fluctuation;
         animation-timing-function: ease-in-out;
         display: none;
-        mix-blend-mode: soft-light;
+        mix-blend-mode: screen;
         position: absolute;
         z-index: $index--sphere;
 
@@ -32,7 +34,7 @@
         &--02 {
             right: 0;
             top: 100vh;
-            transform: translate(-5%, -55%);
+            transform: translate(10%, -60%);
 
             @include xlScreen {
                 height: 120rem;
@@ -42,12 +44,23 @@
     }
 
     &__Image {
-        left: 0;
-        min-height: 100vh;
+        background-blend-mode: multiply;
+        background-image: url("/images/hero.jpg");
+        background-repeat: no-repeat;
+        height: 1300px;
+        right: 0;
         mix-blend-mode: multiply;
         position: absolute;
         top: 0;
+        width: 1920px;
         z-index: $index--img;
+
+        @include xsScreen {
+            background-image: url("/images/hero-mobile.jpg");
+            height: 1000px;
+            width: 400px;
+            background-position-x: 0;
+        }
     }
 
     &__Main {

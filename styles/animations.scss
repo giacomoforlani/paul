@@ -1,21 +1,32 @@
+@function randomNum($min, $max) {
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+    @return $randomNum;
+}
+
+@function randomMargin() {
+    @return #{randomNum(-3, 3)}rem #{randomNum(-3, 3)}rem;
+}
+
 @keyframes fluctuation {
     0% {
         margin: 0 0;
     }
 
     25% {
-        margin: -0.3rem 0;
+        margin: randomMargin();
     }
 
     50% {
-        margin: 0.3rem 0;
+        margin: randomMargin();
     }
 
     75% {
-        margin: -0.4rem 0;
+        margin: randomMargin();
     }
 
     100% {
-        margin: 0.2rem 0;
+        margin: randomMargin();
     }
 }

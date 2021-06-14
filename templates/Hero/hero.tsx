@@ -38,11 +38,9 @@ const Hero = () => {
       className={styles.Hero}
       style={{ height: sectionHeight }}
     >
-      <img
+      <div
         ref={imageRef}
         className={styles.Hero__Image}
-        src="/images/hero.jpg"
-        alt="hero"
       />
 
       <img
