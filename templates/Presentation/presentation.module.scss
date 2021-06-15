@@ -9,7 +9,7 @@
     padding-top: 5rem;
     padding-bottom: 10rem;
 
-    @include smScreen {
+    @include tabletPortrait {
         column-gap: unset;
         grid-template-columns: unset;
     }
@@ -17,7 +17,7 @@
     br {
         display: block;
 
-        @include smScreen {
+        @include tabletPortrait {
             display: none;
         }
     }
@@ -33,7 +33,7 @@
         line-height: 8rem;
         margin-bottom: 4rem;
 
-        @include smScreen {
+        @include tabletPortrait {
             font-size: $size--md;
             line-height: 3.2rem;
             grid-column: unset;
@@ -46,7 +46,7 @@
         grid-column: 2 / 3;
         margin-bottom: 3.5rem;
 
-        @include smScreen {
+        @include tabletPortrait {
             align-self: unset;
             grid-column: unset;
         }
@@ -57,7 +57,7 @@
         margin-bottom: 6rem;
         grid-column: 2 / 3;
 
-        @include smScreen {
+        @include tabletPortrait {
             grid-column: unset;
         }
     }
@@ -66,7 +66,7 @@
         grid-column: 2 / 3;
         justify-self: flex-start;
 
-        @include smScreen {
+        @include tabletPortrait {
             grid-column: unset;
         }
     }

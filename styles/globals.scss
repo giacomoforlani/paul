@@ -42,6 +42,14 @@
 html {
   font-family: $font--primary;
   font-size: 62.5%;
+
+  @include mobileLandscape {
+    font-size: 56.25%;
+  }
+
+  @include mobilePortrait {
+    font-size: 56.25%;
+  }
 }
 
 body {
@@ -49,6 +57,12 @@ body {
 
   &.no-overflow {
     overflow: hidden;
+  }
+
+  &.default-cursor {
+    * {
+      cursor: inherit;
+    }
   }
 }
 

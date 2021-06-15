@@ -1,14 +1,15 @@
 import React, {
-  useCallback, useEffect, useRef, useState,
+  useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
 
 import styles from './cursor.module.scss';
-import { useMouseMove } from './hooks';
+import { useCursorVisible, useMouseMove } from './hooks';
 
 const Cursor = () => {
   const bigCursorRef = useRef<HTMLDivElement>(null);
   const smallCursorRef = useRef<HTMLDivElement>(null);
 
+  const visible = useCursorVisible();
   const onMouseMove = useMouseMove(bigCursorRef, smallCursorRef);
   const [isMouseDown, setIsMouseDown] = useState(false);
 
@@ -32,7 +33,7 @@ const Cursor = () => {
     };
   }, [onMouseMove, onMouseDown, onMouseUp]);
 
-  return (
+  return visible ? (
     <>
       <div
         className={[
@@ -47,7 +48,7 @@ const Cursor = () => {
         ref={smallCursorRef}
       />
     </>
-  );
+  ) : null;
 };
 
 export { Cursor };

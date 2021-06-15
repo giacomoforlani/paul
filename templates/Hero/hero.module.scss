@@ -5,6 +5,32 @@
 .Hero {
     background-color: $color--gray-light;
 
+    &__Image {
+        content: url("/images/hero-desktop.jpg");
+        mix-blend-mode: multiply;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: $index--img;
+
+        @include large {
+            content: url("/images/hero-4k.jpg");
+        }
+
+        @include tabletLandscape {
+            content: url("/images/hero-desktop.jpg");
+        }
+
+        @include tabletPortrait {
+            content: url("/images/hero-tablet.jpg");
+        }
+
+        @include mobilePortrait {
+            content: url("/images/hero-mobile.jpg");
+        }
+    }
+
     &__Sphere {
         animation-direction: alternate;
         animation-duration: 10s;
@@ -16,7 +42,7 @@
         position: absolute;
         z-index: $index--sphere;
 
-        @include xlScreen {
+        @include large {
             display: block;
         }
 
@@ -26,7 +52,7 @@
             top: 0;
             width: 25rem;
 
-            @include xlScreen {
+            @include large {
                 transform: translate(50%, 20%);
             }
         }
@@ -36,30 +62,10 @@
             top: 100vh;
             transform: translate(10%, -60%);
 
-            @include xlScreen {
+            @include large {
                 height: 120rem;
                 width: 120rem;
             }
-        }
-    }
-
-    &__Image {
-        background-blend-mode: multiply;
-        background-image: url("/images/hero.jpg");
-        background-repeat: no-repeat;
-        height: 1300px;
-        right: 0;
-        mix-blend-mode: multiply;
-        position: absolute;
-        top: 0;
-        width: 1920px;
-        z-index: $index--img;
-
-        @include xsScreen {
-            background-image: url("/images/hero-mobile.jpg");
-            height: 1000px;
-            width: 400px;
-            background-position-x: 0;
         }
     }
 
@@ -82,7 +88,7 @@
             display: none;
         }
 
-        @include smScreen {
+        @include tabletPortrait {
             br {
                 display: block;
             }
@@ -100,7 +106,7 @@
             position: relative;
         }
 
-        @include smScreen {
+        @include tabletPortrait {
             margin-bottom: 8rem;
         }
     }
@@ -130,7 +136,7 @@
             margin-right: 2rem;
         }
 
-        @include smScreen {
+        @include tabletPortrait {
             margin: 0;
             justify-content: space-evenly;
 

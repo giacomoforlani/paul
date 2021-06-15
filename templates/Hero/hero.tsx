@@ -19,17 +19,18 @@ const Hero = () => {
 
   const onWindowResize = useCallback(() => {
     const imageHeight = imageRef.current?.clientHeight || 0;
-
-    setSectionHeight(imageHeight);
+    setSectionHeight(`calc(${imageHeight}px + 18rem)`);
   }, []);
 
   useEffect(() => {
     window.addEventListener('load', onWindowResize);
     window.addEventListener('resize', onWindowResize);
+    window.addEventListener('orientationchange', onWindowResize);
 
     return () => {
       window.removeEventListener('load', onWindowResize);
       window.removeEventListener('resize', onWindowResize);
+      window.removeEventListener('orientationchange', onWindowResize);
     };
   }, [onWindowResize]);
 
@@ -38,7 +39,8 @@ const Hero = () => {
       className={styles.Hero}
       style={{ height: sectionHeight }}
     >
-      <div
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <img
         ref={imageRef}
         className={styles.Hero__Image}
       />

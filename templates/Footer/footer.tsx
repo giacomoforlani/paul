@@ -8,20 +8,23 @@ import { Text } from '../../lib/components/Text';
 import styles from './footer.module.scss';
 
 const Footer = () => {
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   const [sectionHeight, setSectionHeight] = useState<number | string | undefined>('100vh');
 
   const onWindowResize = useCallback(() => {
-    setSectionHeight(imgRef.current?.clientHeight);
+    const imageHeight = imageRef.current?.clientHeight || 0;
+    setSectionHeight(`calc(${imageHeight}px + 15rem)`);
   }, []);
 
   useEffect(() => {
     window.addEventListener('load', onWindowResize);
     window.addEventListener('resize', onWindowResize);
+    window.addEventListener('orientationchange', onWindowResize);
 
     return () => {
       window.removeEventListener('load', onWindowResize);
       window.removeEventListener('resize', onWindowResize);
+      window.removeEventListener('orientationchange', onWindowResize);
     };
   }, [onWindowResize]);
 
@@ -30,11 +33,10 @@ const Footer = () => {
       className={styles.Footer}
       style={{ height: sectionHeight }}
     >
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img
-        ref={imgRef}
+        ref={imageRef}
         className={styles.Footer__Image}
-        src="/images/footer.jpg"
-        alt="footer"
       />
 
       <img

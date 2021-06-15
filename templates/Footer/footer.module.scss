@@ -7,14 +7,33 @@
     flex-direction: column;
     overflow: hidden;
     padding-bottom: 2rem;
-    padding-top: 20%;
+    padding-top: 55rem;
 
     &__Image {
-        left: 0;
-        min-height: 100vh;
+        content: url("/images/footer-desktop.jpg");
+        margin-top: 15rem;
+        mix-blend-mode: multiply;
         position: absolute;
+        right: 0;
         top: 0;
+        width: 100%;
         z-index: $index--img;
+
+        @include large {
+            content: url("/images/footer-4k.jpg");
+        }
+
+        @include tabletLandscape {
+            content: url("/images/footer-desktop.jpg");
+        }
+
+        @include tabletPortrait {
+            content: url("/images/footer-tablet.jpg");
+        }
+
+        @include mobilePortrait {
+            content: url("/images/footer-mobile.jpg");
+        }
     }
 
     &__Waves {
@@ -37,7 +56,7 @@
         position: absolute;
         z-index: $index--sphere;
 
-        @include xlScreen {
+        @include large {
             display: block;
         }
 
@@ -46,7 +65,7 @@
             bottom: 100vh;
             transform: translate(-100%, 250%);
 
-            @include xlScreen {
+            @include large {
                 height: 32rem;
                 width: 32rem;
             }
@@ -57,7 +76,7 @@
             bottom: 100vh;
             transform: translate(-120%, 50%);
 
-            @include xlScreen {
+            @include large {
                 height: 80rem;
                 width: 80rem;
             }
@@ -89,7 +108,7 @@
         flex-direction: row-reverse;
         justify-content: space-between;
 
-        @include smScreen {
+        @include tabletPortrait {
             align-items: unset;
             flex-direction: column;
             justify-content: unset;
@@ -104,7 +123,7 @@
             margin-right: 2rem;
         }
 
-        @include smScreen {
+        @include tabletPortrait {
             margin-bottom: 3rem;
         }
     }
@@ -117,7 +136,7 @@
             display: none;
         }
 
-        @include smScreen {
+        @include tabletPortrait {
             text-align: center;
 
             a {

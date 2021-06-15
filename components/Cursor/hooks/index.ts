@@ -1,9 +1,30 @@
 import { TweenLite, Linear } from 'gsap';
-import React, { useCallback, useRef, useState } from 'react';
+import React, {
+  useCallback, useEffect, useRef, useState,
+} from 'react';
 
 const OFFSET = 500;
 const MULTIPLIER = 1.1;
 const DURATION = 0.4;
+
+export const useCursorVisible = () => {
+  const body = process.browser ? document.querySelector('body') : null;
+  const [visible, setVisible] = useState(true);
+
+  const onMouseMove = useCallback(() => {
+    setVisible(!body?.classList.contains('no-custom-cursor'));
+  }, [body]);
+
+  useEffect(() => {
+    document.addEventListener('mousemove', onMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', onMouseMove);
+    };
+  }, [onMouseMove]);
+
+  return visible;
+};
 
 export const useMouseMove = (
   bigCursorRef: React.RefObject<HTMLDivElement>,

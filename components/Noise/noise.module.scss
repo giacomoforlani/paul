@@ -12,14 +12,30 @@
     z-index: $index--noise;
 
     &__Background {
-        background-image: url(/images/gradient-noise.png);
+        background-image: url("/images/bg-noise-desktop.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
         width: 100%;
 
-        @include smScreen {
-            background-image: url(/images/gradient-noise-mobile.png);
+        @include large {
+            background-image: url("/images/bg-noise-4k.jpg");
+        }
+
+        @include tabletLandscape {
+            background-image: url("/images/bg-noise-desktop.jpg");
+        }
+
+        @include tabletPortrait {
+            background-image: url("/images/bg-noise-tablet.jpg");
+        }
+
+        @include mobileLandscape {
+            background-image: url("/images/bg-noise-desktop.jpg");
+        }
+
+        @include mobilePortrait {
+            background-image: url("/images/bg-noise-mobile.jpg");
         }
     }
 }

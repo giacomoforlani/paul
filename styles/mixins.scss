@@ -1,29 +1,29 @@
-@mixin xlScreen {
-  @media only screen and (min-width: 120em) {
+@mixin large {
+  @media only screen and (min-width: 1921px) {
     @content;
   }
 }
 
-@mixin lgScreen {
-  @media only screen and (max-width: 100em) {
+@mixin tabletLandscape {
+  @media only screen and (max-height: 1024px) and (orientation: landscape) {
     @content;
   }
 }
 
-@mixin mdScreen {
-  @media only screen and (max-width: 75em) {
+@mixin tabletPortrait {
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
     @content;
   }
 }
 
-@mixin smScreen {
-  @media only screen and (max-width: 50em) {
+@mixin mobileLandscape {
+  @media only screen and (max-height: 412px) and (orientation: landscape) {
     @content;
   }
 }
 
-@mixin xsScreen {
-  @media only screen and (max-width: 25em) {
+@mixin mobilePortrait {
+  @media only screen and (max-width: 412px) and (orientation: portrait) {
     @content;
   }
 }
