@@ -43,6 +43,10 @@ html {
   font-family: $font--primary;
   font-size: 62.5%;
 
+  @include large {
+    font-size: 120%;
+  }
+
   @include mobileLandscape {
     font-size: 56.25%;
   }
@@ -79,6 +83,15 @@ main {
 section {
   padding: 0 max(4rem, calc((100vw - 108rem) / 2));
   position: relative;
+  width: 100%;
+
+  @include tabletLandscape {
+    padding: 0 12rem;
+  }
+
+  @include tabletPortrait {
+    padding: 0 8rem;
+  }
 }
 
 section * {

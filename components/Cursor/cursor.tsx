@@ -18,7 +18,7 @@ const Cursor = () => {
   }, []);
 
   const onMouseUp = useCallback(() => {
-    setTimeout(() => setIsMouseDown(false), 250);
+    setIsMouseDown(false);
   }, []);
 
   useEffect(() => {

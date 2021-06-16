@@ -94,16 +94,16 @@ const Projects = () => {
             </div>
           </div>
         ))}
-      </div>
 
-      <Text
-        className={styles.ComingSoon}
-        data-aos="fade-up"
-        data-aos-once="true"
-        size="h5"
-      >
-        (More projects coming soon)
-      </Text>
+        <Text
+          className={styles.ComingSoon}
+          data-aos="fade-up"
+          data-aos-once="true"
+          size="h5"
+        >
+          (More projects coming soon)
+        </Text>
+      </div>
 
       <Modal
         className={styles.Player}

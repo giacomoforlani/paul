@@ -4,14 +4,12 @@
 
 .Hero {
     background-color: $color--gray-light;
+    position: relative;
 
     &__Image {
         content: url("/images/hero-desktop.jpg");
+        max-width: 100vw;
         mix-blend-mode: multiply;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
         z-index: $index--img;
 
         @include large {
@@ -37,34 +35,34 @@
         animation-iteration-count: infinite;
         animation-name: fluctuation;
         animation-timing-function: ease-in-out;
-        display: none;
         mix-blend-mode: screen;
         position: absolute;
         z-index: $index--sphere;
-
-        @include large {
-            display: block;
-        }
 
         &--01 {
             height: 25rem;
             left: 0;
             top: 0;
             width: 25rem;
+            transform: translate(100%, 60%);
 
-            @include large {
-                transform: translate(50%, 20%);
+            @include tabletPortrait {
+                height: 15rem;
+                width: 15rem;
             }
         }
 
         &--02 {
+            height: 120rem;
             right: 0;
             top: 100vh;
+            width: 120rem;
             transform: translate(10%, -60%);
 
-            @include large {
-                height: 120rem;
-                width: 120rem;
+            @include tabletPortrait {
+                height: 90rem;
+                width: 90rem;
+                transform: translate(40%, -65%);
             }
         }
     }
@@ -74,8 +72,11 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        padding-top: 10vh;
+        left: 0;
         padding-bottom: 10vh;
+        padding-top: 10vh;
+        position: absolute;
+        top: 0;
     }
 
     &__Greetings {
@@ -147,12 +148,15 @@
     }
 
     &__Waves {
-        bottom: -25rem;
-        display: flex;
+        bottom: 0;
         left: 0;
         position: absolute;
-        transform: rotateX(180deg) rotateY(180deg) scale(1.001);
+        transform: rotateX(180deg) rotateY(180deg) scale(1.001) translateY(-60%);
         z-index: $index--waves;
+
+        @include large {
+            width: 100%;
+        }
     }
 
     &__Player {

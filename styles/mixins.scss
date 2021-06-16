@@ -17,13 +17,13 @@
 }
 
 @mixin mobileLandscape {
-  @media only screen and (max-height: 412px) and (orientation: landscape) {
+  @media only screen and (max-height: 414px) and (orientation: landscape) {
     @content;
   }
 }
 
 @mixin mobilePortrait {
-  @media only screen and (max-width: 412px) and (orientation: portrait) {
+  @media only screen and (max-width: 414px) and (orientation: portrait) {
     @content;
   }
 }

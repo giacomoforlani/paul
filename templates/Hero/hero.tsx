@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useRef, useState,
-} from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Button } from '../../lib/components/Button';
 import { Link } from '../../lib/components/Link';
@@ -13,38 +11,11 @@ import styles from './hero.module.scss';
 const Hero = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const wavesRef = useRef<HTMLImageElement>(null);
-  const [sectionHeight, setSectionHeight] = useState<number | string>('150rem');
 
   const [showModal, setShowModal] = useState(false);
 
-  const onWindowResize = useCallback(() => {
-    const imageHeight = imageRef.current?.clientHeight || 0;
-    setSectionHeight(`calc(${imageHeight}px + 18rem)`);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('load', onWindowResize);
-    window.addEventListener('resize', onWindowResize);
-    window.addEventListener('orientationchange', onWindowResize);
-
-    return () => {
-      window.removeEventListener('load', onWindowResize);
-      window.removeEventListener('resize', onWindowResize);
-      window.removeEventListener('orientationchange', onWindowResize);
-    };
-  }, [onWindowResize]);
-
   return (
-    <section
-      className={styles.Hero}
-      style={{ height: sectionHeight }}
-    >
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <img
-        ref={imageRef}
-        className={styles.Hero__Image}
-      />
-
+    <div className={styles.Hero}>
       <img
         className={[
           styles.Hero__Sphere,
@@ -63,7 +34,13 @@ const Hero = () => {
         alt="sphere-02"
       />
 
-      <div className={styles.Hero__Main}>
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <img
+        ref={imageRef}
+        className={styles.Hero__Image}
+      />
+
+      <section className={styles.Hero__Main}>
         <div className={styles.Hero__Greetings}>
           <Text
             className={styles.Hero__Name}
@@ -122,7 +99,7 @@ const Hero = () => {
             Vimeo
           </Link>
         </div>
-      </div>
+      </section>
 
       <img
         ref={wavesRef}
@@ -138,7 +115,7 @@ const Hero = () => {
       >
         <Player video="547504346" />
       </Modal>
-    </section>
+    </div>
   );
 };
 

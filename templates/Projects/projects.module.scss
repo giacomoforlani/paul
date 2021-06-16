@@ -144,6 +144,7 @@
 
 .ComingSoon {
     color: $color--green;
+    grid-column: span 2;
     padding-top: 10rem;
     text-align: center;
     width: 100%;

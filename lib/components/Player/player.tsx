@@ -1,6 +1,8 @@
 import Vimeo from '@u-wave/react-vimeo';
 import React, { useCallback } from 'react';
 
+import styles from './player.module.scss';
+
 const NO_CUSTOM_CURSOR_CLASS = 'no-custom-cursor';
 
 type PlayerProps = PropsWithClass<{
@@ -23,6 +25,7 @@ const Player = ({
 
   return (
     <div
+      className={styles.Player}
       onMouseEnter={removeCustomCursor}
       onMouseLeave={restoreCustomCursor}
     >
