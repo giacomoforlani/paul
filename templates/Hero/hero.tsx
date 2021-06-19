@@ -4,8 +4,8 @@ import { Button } from '../../lib/components/Button';
 import { Link } from '../../lib/components/Link';
 import { Modal } from '../../lib/components/Modal';
 import { Player } from '../../lib/components/Player';
+import { Sphere } from '../../components/Sphere';
 import { Text } from '../../lib/components/Text';
-
 import styles from './hero.module.scss';
 
 const Hero = () => {
@@ -16,22 +16,14 @@ const Hero = () => {
 
   return (
     <div className={styles.Hero}>
-      <img
-        className={[
-          styles.Hero__Sphere,
-          styles['Hero__Sphere--01'],
-        ].join(' ')}
-        src="/images/sphere.png"
-        alt="sphere-01"
+      <Sphere
+        className={styles['Hero__Sphere--01']}
+        size="small"
       />
 
-      <img
-        className={[
-          styles.Hero__Sphere,
-          styles['Hero__Sphere--02'],
-        ].join(' ')}
-        src="/images/sphere.png"
-        alt="sphere-02"
+      <Sphere
+        className={styles['Hero__Sphere--02']}
+        size="large"
       />
 
       {/* eslint-disable-next-line jsx-a11y/alt-text */}
@@ -40,7 +32,7 @@ const Hero = () => {
         className={styles.Hero__Image}
       />
 
-      <section className={styles.Hero__Main}>
+      <section className={styles.Hero__Section}>
         <div className={styles.Hero__Greetings}>
           <Text
             className={styles.Hero__Name}

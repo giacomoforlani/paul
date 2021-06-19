@@ -2,23 +2,42 @@
 @import "../../styles/variables.scss";
 
 .Presentation {
-    background-color: $color--blue-dark;
-    column-gap: 5rem;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    padding-top: 30rem;
-    padding-bottom: 20rem;
+    position: relative;
 
-    @include tabletPortrait {
-        column-gap: unset;
-        grid-template-columns: unset;
-    }
-
-    br {
-        display: block;
+    &__Sphere {
+        top: 50%;
+        right: 20%;
+        z-index: 1;
 
         @include tabletPortrait {
-            display: none;
+            top: 30%;
+        }
+
+        @include mobilePortrait {
+            top: 10%;
+            left: -10%;
+        }
+    }
+
+    &__Section {
+        background-color: $color--blue-dark;
+        column-gap: 5rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        padding-top: 30rem;
+        padding-bottom: 20rem;
+
+        @include tabletPortrait {
+            column-gap: unset;
+            grid-template-columns: unset;
+        }
+
+        br {
+            display: block;
+
+            @include tabletPortrait {
+                display: none;
+            }
         }
     }
 

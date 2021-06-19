@@ -1,4 +1,4 @@
-@mixin large {
+@mixin desktopLarge {
   @media only screen and (min-width: 1921px) {
     @content;
   }

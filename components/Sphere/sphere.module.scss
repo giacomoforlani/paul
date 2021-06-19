@@ -1,0 +1,39 @@
+@import "../../styles/animations.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.Sphere {
+  animation-direction: alternate;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-name: fluctuation;
+  animation-timing-function: ease-in-out;
+  mix-blend-mode: screen;
+  position: absolute;
+  z-index: $index--sphere;
+
+  &--small {
+    height: 15vw;
+    width: 15vw;
+
+    @include mobilePortrait {
+      height: 75vw;
+      width: 75vw;
+    }
+  }
+
+  &--large {
+    height: 60vw;
+    width: 60vw;
+
+    @include mobilePortrait {
+      height: 150vw;
+      width: 150vw;
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}

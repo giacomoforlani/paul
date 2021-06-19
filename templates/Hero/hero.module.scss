@@ -3,163 +3,154 @@
 @import "../../styles/variables.scss";
 
 .Hero {
-    background-color: $color--gray-light;
-    position: relative;
+  background-color: $color--gray-light;
+  position: relative;
 
-    &__Image {
-        content: url("/images/hero-desktop.jpg");
-        max-width: 100vw;
-        mix-blend-mode: multiply;
-        z-index: $index--img;
+  &__Image {
+    content: url("/images/hero-desktop.jpg");
+    max-width: 100vw;
+    mix-blend-mode: multiply;
+    width: 100vw;
+    z-index: $index--img;
 
-        @include large {
-            content: url("/images/hero-4k.jpg");
-        }
-
-        @include tabletLandscape {
-            content: url("/images/hero-desktop.jpg");
-        }
-
-        @include tabletPortrait {
-            content: url("/images/hero-tablet.jpg");
-        }
-
-        @include mobilePortrait {
-            content: url("/images/hero-mobile.jpg");
-        }
+    @include desktopLarge {
+      content: url("/images/hero-4k.jpg");
     }
 
-    &__Sphere {
-        animation-direction: alternate;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
-        animation-name: fluctuation;
-        animation-timing-function: ease-in-out;
-        mix-blend-mode: screen;
-        position: absolute;
-        z-index: $index--sphere;
-
-        &--01 {
-            height: 25rem;
-            left: 0;
-            top: 0;
-            width: 25rem;
-            transform: translate(100%, 60%);
-
-            @include tabletPortrait {
-                height: 15rem;
-                width: 15rem;
-            }
-        }
-
-        &--02 {
-            height: 120rem;
-            right: 0;
-            top: 100vh;
-            width: 120rem;
-            transform: translate(10%, -60%);
-
-            @include tabletPortrait {
-                height: 90rem;
-                width: 90rem;
-                transform: translate(40%, -65%);
-            }
-        }
+    @include tabletLandscape {
+      content: url("/images/hero-desktop.jpg");
     }
 
-    &__Main {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        left: 0;
-        padding-bottom: 10vh;
-        padding-top: 10vh;
-        position: absolute;
+    @include tabletPortrait {
+      content: url("/images/hero-tablet.jpg");
+    }
+
+    @include mobilePortrait {
+      content: url("/images/hero-mobile.jpg");
+    }
+  }
+
+  &__Sphere {
+    &--01 {
+      left: 5%;
+      top: 10%;
+
+      @include mobilePortrait {
+        left: unset;
+        right: -20%;
         top: 0;
+      }
     }
 
-    &__Greetings {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        justify-content: center;
+    &--02 {
+      bottom: 0;
+      right: -5%;
 
-        br {
-            display: none;
-        }
+      @include tabletPortrait {
+        bottom: 10%;
+      }
 
-        @include tabletPortrait {
-            br {
-                display: block;
-            }
-        }
-    }
-
-    &__Name {
-        margin-bottom: 2rem;
-    }
-
-    &__Nickname {
-        margin-bottom: 4rem;
-
-        span {
-            position: relative;
-        }
-
-        @include tabletPortrait {
-            margin-bottom: 8rem;
-        }
-    }
-
-    &__Sign {
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translate(-20%, -20%);
-        z-index: -1;
-    }
-
-    &__Cta {
-        align-self: flex-start;
-    }
-
-    &__Links {
-        display: flex;
-        justify-content: unset;
-        width: 100%;
-
-        > * {
-            color: $color--white;
-        }
-
-        > *:not(:last-of-type) {
-            margin-right: 2rem;
-        }
-
-        @include tabletPortrait {
-            margin: 0;
-            justify-content: space-evenly;
-
-            > * {
-                margin-right: unset;
-            }
-        }
-    }
-
-    &__Waves {
+      @include mobilePortrait {
         bottom: 0;
-        left: 0;
-        position: absolute;
-        transform: rotateX(180deg) rotateY(180deg) scale(1.001) translateY(-60%);
-        z-index: $index--waves;
+        left: -30%;
+        right: unset;
+      }
+    }
+  }
 
-        @include large {
-            width: 100%;
-        }
+  &__Section {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    padding-bottom: 10vh;
+    padding-top: 10vh;
+    position: absolute;
+    top: 0;
+  }
+
+  &__Greetings {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+
+    br {
+      display: none;
     }
 
-    &__Player {
-        background-color: transparent;
+    @include tabletPortrait {
+      br {
+        display: block;
+      }
     }
+  }
+
+  &__Name {
+    margin-bottom: 2rem;
+  }
+
+  &__Nickname {
+    margin-bottom: 4rem;
+
+    span {
+      position: relative;
+    }
+
+    @include tabletPortrait {
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__Sign {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-20%, -20%);
+    z-index: -1;
+  }
+
+  &__Cta {
+    align-self: flex-start;
+  }
+
+  &__Links {
+    display: flex;
+    justify-content: unset;
+    width: 100%;
+
+    > * {
+      color: $color--white;
+    }
+
+    > *:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+
+    @include tabletPortrait {
+      margin: 0;
+      justify-content: space-evenly;
+
+      > * {
+        margin-right: unset;
+      }
+    }
+  }
+
+  &__Waves {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transform: rotateX(180deg) rotateY(180deg) scale(1.001) translateY(-60%);
+    z-index: $index--waves;
+
+    @include desktopLarge {
+      width: 100%;
+    }
+  }
+
+  &__Player {
+    background-color: transparent;
+  }
 }

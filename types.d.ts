@@ -1,3 +1,3 @@
 type PropsWithClass<T> = {
-    className?:string;
+    className?: string;
 } & T;

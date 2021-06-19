@@ -7,11 +7,12 @@
 
     &__Image {
         content: url("/images/footer-desktop.jpg");
-        mix-blend-mode: multiply;
         max-width: 100vw;
+        mix-blend-mode: multiply;
+        width: 100vw;
         z-index: $index--img;
 
-        @include large {
+        @include desktopLarge {
             content: url("/images/footer-4k.jpg");
         }
 
@@ -35,51 +36,42 @@
         transform: scale(1.001) translateY(-60%);
         z-index: $index--waves;
 
-        @include large {
+        @include desktopLarge {
             width: 100%;
         }
     }
 
     &__Sphere {
-        animation-direction: alternate;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-name: fluctuation;
-        animation-timing-function: ease-in-out;
-        mix-blend-mode: screen;
-        position: absolute;
-        z-index: $index--sphere;
-
         &--01 {
-            bottom: 100vh;
-            height: 25rem;
-            right: 0;
-            transform: translate(-120%, 300%);
-            width: 25rem;
+            right: 20%;
+            bottom: -30%;
 
             @include tabletPortrait {
-                height: 15rem;
-                transform: translate(-80%, 500%);
-                width: 15rem;
+                bottom: -70%;
+            }
+
+            @include mobilePortrait {
+                bottom: -90%;
+                right: -15%;
             }
         }
 
         &--02 {
-            bottom: 100vh;
-            height: 120rem;
-            right: 0;
-            transform: translate(-70%, 35%);
-            width: 120rem;
+            bottom: -20%;
+            left: -10%;
 
             @include tabletPortrait {
-                height: 90rem;
-                transform: translate(-10%, 50%);
-                width: 90rem;
+                bottom: -60%;
+            }
+
+            @include mobilePortrait {
+                bottom: -40%;
+                left: -50%;
             }
         }
     }
 
-    &__Main {
+    &__Section {
         align-items: flex-start;
         bottom: 0;
         display: flex;
@@ -90,7 +82,7 @@
         padding-top: 10vh;
         position: absolute;
 
-        @include large {
+        @include desktopLarge {
             width: 100%;
         }
     }

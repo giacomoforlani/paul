@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Sphere } from '../../components/Sphere';
 
 import { Link } from '../../lib/components/Link';
 import { Text } from '../../lib/components/Text';
@@ -16,22 +17,14 @@ const Footer = () => {
         alt="waves"
       />
 
-      <img
-        className={[
-          styles.Footer__Sphere,
-          styles['Footer__Sphere--01'],
-        ].join(' ')}
-        src="/images/sphere.png"
-        alt="sphere-02"
+      <Sphere
+        className={styles['Footer__Sphere--01']}
+        size="small"
       />
 
-      <img
-        className={[
-          styles.Footer__Sphere,
-          styles['Footer__Sphere--02'],
-        ].join(' ')}
-        src="/images/sphere.png"
-        alt="sphere-02"
+      <Sphere
+        className={styles['Footer__Sphere--02']}
+        size="large"
       />
 
       {/* eslint-disable-next-line jsx-a11y/alt-text */}
@@ -40,7 +33,7 @@ const Footer = () => {
         className={styles.Footer__Image}
       />
 
-      <section className={styles.Footer__Main}>
+      <section className={styles.Footer__Section}>
         <div className={styles.Footer__Top}>
           <Text
             className={styles.Footer__Title}

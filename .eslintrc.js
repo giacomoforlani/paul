@@ -37,5 +37,6 @@ module.exports = {
     'react/button-has-type': 0,
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-props-no-spreading': 0,
+    'react/require-default-props': 0,
   },
 };
