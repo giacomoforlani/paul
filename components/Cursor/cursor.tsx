@@ -1,15 +1,17 @@
 import React, {
-  useCallback, useEffect, useMemo, useRef, useState,
+  useCallback, useEffect, useRef, useState,
 } from 'react';
 
 import styles from './cursor.module.scss';
-import { useCursorVisible, useMouseMove } from './hooks';
+import { useMouseMove } from './hooks/useMouseMove';
+import { useCursorContext } from './services/cursor.provider';
 
 const Cursor = () => {
+  const { visible } = useCursorContext();
+
   const bigCursorRef = useRef<HTMLDivElement>(null);
   const smallCursorRef = useRef<HTMLDivElement>(null);
 
-  const visible = useCursorVisible();
   const onMouseMove = useMouseMove(bigCursorRef, smallCursorRef);
   const [isMouseDown, setIsMouseDown] = useState(false);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import { Bubbles } from '../components/Bubbles';
-import { Cursor } from '../components/Cursor';
+import { Cursor, CursorProvider } from '../components/Cursor';
 import { Noise } from '../components/Noise';
 
 import { Footer } from '../templates/Footer';
@@ -12,7 +12,7 @@ import { Projects } from '../templates/Projects';
 
 export default function Home() {
   return (
-    <>
+    <CursorProvider>
       <Head>
         <title>Hi, I&apos;m Paolo</title>
         <link rel="icon" href="/favicon.ico" />
@@ -28,6 +28,6 @@ export default function Home() {
         <Bubbles />
         <Noise />
       </main>
-    </>
+    </CursorProvider>
   );
 }

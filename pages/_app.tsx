@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import { gsap, CSSPlugin } from 'gsap';
 import AOS from 'aos';
 
+import { BodyProvider } from '../core/services';
+
 import '../styles/globals.scss';
 
 gsap.registerPlugin(CSSPlugin);
@@ -13,7 +15,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
-    <Component {...pageProps} />
+    <BodyProvider>
+      <Component {...pageProps} />
+    </BodyProvider>
   );
 };
 

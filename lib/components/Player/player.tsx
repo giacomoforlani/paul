@@ -1,5 +1,6 @@
 import Vimeo from '@u-wave/react-vimeo';
 import React, { useCallback } from 'react';
+import { useCursorContext } from '../../../components/Cursor';
 
 import styles from './player.module.scss';
 
@@ -13,21 +14,17 @@ const Player = ({
   className,
   video,
 }: PlayerProps) => {
-  const body = document.querySelector('body');
+  const { setVisible: setCursorVisible } = useCursorContext();
 
-  const removeCustomCursor = useCallback(() => {
-    body?.classList.add(NO_CUSTOM_CURSOR_CLASS);
-  }, [body]);
+  const removeCustomCursor = useCallback(() => setCursorVisible(false), [setCursorVisible]);
 
-  const restoreCustomCursor = useCallback(() => {
-    body?.classList.remove(NO_CUSTOM_CURSOR_CLASS);
-  }, [body]);
+  const showCustomCursor = useCallback(() => setCursorVisible(true), [setCursorVisible]);
 
   return (
     <div
       className={styles.Player}
       onMouseEnter={removeCustomCursor}
-      onMouseLeave={restoreCustomCursor}
+      onMouseLeave={showCustomCursor}
     >
       <Vimeo
         className={className}

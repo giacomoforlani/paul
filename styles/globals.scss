@@ -62,12 +62,6 @@ body {
   &.no-overflow {
     overflow: hidden;
   }
-
-  &.default-cursor {
-    * {
-      cursor: inherit;
-    }
-  }
 }
 
 main {

@@ -1,11 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { PropsWithChildren, useEffect } from 'react';
+import { BodyClass, useBodyContext } from '../../../core/services';
 
 import { fade } from '../../animations';
 
 import styles from './modal.module.scss';
-
-const NO_OVERFLOW_CLASS = 'no-overflow';
 
 type ModalProps = PropsWithChildren<PropsWithClass<{
   visible: boolean;
@@ -18,17 +17,20 @@ const Modal = ({
   visible,
   onBackdrop = () => {},
 }: ModalProps) => {
-  useEffect(() => {
-    const body = document.querySelector('body');
+  const {
+    addClass: addBodyClass,
+    removeClass: removeBodyClass,
+  } = useBodyContext();
 
+  useEffect(() => {
     if (visible) {
-      body?.classList.add(NO_OVERFLOW_CLASS);
+      addBodyClass(BodyClass.noOverflow);
     } else {
-      body?.classList.remove(NO_OVERFLOW_CLASS);
+      removeBodyClass(BodyClass.noOverflow);
     }
 
-    return () => body?.classList.remove(NO_OVERFLOW_CLASS);
-  }, [visible]);
+    return () => removeBodyClass(BodyClass.noOverflow);
+  }, [visible, addBodyClass, removeBodyClass]);
 
   return (
     <AnimatePresence>
