@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Button } from '../../lib/components/Button';
 import { Link } from '../../lib/components/Link';

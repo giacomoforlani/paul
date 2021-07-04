@@ -3,7 +3,7 @@
 
 .Projects {
     background-color: $color--blue-dark;
-    padding-bottom: 10rem;
+    padding-bottom: 20rem;
 
     @include tabletPortrait {
         padding: 0;
@@ -60,7 +60,7 @@
         height: 100%;
         justify-content: space-between;
         left: 0;
-        padding: 3rem 3em;
+        padding: 4rem;
         position: absolute;
         top: 0;
         width: 100%;
@@ -87,57 +87,60 @@
 
     &__Description {
         color: $color--white;
+        margin-right: 3rem;
 
         @include tabletPortrait {
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
+            margin-right: 0;
         }
     }
 }
 
 .Card.Focus {
-    .Card__Waves {
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-    }
-
     .Card__Info {
-        transform: translateY(0);
-        transition: transform 0.4s ease-in-out;
-    }
-
-    .Card__Top,
-    .Card__Bottom {
         opacity: 1;
         transition: opacity 0.4s ease-in-out;
-        transition-delay: 0.4s;
     }
 }
 
 .Card:not(.Focus) {
-    .Card__Waves {
-        opacity: 1;
-        transition: opacity 0.4s ease-in-out;
-    }
-
     .Card__Info {
-        transform: translateY(100%);
-        transition: transform 0.4s ease-in-out;
-    }
-
-    .Card__Top,
-    .Card__Bottom {
         opacity: 0;
         transition: opacity 0.4s ease-in-out;
     }
+}
 
-    @include tabletPortrait {
+@include tabletPortrait {
+    .Card.Focus {
         .Card__Info {
-            background-image: none;
-            transform: translateY(50%);
+            transform: translateY(0);
+            transition: transform 0.4s ease-in-out;
         }
 
-        .Card__Top {
+        .Card__Top,
+        .Card__Bottom {
             opacity: 1;
+            transition: opacity 0.4s ease-in-out;
+            transition-delay: 0.4s;
+        }
+    }
+
+    .Card:not(.Focus) {
+        .Card__Info {
+            opacity: unset;
+            transform: translateY(70%);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .Card__Bottom {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        @include mobilePortrait {
+            .Card__Info {
+                transform: translateY(50%);
+            }
         }
     }
 }

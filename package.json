@@ -12,24 +12,25 @@
     "aos": "^3.0.0-beta.6",
     "framer-motion": "^4.1.17",
     "gsap": "^3.7.0",
-    "next": "11.0.0",
+    "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-particles-js": "^3.4.1"
+    "react-particles-js": "3.5.3"
   },
   "devDependencies": {
     "@types/aos": "^3.0.3",
-    "@types/react": "17.0.11",
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "@typescript-eslint/parser": "^4.27.0",
-    "eslint": "^7.29.0",
+    "@types/react": "17.0.13",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-next": "^11.0.0",
+    "eslint-config-next": "^11.0.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "sass": "^1.35.1",
-    "typescript": "4.3.4"
+    "tsparticles": "^1.30.3",
+    "typescript": "4.3.5"
   }
 }

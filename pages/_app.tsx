@@ -12,7 +12,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     AOS.init();
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <Component {...pageProps} />
+  );
 };
 
 export default App;

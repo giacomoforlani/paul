@@ -1,4 +1,7 @@
 import React, { useRef } from 'react';
+
+import WavesImg from '../../public/images/waves.svg';
+
 import { Sphere } from '../../components/Sphere';
 
 import { Link } from '../../lib/components/Link';
@@ -39,6 +42,7 @@ const Footer = () => {
             className={styles.Footer__Title}
             data-aos="fade-up"
             data-aos-once="true"
+            data-aos-duration="1000"
             size="h1"
           >
             Nice
@@ -57,6 +61,7 @@ const Footer = () => {
             className={styles.Footer__Email}
             data-aos="fade-up"
             data-aos-once="true"
+            data-aos-duration="1000"
             url="mailto:info@paolodata.com"
           >
             <Text size="h2">info@paolodata.com</Text>

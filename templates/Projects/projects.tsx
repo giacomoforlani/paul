@@ -41,6 +41,7 @@ const Projects = () => {
       <div
         data-aos="fade-up"
         data-aos-once="true"
+        data-aos-duration="1000"
         className={styles.Cards}
       >
         {projects.map((project) => (
@@ -52,12 +53,6 @@ const Projects = () => {
             onMouseEnter={() => hoverHandler(project)}
             onMouseLeave={() => hoverHandler(undefined)}
           >
-            <img
-              className={styles.Card__Waves}
-              src="/images/waves-little.svg"
-              alt="waves-little"
-            />
-
             <div className={styles.Card__Info}>
               <div className={styles.Card__Top}>
                 <Text

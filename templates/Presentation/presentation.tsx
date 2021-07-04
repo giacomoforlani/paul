@@ -18,6 +18,7 @@ const Presentation = () => (
         className={styles.Presentation__First}
         data-aos="fade-up"
         data-aos-once="true"
+        data-aos-duration="1000"
         size="h2"
       >
         I’m a
@@ -46,6 +47,7 @@ const Presentation = () => (
         className={styles.Presentation__Second}
         data-aos="fade-up"
         data-aos-once="true"
+        data-aos-duration="1000"
         size="h4"
       >
         My goal is to communicate
@@ -57,6 +59,7 @@ const Presentation = () => (
         className={styles.Presentation__Third}
         data-aos="fade-up"
         data-aos-once="true"
+        data-aos-duration="1000"
         size="h5"
       >
         I’m a goosebumps seeker, a true
@@ -76,6 +79,7 @@ const Presentation = () => (
         className={styles.Presentation__Cta}
         data-aos="fade-up"
         data-aos-once="true"
+        data-aos-duration="1000"
         kind="secondary"
         target="_blank"
         url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"

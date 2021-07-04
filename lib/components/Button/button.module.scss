@@ -30,6 +30,10 @@
     @include isHoverEnable {
         &:hover {
             transform: scale(1.1) !important;
+
+            .Button__Triangle {
+                transform: translateX(0.5rem);
+            }
         }
     }
 
@@ -97,6 +101,8 @@
 
     &__Triangle {
         @extend .figure;
+
+        transition: transform 0.4s ease-in-out;
 
         &::before {
             background-color: $color--white;

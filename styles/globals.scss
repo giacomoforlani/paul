@@ -43,7 +43,7 @@ html {
   font-family: $font--primary;
   font-size: 62.5%;
 
-  @include desktopLarge {
+  @include desktopHuge {
     font-size: 120%;
   }
 
@@ -81,7 +81,7 @@ main {
 }
 
 section {
-  padding: 0 max(4rem, calc((100vw - 108rem) / 2));
+  padding: 0 max(4rem, calc((100% - 108rem) / 2));
   position: relative;
   width: 100%;
 
@@ -90,7 +90,7 @@ section {
   }
 
   @include tabletPortrait {
-    padding: 0 8rem;
+    padding: 0 5rem;
   }
 }
 
