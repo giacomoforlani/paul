@@ -7,7 +7,7 @@ const OFFSET = 500;
 const MULTIPLIER = 1.1;
 const DURATION = 0.4;
 
-export const useMouseMove = (
+export const useMoveCursor = (
   bigCursorRef: React.RefObject<HTMLDivElement>,
   smallCursorRef: React.RefObject<HTMLDivElement>,
 ) => {
@@ -15,7 +15,7 @@ export const useMouseMove = (
   const [cursorWidth, setCursorWidth] = useState(0);
   const [prevPos, setPrevPos] = useState({ x: 0, y: 0, time: 0 });
 
-  const onMouseMove = useCallback(
+  const animateCursor = useCallback(
     (e: MouseEvent) => {
       if (!bigCursorRef.current) {
         return;
@@ -71,5 +71,5 @@ export const useMouseMove = (
     [bigCursorRef, smallCursorRef, prevPos, cursorWidth],
   );
 
-  return onMouseMove;
+  return animateCursor;
 };

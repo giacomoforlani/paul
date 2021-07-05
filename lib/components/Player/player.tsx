@@ -16,9 +16,13 @@ const Player = ({
 }: PlayerProps) => {
   const { setVisible: setCursorVisible } = useCursorContext();
 
-  const removeCustomCursor = useCallback(() => setCursorVisible(false), [setCursorVisible]);
+  const removeCustomCursor = useCallback(() => {
+    setCursorVisible(false);
+  }, [setCursorVisible]);
 
-  const showCustomCursor = useCallback(() => setCursorVisible(true), [setCursorVisible]);
+  const showCustomCursor = useCallback(() => {
+    setCursorVisible(true);
+  }, [setCursorVisible]);
 
   return (
     <div

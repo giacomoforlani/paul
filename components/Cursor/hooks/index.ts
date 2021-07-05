@@ -1,1 +1,2 @@
-export * from './useMouseMove';
+export * from './useHoverCursor';
+export * from './useMoveCursor';
