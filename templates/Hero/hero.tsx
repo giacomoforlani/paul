@@ -26,10 +26,10 @@ const Hero = () => {
         size="large"
       />
 
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img
         ref={imageRef}
         className={styles.Hero__Image}
+        alt="hero"
       />
 
       <section className={styles.Hero__Section}>

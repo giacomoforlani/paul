@@ -79,10 +79,6 @@ section {
   position: relative;
   width: 100%;
 
-  @include tabletLandscape {
-    padding: 0 12rem;
-  }
-
   @include tabletPortrait {
     padding: 0 5rem;
   }

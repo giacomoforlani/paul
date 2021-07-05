@@ -30,10 +30,10 @@ const Footer = () => {
         size="large"
       />
 
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img
         ref={imageRef}
         className={styles.Footer__Image}
+        alt="footer"
       />
 
       <section className={styles.Footer__Section}>
