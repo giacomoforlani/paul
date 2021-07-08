@@ -1,9 +1,9 @@
 import React, {
   useCallback, useEffect, useRef, useState,
 } from 'react';
+import { useBodyContext } from '../../core/services';
 
 import styles from './cursor.module.scss';
-import { useHoverCursor } from './hooks';
 import { useMoveCursor } from './hooks/useMoveCursor';
 import { useCursorContext } from './services/cursor.provider';
 
@@ -15,8 +15,7 @@ const Cursor = () => {
 
   const [isCursorFull, setIsCursorFull] = useState(false);
 
-  const moveCursor = useMoveCursor(bigCursorRef, smallCursorRef);
-  const hoverCursor = useHoverCursor();
+  const animateCursor = useMoveCursor(bigCursorRef, smallCursorRef);
 
   const onMouseDown = useCallback(() => {
     setIsCursorFull(true);
@@ -27,18 +26,16 @@ const Cursor = () => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mousemove', hoverCursor);
+    document.addEventListener('mousemove', animateCursor);
     document.addEventListener('mousedown', onMouseDown);
     document.addEventListener('mouseup', onMouseUp);
 
     return () => {
-      document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mousemove', hoverCursor);
+      document.removeEventListener('mousemove', animateCursor);
       document.removeEventListener('mousedown', onMouseDown);
       document.removeEventListener('mouseup', onMouseUp);
     };
-  }, [moveCursor, hoverCursor, onMouseDown, onMouseUp]);
+  }, [onMouseDown, onMouseUp, animateCursor]);
 
   return visible ? (
     <>

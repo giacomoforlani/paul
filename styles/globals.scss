@@ -62,6 +62,10 @@ body {
   &.no-overflow {
     overflow: hidden;
   }
+
+  &.show-pointer * {
+    cursor: pointer;
+  }
 }
 
 main {

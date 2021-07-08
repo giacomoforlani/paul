@@ -15,11 +15,11 @@ const Modal = ({
   className,
   children,
   visible,
-  onBackdrop = () => {},
+  onBackdrop = () => { },
 }: ModalProps) => {
   const {
-    addClass: addBodyClass,
-    removeClass: removeBodyClass,
+    addBodyClass,
+    removeBodyClass,
   } = useBodyContext();
 
   useEffect(() => {

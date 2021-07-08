@@ -3,19 +3,20 @@ import React, {
 } from 'react';
 
 enum BodyClass {
-    noOverflow = 'no-overflow'
+  noOverflow = 'no-overflow',
+  showPointer = 'show-pointer',
 }
 
 interface BodyContextValue {
-    addClass: (className: BodyClass) => void;
-    removeClass: (className: BodyClass) => void;
+  addBodyClass: (className: BodyClass) => void;
+  removeBodyClass: (className: BodyClass) => void;
 }
 
 type BodyProviderValue = PropsWithChildren<{}>;
 
 const BodyContext = createContext<BodyContextValue>({
-  addClass: (className: BodyClass) => {},
-  removeClass: (className: BodyClass) => {},
+  addBodyClass: (className: BodyClass) => { },
+  removeBodyClass: (className: BodyClass) => { },
 });
 
 const BodyProvider = ({
@@ -36,8 +37,8 @@ const BodyProvider = ({
 
   return (
     <BodyContext.Provider value={{
-      addClass,
-      removeClass,
+      addBodyClass: addClass,
+      removeBodyClass: removeClass,
     }}
     >
       {children}
