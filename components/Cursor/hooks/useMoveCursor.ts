@@ -4,11 +4,11 @@ import React, {
 } from 'react';
 import { BodyClass, useBodyContext } from '../../../core/services';
 
-const OFFSET = 500;
-const MOVE_MULTIPLIER = 1.1;
-const HOVER_MULTIPLIER = 0.8;
 const DURATION = 0.4;
+const HOVER_MULTIPLIER = 0.8;
 const HOVER_TAGS = ['button', 'a'];
+const MOVE_MULTIPLIER = 1.1;
+const OFFSET = 500;
 
 interface MouseInfo {
   isHovering: boolean;
