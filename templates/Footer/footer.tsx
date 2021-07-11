@@ -42,7 +42,7 @@ const Footer = () => {
             className={styles.Footer__Title}
             data-aos="fade-up"
             data-aos-once="true"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
             size="h1"
           >
             Nice
@@ -61,7 +61,7 @@ const Footer = () => {
             className={styles.Footer__Email}
             data-aos="fade-up"
             data-aos-once="true"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
             url="mailto:info@paolodata.com"
           >
             <Text size="h2">info@paolodata.com</Text>
