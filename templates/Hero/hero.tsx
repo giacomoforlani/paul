@@ -9,9 +9,6 @@ import { Text } from '../../lib/components/Text';
 import styles from './hero.module.scss';
 
 const Hero = () => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const wavesRef = useRef<HTMLImageElement>(null);
-
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -27,7 +24,6 @@ const Hero = () => {
       />
 
       <img
-        ref={imageRef}
         className={styles.Hero__Image}
         alt="hero"
       />
@@ -94,7 +90,6 @@ const Hero = () => {
       </section>
 
       <img
-        ref={wavesRef}
         className={styles.Hero__Waves}
         src="/images/waves.svg"
         alt="waves"
