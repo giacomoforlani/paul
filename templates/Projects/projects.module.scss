@@ -26,6 +26,7 @@
 .Card {
     background-position: center;
     background-size: cover;
+    margin-bottom: 2rem;
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
@@ -82,6 +83,33 @@
 }
 
 // TABLET
+@include onlyTabletPortrait {
+    .Card {
+        &__Info {
+            padding: 8rem;
+        }
+
+        &__Top {
+            margin-bottom: 3rem;
+        }
+
+        &__Label {
+            font-size: $size--sm;
+        }
+
+        &__Title {
+            font-size: $size--lg;
+        }
+
+        &__Description {
+            font-size: $size--md;
+            margin-bottom: 3rem;
+            margin-right: 0;
+            line-height: $size--md;
+        }
+    }
+}
+
 @include tabletPortrait {
     .Card {
         &__Info {
@@ -96,32 +124,8 @@
             margin-top: 2rem;
         }
 
-        &__Description {
-            margin-bottom: 3rem;
-            margin-right: 0;
-        }
-
-        &.Focus &__Info {
-            transform: translateY(0);
-            transition: transform 0.4s ease-in-out;
-        }
-
-        &.Focus &__Top,
-        &.Focus &__Bottom {
-            opacity: 1;
-            transition: opacity 0.4s ease-in-out;
-            transition-delay: 0.4s;
-        }
-
         &:not(.Focus) &__Info {
-            opacity: unset;
-            transform: translateY(50%);
-            transition: transform 0.4s ease-in-out;
-        }
-
-        &:not(.Focus) &__Bottom {
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out;
+            opacity: 1;
         }
     }
 }
@@ -132,14 +136,11 @@
         padding-top: 100%;
 
         &__Info {
-            justify-content: space-between;
             padding: 4rem;
         }
 
         &__Bottom {
-            flex: unset;
             justify-content: space-between;
-            margin-top: unset;
         }
     }
 }

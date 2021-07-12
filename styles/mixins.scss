@@ -10,6 +10,12 @@
   }
 }
 
+@mixin onlyTabletPortrait {
+  @media only screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
 @mixin tabletLandscape {
   @media only screen and (max-height: 1024px) and (orientation: landscape) {
     @content;

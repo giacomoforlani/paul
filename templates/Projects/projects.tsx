@@ -1,6 +1,5 @@
 /* eslint-disable react/no-danger */
 import React, { useCallback, useMemo, useState } from 'react';
-import { isTouchDevice } from '../../core/utilities';
 
 import { projects } from '../../data/projects';
 
@@ -32,10 +31,6 @@ const Projects = () => {
     setOpened(project);
   }, []);
 
-  const clickHandler = useMemo(() => (isTouchDevice ? focus : () => {}), [focus]);
-
-  const hoverHandler = useMemo(() => (isTouchDevice ? () => {} : focus), [focus]);
-
   return (
     <section className={styles.Projects}>
       <div
@@ -49,9 +44,8 @@ const Projects = () => {
             key={project.id}
             className={[styles.Card, focused?.id === project.id ? styles.Focus : ''].join(' ')}
             style={{ backgroundImage: `url(${project.image})` }}
-            onClick={() => clickHandler(project)}
-            onMouseEnter={() => hoverHandler(project)}
-            onMouseLeave={() => hoverHandler(undefined)}
+            onMouseEnter={() => focus(project)}
+            onMouseLeave={() => focus(undefined)}
           >
             <div className={styles.Card__Info}>
               <div className={styles.Card__Top}>
