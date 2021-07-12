@@ -36,6 +36,7 @@ const ParallaxItem = ({
       className={className}
       ref={ref}
       animate={{ y }}
+      transition={{ type: 'spring', stiffness: 20 }}
       {...attributes}
     >
       {children}
