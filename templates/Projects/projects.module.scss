@@ -26,7 +26,6 @@
 .Card {
     background-position: center;
     background-size: cover;
-    margin-bottom: 2rem;
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
@@ -50,6 +49,16 @@
         position: absolute;
         top: 0;
         width: 100%;
+
+        &.Hovered {
+            opacity: 1;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        &:not(.Hovered) {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
     }
 
     &__Label {
@@ -69,16 +78,6 @@
     &__Description {
         color: $color--white;
         margin-right: 3rem;
-    }
-
-    &.Focus &__Info {
-        opacity: 1;
-        transition: opacity 0.4s ease-in-out;
-    }
-
-    &:not(.Focus) &__Info {
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
     }
 }
 
@@ -112,8 +111,14 @@
 
 @include tabletPortrait {
     .Card {
+        margin-bottom: 2rem;
+
         &__Info {
             justify-content: unset;
+
+            &:not(.Hovered) {
+                opacity: 1;
+            }
         }
 
         &__Bottom {
@@ -122,10 +127,6 @@
             flex: 1;
             justify-content: space-between;
             margin-top: 2rem;
-        }
-
-        &:not(.Focus) &__Info {
-            opacity: 1;
         }
     }
 }

@@ -13,18 +13,18 @@ import styles from './projects.module.scss';
 type Project = typeof projects[0];
 
 const Projects = () => {
-  const [focused, setFocused] = useState<Project | undefined>();
+  const [hovered, setFocused] = useState<Project | undefined>();
 
   const [showModal, setShowModal] = useState(false);
   const [opened, setOpened] = useState<Project | undefined>();
 
   const focus = useCallback((project: Project | undefined) => {
     setFocused(
-      focused?.id === project?.id
+      hovered?.id === project?.id
         ? undefined
         : project,
     );
-  }, [focused]);
+  }, [hovered]);
 
   const open = useCallback((project: Project | undefined) => {
     setShowModal(!!project);
@@ -34,20 +34,23 @@ const Projects = () => {
   return (
     <section className={styles.Projects}>
       <div
-        data-aos="fade-up"
-        data-aos-once="true"
-        data-aos-duration="1500"
         className={styles.Cards}
       >
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <div
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="1500"
+            data-aos-delay={index * 100}
             key={project.id}
-            className={[styles.Card, focused?.id === project.id ? styles.Focus : ''].join(' ')}
+            className={styles.Card}
             style={{ backgroundImage: `url(${project.image})` }}
             onMouseEnter={() => focus(project)}
             onMouseLeave={() => focus(undefined)}
           >
-            <div className={styles.Card__Info}>
+            <div
+              className={[styles.Card__Info, hovered?.id === project.id ? styles.Hovered : ''].join(' ')}
+            >
               <div className={styles.Card__Top}>
                 <Text
                   className={styles.Card__Label}
