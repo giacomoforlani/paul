@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Button } from '../../lib/components/Button';
 import { Link } from '../../lib/components/Link';
@@ -32,6 +32,10 @@ const Hero = () => {
         <div className={styles.Hero__Greetings}>
           <Text
             className={styles.Hero__Name}
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="1500"
+            data-aos-delay="2000"
             size="h1"
           >
             Hi,
@@ -42,6 +46,10 @@ const Hero = () => {
 
           <Text
             className={styles.Hero__Nickname}
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="1500"
+            data-aos-delay="2000"
             size="h2"
           >
             But you can
@@ -61,13 +69,23 @@ const Hero = () => {
 
           <Button
             className={styles.Hero__Cta}
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="1500"
+            data-aos-delay="2000"
             onClick={() => setShowModal(true)}
           >
             Play showreel
           </Button>
         </div>
 
-        <div className={styles.Hero__Links}>
+        <div
+          className={styles.Hero__Links}
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="1500"
+          data-aos-delay="2000"
+        >
           <Link
             target="_blank"
             url="https://www.instagram.com/paolodata"
