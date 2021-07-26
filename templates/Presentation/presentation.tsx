@@ -75,17 +75,20 @@ const Presentation = () => (
         new journey, new stories, your stories.
       </Text>
 
-      <Button
+      <div
         className={styles.Presentation__Cta}
         data-aos="fade-up"
         data-aos-once="true"
         data-aos-duration="1500"
-        kind="secondary"
-        target="_blank"
-        url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"
       >
-        My portfolio
-      </Button>
+        <Button
+          kind="secondary"
+          target="_blank"
+          url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"
+        >
+          My portfolio
+        </Button>
+      </div>
     </section>
   </div>
 );

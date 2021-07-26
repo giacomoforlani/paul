@@ -1,6 +1,10 @@
 @import "../../../styles/mixins.scss";
 @import "../../../styles/variables";
 
+@mixin withTransition {
+    transition: all 0.4s ease-in-out;
+}
+
 .figure {
     display: inline-block;
     height: 100%;
@@ -11,6 +15,8 @@
 }
 
 .Button {
+    @include withTransition;
+
     align-items: center;
     border-radius: 5rem;
     border: none;
@@ -25,14 +31,17 @@
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    transition: all 0.4s ease-out;
 
     @include isHoverEnable {
         &:hover {
             transform: scale(1.1) !important;
 
             .Button__Triangle {
-                transform: translateX(0.5rem);
+                transform: translateX(0.2rem);
+            }
+
+            .Button__Circle {
+                transform: scale(0.85);
             }
         }
     }
@@ -42,6 +51,8 @@
         color: $color--white;
 
         &::after {
+            @include withTransition;
+
             background-image: linear-gradient(to left, $color--cyan, $color--pink);
             border-radius: 5rem;
             content: "";
@@ -50,7 +61,6 @@
             opacity: 0;
             position: absolute;
             top: 0;
-            transition: all 0.4s ease-out;
             width: 100%;
             z-index: -1;
         }
@@ -68,27 +78,10 @@
         background-image: unset;
         background-color: $color--white;
 
-        &::after {
-            background-color: $color--green;
-            border-radius: 5rem;
-            content: "";
-            height: 100%;
-            left: 0;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            transition: all 0.4s ease-out;
-            width: 100%;
-            z-index: -1;
-        }
-
         @include isHoverEnable {
             &:hover {
+                background-color: $color--green;
                 color: $color--white;
-
-                &::after {
-                    opacity: 1;
-                }
 
                 .Button {
                     &__Triangle {
@@ -117,11 +110,12 @@
     }
 
     &__Triangle {
+        @include withTransition;
         @extend .figure;
 
-        transition: transform 0.4s ease-in-out;
-
         &::before {
+            @include withTransition;
+
             background-color: $color--white;
             content: "";
             height: 2px;
@@ -133,6 +127,8 @@
         }
 
         &::after {
+            @include withTransition;
+
             background-color: $color--white;
             content: "";
             height: 2px;
@@ -145,9 +141,12 @@
     }
 
     &__Circle {
+        @include withTransition;
         @extend .figure;
 
         &::before {
+            @include withTransition;
+
             border-radius: 50%;
             border: 2px solid $color--white;
             content: "";
