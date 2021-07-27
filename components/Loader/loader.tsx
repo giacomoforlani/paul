@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect } from 'react';
+import React, {
+  useCallback, useEffect, useRef, useState,
+} from 'react';
 import { BodyClass, useBodyContext } from '../../core/services';
 import { Noise } from '../Noise';
 
@@ -17,6 +19,8 @@ const Loader = ({
   } = useBodyContext();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     setTimeout(() => {
       if (loading) {
         addBodyClass(BodyClass.noOverflow);
@@ -26,16 +30,15 @@ const Loader = ({
     });
   }, [addBodyClass, loading, removeBodyClass]);
 
-  return loading ? (
-    <div className={styles.Loader}>
+  return (
+    <div className={[styles.Loader, loading ? '' : styles.Loaded].join(' ')}>
       <img
         src="/images/loader.gif"
         alt="Loader"
       />
-
       <Noise />
     </div>
-  ) : null;
+  );
 };
 
 export type { LoaderProps };

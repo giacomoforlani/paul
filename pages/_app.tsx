@@ -11,14 +11,14 @@ import { Loader } from '../components/Loader';
 gsap.registerPlugin(CSSPlugin);
 
 const App = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    AOS.init({ });
-  }, []);
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 3000);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({ });
   }, []);
 
   return (

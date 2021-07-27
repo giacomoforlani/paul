@@ -8,8 +8,6 @@ import { Sphere } from '../../components/Sphere';
 import { Text } from '../../lib/components/Text';
 import styles from './hero.module.scss';
 
-const DELAY = 200;
-
 const Hero = () => {
   const [showModal, setShowModal] = useState(false);
 
@@ -37,7 +35,6 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-once="true"
             data-aos-duration="1500"
-            data-aos-delay={DELAY}
             size="h1"
           >
             Hi,
@@ -51,7 +48,6 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-once="true"
             data-aos-duration="1500"
-            data-aos-delay={DELAY * 2}
             size="h2"
           >
             But you can
@@ -70,13 +66,12 @@ const Hero = () => {
           </Text>
 
           <div
+            className={styles.Hero__Cta}
             data-aos="fade-up"
             data-aos-once="true"
             data-aos-duration="1500"
-            data-aos-delay={DELAY * 3}
           >
             <Button
-              className={styles.Hero__Cta}
               onClick={() => setShowModal(true)}
             >
               Play showreel
@@ -89,7 +84,6 @@ const Hero = () => {
           data-aos="fade-up"
           data-aos-once="true"
           data-aos-duration="1500"
-          data-aos-delay={DELAY * 4}
         >
           <Link
             target="_blank"

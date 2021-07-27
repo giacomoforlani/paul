@@ -93,10 +93,12 @@
 
   &__Name {
     margin-bottom: 2rem;
+    transition-delay: 4s;
   }
 
   &__Nickname {
     margin-bottom: 4rem;
+    transition-delay: 4.25s;
 
     span {
       position: relative;
@@ -108,20 +110,23 @@
   }
 
   &__Sign {
-    position: absolute;
     left: 0;
+    position: absolute;
     top: 0;
     transform: translate(-20%, -20%);
+    transition-delay: 4.5s;
     z-index: -1;
   }
 
   &__Cta {
     align-self: flex-start;
+    transition-delay: 4.75s;
   }
 
   &__Links {
     display: flex;
     justify-content: unset;
+    transition-delay: 5s;
     width: 100%;
 
     > * {

@@ -4,8 +4,6 @@ import { useCursorContext } from '../../../components/Cursor';
 
 import styles from './player.module.scss';
 
-const NO_CUSTOM_CURSOR_CLASS = 'no-custom-cursor';
-
 type PlayerProps = PropsWithClass<{
   video: string;
 }>
@@ -33,6 +31,7 @@ const Player = ({
       <Vimeo
         className={className}
         autoplay
+        controls
         video={video}
         width={window.innerWidth * 0.8}
       />

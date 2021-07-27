@@ -91,6 +91,7 @@ const Projects = () => {
           className={styles.ComingSoon}
           data-aos="fade-up"
           data-aos-once="true"
+          data-aos-duration="1500"
           size="h5"
         >
           (More projects coming soon)
