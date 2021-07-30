@@ -14,11 +14,15 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 3000);
+    AOS.init({ });
   }, []);
 
   useEffect(() => {
-    AOS.init({ });
+    window.history.scrollRestoration = 'manual';
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 3000);
   }, []);
 
   return (

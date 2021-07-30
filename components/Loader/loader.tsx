@@ -19,8 +19,6 @@ const Loader = ({
   } = useBodyContext();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
     setTimeout(() => {
       if (loading) {
         addBodyClass(BodyClass.noOverflow);

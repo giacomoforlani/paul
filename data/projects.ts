@@ -31,22 +31,6 @@ const projects = [
     description: 'A visual voyage inspired by the words of Jim Lovell, Apollo 13 veteran.',
     video: '530079360',
   },
-  {
-    id: 5,
-    image: '/images/7-seconds-on-the-moon.png',
-    label: 'Motion design',
-    name: '7 Seconds<br />on the Moon',
-    description: 'A visual voyage inspired by the words of Jim Lovell, Apollo 13 veteran.',
-    video: '530079360',
-  },
-  {
-    id: 6,
-    image: '/images/7-seconds-on-the-moon.png',
-    label: 'Motion design',
-    name: '7 Seconds<br />on the Moon',
-    description: 'A visual voyage inspired by the words of Jim Lovell, Apollo 13 veteran.',
-    video: '530079360',
-  },
 ];
 
 export { projects };
