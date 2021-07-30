@@ -32,6 +32,10 @@
     text-decoration: none;
     text-transform: uppercase;
 
+    &:active {
+        transform: scale(0.95);
+    }
+
     @include isHoverEnable {
         &:hover {
             transform: scale(1.1) !important;
