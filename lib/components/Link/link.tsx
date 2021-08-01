@@ -17,7 +17,7 @@ const Link = ({
   <a
     {...attributes}
     className={[style.Link, className].join(' ')}
-    href={url || '#'}
+    href={url ?? '#'}
     target={target}
   >
     {children}

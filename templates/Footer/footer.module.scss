@@ -33,8 +33,7 @@
         left: 0;
         position: absolute;
         top: 0;
-        transform: scale(1.001) translateY(-60%);
-        z-index: $index--waves;
+        transform: scale(1.001) translateY(-50%);
 
         @include desktopLarge {
             width: 100%;
@@ -44,29 +43,29 @@
     &__Sphere {
         &--01 {
             right: 20%;
-            bottom: -30%;
+            top: 50%;
 
             @include tabletPortrait {
-                bottom: -70%;
+                top: 60%;
             }
 
             @include mobilePortrait {
-                bottom: -90%;
                 right: -15%;
+                top: 70%;
             }
         }
 
         &--02 {
-            bottom: -20%;
             left: -10%;
+            top: 0%;
 
             @include tabletPortrait {
-                bottom: -60%;
+                top: 40%;
             }
 
             @include mobilePortrait {
-                bottom: -40%;
                 left: -50%;
+                top: 10%;
             }
         }
     }

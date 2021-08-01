@@ -11,6 +11,7 @@ const Presentation = () => (
     <Sphere
       className={styles.Presentation__Sphere}
       size="small"
+      zIndex={1}
     />
 
     <section className={styles.Presentation__Section}>

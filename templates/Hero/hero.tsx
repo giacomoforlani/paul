@@ -7,6 +7,7 @@ import { Player } from '../../lib/components/Player';
 import { Sphere } from '../../components/Sphere';
 import { Text } from '../../lib/components/Text';
 import styles from './hero.module.scss';
+import { ParallaxItem } from '../../lib/components/ParallaxItem';
 
 const Hero = () => {
   const [showModal, setShowModal] = useState(false);
@@ -106,11 +107,17 @@ const Hero = () => {
         </div>
       </section>
 
-      <img
-        className={styles.Hero__Waves}
-        src="/images/waves.svg"
-        alt="waves"
-      />
+      <ParallaxItem
+        limit={150}
+        speed={-0.5}
+        zIndex={1}
+      >
+        <img
+          className={styles.Hero__Waves}
+          src="/images/waves.svg"
+          alt="waves"
+        />
+      </ParallaxItem>
 
       <Modal
         className={styles.Hero__Player}

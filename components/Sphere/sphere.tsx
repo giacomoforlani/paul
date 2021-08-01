@@ -6,11 +6,13 @@ import styles from './sphere.module.scss';
 
 type SphereProps = PropsWithClass<{
   size: 'small' | 'large';
+  zIndex?: number;
 }>;
 
 const Sphere = ({
   className,
   size,
+  zIndex = 0,
 }: SphereProps) => (
   <ParallaxItem
     className={[
@@ -18,7 +20,8 @@ const Sphere = ({
       styles[`Sphere--${size}`],
       className,
     ].join(' ')}
-    speed={-0.2}
+    position="absolute"
+    zIndex={zIndex}
   >
     <img
       src="/images/sphere.png"

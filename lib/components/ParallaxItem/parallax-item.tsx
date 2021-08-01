@@ -5,21 +5,53 @@ import React, {
 import { motion } from 'framer-motion';
 
 type ParallaxItemProps = PropsWithChildren<PropsWithClass<{
-  speed: number;
+  limit?: number;
+  position?: 'relative' | 'absolute' | 'fixed';
+  speed?: number;
+  zIndex?: number;
 }>>;
 
 const ParallaxItem = ({
   children,
   className,
-  speed,
+  limit = 200,
+  position = 'relative',
+  speed = -0.5,
+  zIndex = 0,
   ...attributes
 }: ParallaxItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [scroll, setScroll] = useState(process.browser ? window.pageYOffset : 0);
+
+  const initialScroll = useMemo(
+    () => (process.browser ? window.pageYOffset : 0),
+    [],
+  );
+
+  const initialTop = useMemo(
+    () => ref.current?.getBoundingClientRect().top ?? 0 + initialScroll,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [initialScroll, ref.current],
+  );
+
+  const [scroll, setScroll] = useState(initialScroll);
 
   const y = useMemo(
-    () => scroll * speed,
-    [scroll, speed],
+    () => {
+      const windowHeight = (process.browser ? window.innerHeight : 0);
+      const offsetValue = initialTop >= windowHeight ? windowHeight : 0;
+      const value = (scroll + offsetValue - initialTop) * speed;
+      const canAnimate = scroll + offsetValue >= initialTop;
+      const multiplier = speed > 0 ? 1 : -1;
+
+      return (
+        canAnimate
+          ? Math.abs(value) >= limit
+            ? limit * multiplier
+            : value
+          : 0
+      );
+    },
+    [initialTop, limit, scroll, speed],
   );
 
   const onWindowScroll = useCallback(() => {
@@ -33,9 +65,10 @@ const ParallaxItem = ({
 
   return (
     <motion.div
+      animate={{ y }}
       className={className}
       ref={ref}
-      animate={{ y }}
+      style={{ position, zIndex }}
       transition={{ type: 'spring', stiffness: 20 }}
       {...attributes}
     >

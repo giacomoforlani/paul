@@ -40,7 +40,7 @@ export const useMoveCursor = (
   const getMouseInfo = useCallback((
     e: MouseEvent,
   ) => {
-    const target = (e.target || {}) as HTMLElement;
+    const target = (e.target ?? {}) as HTMLElement;
 
     const x = e.clientX;
     const y = e.clientY;
@@ -75,7 +75,7 @@ export const useMoveCursor = (
         return;
       }
 
-      const initialWidth = cursorWidth || bigCursorRef.current.clientWidth;
+      const initialWidth = cursorWidth ?? bigCursorRef.current.clientWidth;
       setCursorWidth(initialWidth);
 
       const mouseInfo = getMouseInfo(e);

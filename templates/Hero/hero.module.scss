@@ -47,15 +47,14 @@
     }
 
     &--02 {
-      bottom: 0;
       right: -5%;
+      top: 20%;
 
       @include tabletPortrait {
-        bottom: 10%;
+        top: 35%;
       }
 
       @include mobilePortrait {
-        bottom: 0;
         left: -30%;
         right: unset;
       }
@@ -152,7 +151,6 @@
     left: 0;
     position: absolute;
     transform: rotateX(180deg) rotateY(180deg) scale(1.001) translateY(-60%);
-    z-index: $index--waves;
 
     @include desktopLarge {
       width: 100%;

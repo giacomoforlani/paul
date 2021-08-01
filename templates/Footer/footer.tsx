@@ -8,14 +8,21 @@ import { Link } from '../../lib/components/Link';
 import { Text } from '../../lib/components/Text';
 
 import styles from './footer.module.scss';
+import { ParallaxItem } from '../../lib/components/ParallaxItem';
 
 const Footer = () => (
   <div className={styles.Footer}>
-    <img
-      className={styles.Footer__Waves}
-      src="/images/waves.svg"
-      alt="waves"
-    />
+    <ParallaxItem
+      limit={100}
+      speed={-0.5}
+      zIndex={1}
+    >
+      <img
+        className={styles.Footer__Waves}
+        src="/images/waves.svg"
+        alt="waves"
+      />
+    </ParallaxItem>
 
     <Sphere
       className={styles['Footer__Sphere--01']}
