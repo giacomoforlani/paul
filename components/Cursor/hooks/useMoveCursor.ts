@@ -75,7 +75,7 @@ export const useMoveCursor = (
         return;
       }
 
-      const initialWidth = cursorWidth ?? bigCursorRef.current.clientWidth;
+      const initialWidth = cursorWidth || bigCursorRef.current.clientWidth;
       setCursorWidth(initialWidth);
 
       const mouseInfo = getMouseInfo(e);
