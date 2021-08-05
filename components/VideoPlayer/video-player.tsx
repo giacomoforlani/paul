@@ -27,8 +27,11 @@ const VideoPlayer = ({
   useEffect(() => {
     setAudioPlayerDisabled(true);
 
-    return () => setAudioPlayerDisabled(false);
-  }, [setAudioPlayerDisabled]);
+    return () => {
+      setAudioPlayerDisabled(false);
+      showCustomCursor();
+    };
+  }, [setAudioPlayerDisabled, showCustomCursor]);
 
   return (
     <div
