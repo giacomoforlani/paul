@@ -25,7 +25,7 @@ export default function Home() {
 
   const isHeroSurpassed = useMemo(() => heroHeight && scroll >= heroHeight, [heroHeight, scroll]);
   const isFooterReached = useMemo(() => footerTop && scroll >= footerTop, [footerTop, scroll]);
-  const isNavbarWhite = useMemo(
+  const isNavbarSticky = useMemo(
     () => isHeroSurpassed && !isFooterReached,
     [isFooterReached, isHeroSurpassed],
   );
@@ -46,8 +46,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar className={isNavbarWhite ? styles['Navbar--white'] : styles['Navbar--blue']}>
-          <Logo color={isNavbarWhite ? '#ffffff' : '#122031'} />
+        <Navbar className={isNavbarSticky ? styles['Navbar--sticky'] : styles['Navbar--default']}>
+          <Logo color={isNavbarSticky ? '#ffffff' : '#122031'} />
           <AudioPlayer url="/audio/home.mp3" />
         </Navbar>
 

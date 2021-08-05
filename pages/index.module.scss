@@ -1,14 +1,17 @@
 @import "../styles/variables.scss";
 
 .Navbar {
-    &--blue {
+    &--default {
         * {
             color: $color--blue-dark;
             stroke: $color--blue-dark;
         }
     }
 
-    &--white {
+    &--sticky {
+        background-color: $color--blue-dark;
+        height: 8rem;
+
         * {
             color: $color--white;
             stroke: $color--white;
