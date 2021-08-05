@@ -5,27 +5,31 @@ import { Link } from '../../lib/components/Link';
 import { Text } from '../../lib/components/Text';
 
 import styles from './audio-player.module.scss';
+import { useAudioPlayerContext } from './audio-player.provider';
 
 interface AudioProps {
-    url: string;
+  url: string;
 }
 
 const AudioPlayer = ({
   url,
 }: AudioProps) => {
-  const [paused, setPaused] = useState(true);
+  const { isDisabled } = useAudioPlayerContext();
+
+  const [isStarted, setIsStarted] = useState(false);
+  const [isPaused, setIsPaused] = useState(true);
   const audio = useMemo(() => (process.browser
     ? new Audio(url)
     : {} as HTMLAudioElement),
-  [url]);
+    [url]);
 
   const toggleAudio = useCallback(() => {
-    setPaused((value) => {
+    setIsPaused((value) => {
       setTimeout(() => {
         if (value) {
-          audio.pause();
-        } else {
           audio.play();
+        } else {
+          audio.pause();
         }
       });
 
@@ -38,15 +42,24 @@ const AudioPlayer = ({
     audio.autoplay = true;
 
     const listener = () => {
-      if (paused) {
+      if (isPaused && !isStarted) {
         audio.play();
-        setPaused(false);
+        setIsPaused(false);
+        setIsStarted(true);
       }
     };
 
     document.addEventListener('click', listener);
     return () => document.removeEventListener('click', listener);
-  }, [audio, paused]);
+  }, [audio, isPaused, isStarted]);
+
+  useEffect(() => {
+    if (isDisabled) {
+      audio.pause();
+    } else if (!isPaused) {
+      audio.play();
+    }
+  }, [audio, isDisabled, isPaused]);
 
   return (
     <div className={styles.AudioPlayer}>
@@ -54,11 +67,14 @@ const AudioPlayer = ({
         <Text size="h4">
           Music
           {' '}
-          {paused ? 'off' : 'on'}
+          {isPaused ? 'off' : 'on'}
         </Text>
       </Link>
 
-      <img src="/images/frequency.svg" alt="frequency" />
+      <img
+        src={isPaused ? '/images/frequency-plain.svg' : '/images/frequency.svg'}
+        alt="frequency"
+      />
     </div>
   );
 };

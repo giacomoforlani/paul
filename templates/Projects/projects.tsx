@@ -5,7 +5,7 @@ import { projects } from '../../data/projects';
 
 import { Button } from '../../lib/components/Button';
 import { Modal } from '../../lib/components/Modal';
-import { VideoPlayer } from '../../lib/components/VideoPlayer';
+import { VideoPlayer } from '../../components/VideoPlayer';
 import { Text } from '../../lib/components/Text';
 
 import styles from './projects.module.scss';

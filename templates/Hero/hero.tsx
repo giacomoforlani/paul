@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '../../lib/components/Button';
 import { Link } from '../../lib/components/Link';
 import { Modal } from '../../lib/components/Modal';
-import { VideoPlayer } from '../../lib/components/VideoPlayer';
+import { VideoPlayer } from '../../components/VideoPlayer';
 import { Sphere } from '../../components/Sphere';
 import { Text } from '../../lib/components/Text';
 import styles from './hero.module.scss';

@@ -8,6 +8,8 @@
     padding-bottom: 5px;
     position: relative;
     text-decoration: none;
+    background: transparent;
+    border: none;
 
     &::before {
         background: $color--green;

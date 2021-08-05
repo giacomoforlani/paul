@@ -1,6 +1,7 @@
 import Vimeo from '@u-wave/react-vimeo';
-import React, { useCallback } from 'react';
-import { useCursorContext } from '../../../components/Cursor';
+import React, { useCallback, useEffect } from 'react';
+import { useAudioPlayerContext } from '../AudioPlayer';
+import { useCursorContext } from '../Cursor';
 
 import styles from './video-player.module.scss';
 
@@ -12,6 +13,7 @@ const VideoPlayer = ({
   className,
   url,
 }: PlayerProps) => {
+  const { setIsDisabled: setAudioPlayerDisabled } = useAudioPlayerContext();
   const { setVisible: setCursorVisible } = useCursorContext();
 
   const removeCustomCursor = useCallback(() => {
@@ -21,6 +23,12 @@ const VideoPlayer = ({
   const showCustomCursor = useCallback(() => {
     setCursorVisible(true);
   }, [setCursorVisible]);
+
+  useEffect(() => {
+    setAudioPlayerDisabled(true);
+
+    return () => setAudioPlayerDisabled(false);
+  }, [setAudioPlayerDisabled]);
 
   return (
     <div

@@ -13,18 +13,22 @@ const Link = ({
   className,
   target,
   url,
-  onClick = () => {},
+  onClick = () => { },
   ...attributes
-}: LinkProps) => (
-  <a
-    {...attributes}
-    className={[style.Link, className].join(' ')}
-    href={url ?? '#'}
-    target={target}
-    onClick={onClick}
-  >
-    {children}
-  </a>
-);
+}: LinkProps) => {
+  const Tag = url ? 'a' : 'button';
+
+  return (
+    <Tag
+      {...attributes}
+      className={[style.Link, className].join(' ')}
+      href={url ?? '#'}
+      target={target}
+      onClick={onClick}
+    >
+      {children}
+    </Tag>
+  );
+};
 
 export { Link };
