@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 1,
-    image: '/images/eisworld-horizons.png',
+    image: '/images/projects/eisworld-horizons.jpg',
     label: 'Motion design',
     name: 'Eisworld<br />Horizons',
     description: 'An emotional visual journey for a company becoming a group.',
@@ -9,7 +9,7 @@ const projects = [
   },
   {
     id: 2,
-    image: '/images/l-annee-trailer.png',
+    image: '/images/projects/l-annee-trailer.jpg',
     label: 'Motion design',
     name: 'L\'Année<br />Trailer',
     description: 'A conceptual trailer for L’Année, a french movie La Haine hommage.',
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     id: 3,
-    image: '/images/project-loading.png',
+    image: '/images/projects/project-loading.jpg',
     label: 'Motion design',
     name: 'Project<br />Loading',
     description: 'A puzzle skill-based game with minimalist and polished design.',
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     id: 4,
-    image: '/images/7-seconds-on-the-moon.png',
+    image: '/images/projects/7-seconds-on-the-moon.jpg',
     label: 'Motion design',
     name: '7 Seconds<br />on the Moon',
     description: 'A visual voyage inspired by the words of Jim Lovell, Apollo 13 veteran.',
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     id: 5,
-    image: '/images/mopar-ant.png',
+    image: '/images/projects/mopar-ant.jpg',
     label: 'Motion design',
     name: 'Mopar Ant',
     description: 'An explainer video for an innovative IT FCA product.',
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     id: 6,
-    image: '/images/agudio-flyingbelt.png',
+    image: '/images/projects/agudio-flyingbelt.jpg',
     label: 'Motion design',
     name: 'Agudio FlyingBelt',
     description: 'A motion story for a leading brand of material ropeways.',
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     id: 7,
-    image: '/images/36-days-of-type-07.png',
+    image: '/images/projects/36-days-of-type-07.jpg',
     label: 'Motion design',
     name: '36 Days of Type 07',
     description: '36days invites designers, illustrators and artists to share their view on the letters and numbers from our alphabet.',
