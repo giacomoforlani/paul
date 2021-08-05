@@ -1,6 +1,5 @@
-import React, {
-  useCallback, useEffect, useRef, useState,
-} from 'react';
+import React, { useEffect } from 'react';
+
 import { BodyClass, useBodyContext } from '../../core/services';
 import { Noise } from '../Noise';
 
@@ -34,7 +33,8 @@ const Loader = ({
         src="/images/loader.gif"
         alt="Loader"
       />
-      <Noise />
+
+      <Noise className={styles.Loader__Noise} />
     </div>
   );
 };

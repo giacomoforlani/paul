@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ParallaxItem } from '../../lib/components/ParallaxItem';
+import { ParallaxItem } from '../ParallaxItem';
 
 import styles from './sphere.module.scss';
 

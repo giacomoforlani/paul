@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { PropsWithChildren, useEffect } from 'react';
-import { BodyClass, useBodyContext } from '../../../core/services';
 
+import { BodyClass, useBodyContext } from '../../core/services';
 import { fade } from '../../animations';
 
 import styles from './modal.module.scss';

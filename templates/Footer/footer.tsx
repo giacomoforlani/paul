@@ -1,17 +1,17 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
-import WavesImg from '../../public/images/waves.svg';
-
+import { Link } from '../../components/Link';
+import { ParallaxItem } from '../../components/ParallaxItem';
 import { Sphere } from '../../components/Sphere';
-
-import { Link } from '../../lib/components/Link';
-import { Text } from '../../lib/components/Text';
+import { Text } from '../../components/Text';
 
 import styles from './footer.module.scss';
-import { ParallaxItem } from '../../lib/components/ParallaxItem';
 
-const Footer = () => (
-  <div className={styles.Footer}>
+const Footer = React.forwardRef<HTMLDivElement>((_props, ref) => (
+  <div
+    className={styles.Footer}
+    ref={ref}
+  >
     <ParallaxItem
       limit={100}
       speed={-0.5}
@@ -112,6 +112,6 @@ const Footer = () => (
       </div>
     </section>
   </div>
-);
+));
 
 export { Footer };

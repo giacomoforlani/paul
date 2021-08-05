@@ -1,12 +1,13 @@
 /* eslint-disable react/no-danger */
-import React, { useCallback, useMemo, useState } from 'react';
+
+import React, { useCallback, useState } from 'react';
 
 import { projects } from '../../data/projects';
 
-import { Button } from '../../lib/components/Button';
-import { Modal } from '../../lib/components/Modal';
+import { Button } from '../../components/Button';
+import { Modal } from '../../components/Modal';
+import { Text } from '../../components/Text';
 import { VideoPlayer } from '../../components/VideoPlayer';
-import { Text } from '../../lib/components/Text';
 
 import styles from './projects.module.scss';
 

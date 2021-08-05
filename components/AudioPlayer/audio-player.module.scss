@@ -3,19 +3,14 @@
 .AudioPlayer {
     align-items: center;
     display: flex;
-    position: fixed;
-    right: 15vw;
-    top: 5rem;
-    width: 14rem;
-    z-index: 5;
+    width: 13rem;
+    justify-content: space-between;
 
-    * {
-        color: $color--white;
-    }
-
-    img {
-        width: 25;
-        height: 25;
-        margin-left: 2rem;
+    &__Icon {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        stroke: #fff;
     }
 }

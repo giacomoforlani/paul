@@ -1,8 +1,9 @@
 import React, {
   PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
-
 import { motion } from 'framer-motion';
+
+import { useScroll } from '../../core/hooks';
 
 type ParallaxItemProps = PropsWithChildren<PropsWithClass<{
   limit?: number;
@@ -33,7 +34,7 @@ const ParallaxItem = ({
     [initialScroll, ref.current],
   );
 
-  const [scroll, setScroll] = useState(initialScroll);
+  const scroll = useScroll();
 
   const y = useMemo(
     () => {
@@ -53,15 +54,6 @@ const ParallaxItem = ({
     },
     [initialTop, limit, scroll, speed],
   );
-
-  const onWindowScroll = useCallback(() => {
-    setScroll(window.pageYOffset);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', onWindowScroll);
-    return () => window.removeEventListener('scroll', onWindowScroll);
-  }, [onWindowScroll]);
 
   return (
     <motion.div

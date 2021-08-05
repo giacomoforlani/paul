@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 
-import { Button } from '../../lib/components/Button';
-import { Link } from '../../lib/components/Link';
-import { Modal } from '../../lib/components/Modal';
-import { VideoPlayer } from '../../components/VideoPlayer';
+import { Button } from '../../components/Button';
+import { Link } from '../../components/Link';
+import { Modal } from '../../components/Modal';
+import { ParallaxItem } from '../../components/ParallaxItem';
 import { Sphere } from '../../components/Sphere';
-import { Text } from '../../lib/components/Text';
-import styles from './hero.module.scss';
-import { ParallaxItem } from '../../lib/components/ParallaxItem';
+import { Text } from '../../components/Text';
+import { VideoPlayer } from '../../components/VideoPlayer';
 
-const Hero = () => {
+import styles from './hero.module.scss';
+
+const Hero = React.forwardRef<HTMLDivElement>((_props, ref) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className={styles.Hero}>
+    <div
+      className={styles.Hero}
+      ref={ref}
+    >
       <Sphere
         className={styles['Hero__Sphere--01']}
         size="small"
@@ -128,6 +132,6 @@ const Hero = () => {
       </Modal>
     </div>
   );
-};
+});
 
 export { Hero };

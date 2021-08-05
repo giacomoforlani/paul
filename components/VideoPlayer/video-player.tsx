@@ -1,5 +1,6 @@
 import Vimeo from '@u-wave/react-vimeo';
 import React, { useCallback, useEffect } from 'react';
+
 import { useAudioPlayerContext } from '../AudioPlayer';
 import { useCursorContext } from '../Cursor';
 

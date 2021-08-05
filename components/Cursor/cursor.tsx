@@ -1,11 +1,10 @@
 import React, {
   useCallback, useEffect, useRef, useState,
 } from 'react';
-import { useBodyContext } from '../../core/services';
 
-import styles from './cursor.module.scss';
-import { useMoveCursor } from './hooks/useMoveCursor';
 import { useCursorContext } from './services/cursor.provider';
+import { useMoveCursor } from './hooks/useMoveCursor';
+import styles from './cursor.module.scss';
 
 const Cursor = () => {
   const { visible } = useCursorContext();

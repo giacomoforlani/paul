@@ -1,13 +1,14 @@
-import type { AppProps } from 'next/app';
-import React, { useEffect, useState } from 'react';
 import { gsap, CSSPlugin } from 'gsap';
 import AOS from 'aos';
+import React, { useEffect, useState } from 'react';
+import type { AppProps } from 'next/app';
 
 import { BodyProvider } from '../core/services';
 
-import '../styles/globals.scss';
-import { Loader } from '../components/Loader';
 import { AudioPlayerProvider } from '../components/AudioPlayer';
+import { Loader } from '../components/Loader';
+
+import '../styles/globals.scss';
 
 gsap.registerPlugin(CSSPlugin);
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Sphere } from '../../components/Sphere';
 
-import { Button } from '../../lib/components/Button';
-import { Text } from '../../lib/components/Text';
+import { Button } from '../../components/Button';
+import { Sphere } from '../../components/Sphere';
+import { Text } from '../../components/Text';
 
 import styles from './presentation.module.scss';
 
