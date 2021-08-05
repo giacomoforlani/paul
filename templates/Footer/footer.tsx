@@ -7,11 +7,8 @@ import { Text } from '../../components/Text';
 
 import styles from './footer.module.scss';
 
-const Footer = React.forwardRef<HTMLDivElement>((_props, ref) => (
-  <div
-    className={styles.Footer}
-    ref={ref}
-  >
+const Footer = () => (
+  <div className={styles.Footer}>
     <ParallaxItem
       limit={100}
       speed={-0.5}
@@ -112,6 +109,6 @@ const Footer = React.forwardRef<HTMLDivElement>((_props, ref) => (
       </div>
     </section>
   </div>
-));
+);
 
 export { Footer };

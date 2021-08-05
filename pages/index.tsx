@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useMemo, useState,
+  useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
 import Head from 'next/head';
 
@@ -8,35 +8,56 @@ import { Hero } from '../templates/Hero';
 import { Presentation } from '../templates/Presentation';
 import { Projects } from '../templates/Projects';
 
-import { AudioPlayer } from '../components/AudioPlayer';
 import { Cursor, CursorProvider } from '../components/Cursor';
-import { Logo } from '../components/Logo';
 import { Navbar } from '../components/Navbar';
 import { Noise } from '../components/Noise';
 import { useScroll } from '../core/hooks';
 
-import styles from './index.module.scss';
+const calculateHeroTollerance = (height: number) => (
+  window.innerWidth < 500
+    ? (height * 0.80)
+    : window.innerWidth < 800
+      ? (height * 0.40)
+      : 0
+);
 
 export default function Home() {
+  const timer = useRef<NodeJS.Timeout>();
   const scroll = useScroll();
 
-  const [heroHeight, setHeroHeight] = useState<number>();
-  const [footerTop, setFooterTop] = useState<number>();
+  const [heroHeight, setHeroHeight] = useState<number>(0);
+  const [heroTollerance, setHeroTollerance] = useState<number>(0);
 
-  const isHeroSurpassed = useMemo(() => heroHeight && scroll >= heroHeight, [heroHeight, scroll]);
-  const isFooterReached = useMemo(() => footerTop && scroll >= footerTop, [footerTop, scroll]);
-  const isNavbarSticky = useMemo(
-    () => isHeroSurpassed && !isFooterReached,
-    [isFooterReached, isHeroSurpassed],
+  const isHeroSurpassed = useMemo(
+    () => (typeof heroHeight === 'number'
+      && scroll >= heroHeight - heroTollerance
+    ),
+    [heroHeight, heroTollerance, scroll],
   );
 
   const onInitHeroRef = useCallback((ref: HTMLDivElement | null) => {
-    setHeroHeight(ref?.clientHeight);
+    if (ref) {
+      const height = ref.clientHeight;
+      setHeroHeight(height);
+      setHeroTollerance(calculateHeroTollerance(height));
+    }
   }, []);
 
-  const onInitFooterRef = useCallback((ref: HTMLDivElement | null) => {
-    setFooterTop(ref?.offsetTop);
-  }, []);
+  const onWindowResize = useCallback(() => {
+    if (timer.current) {
+      clearTimeout(timer.current);
+    }
+
+    timer.current = setTimeout(
+      () => setHeroTollerance(calculateHeroTollerance(heroHeight)),
+      500,
+    );
+  }, [heroHeight]);
+
+  useEffect(() => {
+    window.addEventListener('resize', onWindowResize);
+    return () => window.removeEventListener('resize', onWindowResize);
+  }, [onWindowResize]);
 
   return (
     <CursorProvider>
@@ -46,15 +67,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar className={isNavbarSticky ? styles['Navbar--sticky'] : styles['Navbar--default']}>
-          <Logo color={isNavbarSticky ? '#ffffff' : '#122031'} />
-          <AudioPlayer url="/audio/home.mp3" />
-        </Navbar>
+        <Navbar isSticky={isHeroSurpassed} />
 
         <Hero ref={onInitHeroRef} />
         <Presentation />
         <Projects />
-        <Footer ref={onInitFooterRef} />
+        <Footer />
 
         <Cursor />
         <Noise />
