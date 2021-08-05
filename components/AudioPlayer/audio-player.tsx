@@ -20,8 +20,7 @@ const AudioPlayer = ({
   const [isPaused, setIsPaused] = useState(true);
   const audio = useMemo(() => (process.browser
     ? new Audio(url)
-    : {} as HTMLAudioElement),
-    [url]);
+    : {} as HTMLAudioElement), [url]);
 
   const toggleAudio = useCallback(() => {
     setIsPaused((value) => {
