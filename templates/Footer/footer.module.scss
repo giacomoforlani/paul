@@ -8,6 +8,7 @@
     &__Image {
         content: url("/images/footer-desktop.jpg");
         max-width: 100vw;
+        min-width: 100vw;
         mix-blend-mode: multiply;
         width: 100vw;
         z-index: $index--img;

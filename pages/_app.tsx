@@ -7,6 +7,7 @@ import { BodyProvider } from '../core/services';
 
 import '../styles/globals.scss';
 import { Loader } from '../components/Loader';
+import { AudioPlayerProvider } from '../components/AudioPlayer';
 
 gsap.registerPlugin(CSSPlugin);
 
@@ -14,7 +15,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    AOS.init({ });
+    AOS.init({});
   }, []);
 
   useEffect(() => {
@@ -27,8 +28,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <BodyProvider>
-      <Loader loading={isLoading} />
-      <Component {...pageProps} />
+      <AudioPlayerProvider>
+        <Loader loading={isLoading} />
+        <Component {...pageProps} />
+      </AudioPlayerProvider>
     </BodyProvider>
   );
 };

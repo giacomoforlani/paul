@@ -5,6 +5,7 @@ import style from './link.module.scss';
 type LinkProps = PropsWithChildren<PropsWithClass<{
   target?: string;
   url?: string;
+  onClick?: () => void;
 }>>;
 
 const Link = ({
@@ -12,16 +13,22 @@ const Link = ({
   className,
   target,
   url,
+  onClick = () => { },
   ...attributes
-}: LinkProps) => (
-  <a
-    {...attributes}
-    className={[style.Link, className].join(' ')}
-    href={url ?? '#'}
-    target={target}
-  >
-    {children}
-  </a>
-);
+}: LinkProps) => {
+  const Tag = url ? 'a' : 'button';
+
+  return (
+    <Tag
+      {...attributes}
+      className={[style.Link, className].join(' ')}
+      href={url ?? '#'}
+      target={target}
+      onClick={onClick}
+    >
+      {children}
+    </Tag>
+  );
+};
 
 export { Link };

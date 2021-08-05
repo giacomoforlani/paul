@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '../../lib/components/Button';
 import { Link } from '../../lib/components/Link';
 import { Modal } from '../../lib/components/Modal';
-import { Player } from '../../lib/components/Player';
+import { VideoPlayer } from '../../components/VideoPlayer';
 import { Sphere } from '../../components/Sphere';
 import { Text } from '../../lib/components/Text';
 import styles from './hero.module.scss';
@@ -124,7 +124,7 @@ const Hero = () => {
         visible={showModal}
         onBackdrop={() => setShowModal(false)}
       >
-        <Player video="547504346" />
+        <VideoPlayer url="547504346" />
       </Modal>
     </div>
   );

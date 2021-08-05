@@ -5,7 +5,7 @@ import { projects } from '../../data/projects';
 
 import { Button } from '../../lib/components/Button';
 import { Modal } from '../../lib/components/Modal';
-import { Player } from '../../lib/components/Player';
+import { VideoPlayer } from '../../components/VideoPlayer';
 import { Text } from '../../lib/components/Text';
 
 import styles from './projects.module.scss';
@@ -103,7 +103,7 @@ const Projects = () => {
         visible={showModal}
         onBackdrop={() => open(undefined)}
       >
-        {opened && <Player video={opened!.video} />}
+        {opened && <VideoPlayer url={opened!.video} />}
       </Modal>
     </section>
   );
