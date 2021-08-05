@@ -31,6 +31,30 @@ const projects = [
     description: 'A visual voyage inspired by the words of Jim Lovell, Apollo 13 veteran.',
     video: '530079360',
   },
+  {
+    id: 5,
+    image: '/images/mopar-ant.png',
+    label: 'Motion design',
+    name: 'Mopar Ant',
+    description: 'An explainer video for an innovative IT FCA product.',
+    video: '574440605',
+  },
+  {
+    id: 6,
+    image: '/images/agudio-flyingbelt.png',
+    label: 'Motion design',
+    name: 'Agudio FlyingBelt',
+    description: 'A motion story for a leading brand of material ropeways.',
+    video: '524505851',
+  },
+  {
+    id: 7,
+    image: '/images/36-days-of-type-07.png',
+    label: 'Motion design',
+    name: '36 Days of Type 07',
+    description: '36days invites designers, illustrators and artists to share their view on the letters and numbers from our alphabet.',
+    video: '577733461',
+  },
 ];
 
 export { projects };
