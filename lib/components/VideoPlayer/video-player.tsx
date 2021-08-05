@@ -2,15 +2,15 @@ import Vimeo from '@u-wave/react-vimeo';
 import React, { useCallback } from 'react';
 import { useCursorContext } from '../../../components/Cursor';
 
-import styles from './player.module.scss';
+import styles from './video-player.module.scss';
 
 type PlayerProps = PropsWithClass<{
-  video: string;
+  url: string;
 }>
 
-const Player = ({
+const VideoPlayer = ({
   className,
-  video,
+  url,
 }: PlayerProps) => {
   const { setVisible: setCursorVisible } = useCursorContext();
 
@@ -24,7 +24,7 @@ const Player = ({
 
   return (
     <div
-      className={styles.Player}
+      className={styles.VideoPlayer}
       onMouseEnter={removeCustomCursor}
       onMouseLeave={showCustomCursor}
     >
@@ -32,11 +32,11 @@ const Player = ({
         className={className}
         autoplay
         controls
-        video={video}
+        video={url}
         width={window.innerWidth * 0.8}
       />
     </div>
   );
 };
 
-export { Player };
+export { VideoPlayer };

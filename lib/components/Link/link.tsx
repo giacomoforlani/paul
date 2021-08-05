@@ -5,6 +5,7 @@ import style from './link.module.scss';
 type LinkProps = PropsWithChildren<PropsWithClass<{
   target?: string;
   url?: string;
+  onClick?: () => void;
 }>>;
 
 const Link = ({
@@ -12,6 +13,7 @@ const Link = ({
   className,
   target,
   url,
+  onClick = () => {},
   ...attributes
 }: LinkProps) => (
   <a
@@ -19,6 +21,7 @@ const Link = ({
     className={[style.Link, className].join(' ')}
     href={url ?? '#'}
     target={target}
+    onClick={onClick}
   >
     {children}
   </a>
