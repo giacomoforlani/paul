@@ -16,7 +16,6 @@ const AudioPlayer = ({
 }: AudioProps) => {
   const { isDisabled } = useAudioPlayerContext();
 
-  const [isStarted, setIsStarted] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const audio = useMemo(() => (process.browser
     ? new Audio(url)
@@ -35,22 +34,6 @@ const AudioPlayer = ({
       return !value;
     });
   }, [audio]);
-
-  useEffect(() => {
-    audio.loop = true;
-    audio.autoplay = true;
-
-    const listener = () => {
-      if (isPaused && !isStarted) {
-        audio.play();
-        setIsPaused(false);
-        setIsStarted(true);
-      }
-    };
-
-    document.addEventListener('click', listener);
-    return () => document.removeEventListener('click', listener);
-  }, [audio, isPaused, isStarted]);
 
   useEffect(() => {
     if (isDisabled) {
