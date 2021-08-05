@@ -1,10 +1,35 @@
+@import "../../styles/functions.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .Navbar {
     align-items: center;
     display: flex;
     height: 12rem;
     justify-content: space-between;
-    padding: 0 15rem;
+    padding: 0 globalPadding();
     position: fixed;
+    transition: all 0.25s ease-in-out;
     width: 100%;
     z-index: 5;
+
+    * {
+        color: $color--blue-dark;
+        stroke: $color--blue-dark;
+    }
+
+    &--sticky {
+        backdrop-filter: blur(10px);
+        background-color: rgba($color--blue-dark, 0.8);
+        height: 8rem;
+
+        * {
+            color: $color--white;
+            stroke: $color--white;
+        }
+    }
+
+    @include mobilePortrait {
+        padding: 0 3.6rem;
+    }
 }

@@ -79,7 +79,7 @@ main {
 }
 
 section {
-  padding: 0 max(4rem, calc((100% - 108rem) / 2));
+  padding: globalPadding();
   position: relative;
   width: 100%;
 

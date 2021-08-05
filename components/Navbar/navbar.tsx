@@ -1,15 +1,19 @@
 import React, { PropsWithChildren } from 'react';
+import { AudioPlayer } from '../AudioPlayer';
+import { Logo } from '../Logo';
 
 import styles from './navbar.module.scss';
 
-type NavbarProps = PropsWithChildren<PropsWithClass<{}>>;
+type NavbarProps = {
+  isSticky?: boolean;
+};
 
 const Navbar = ({
-  children,
-  className,
+  isSticky = false,
 }: NavbarProps) => (
-  <div className={[styles.Navbar, className].join(' ')}>
-    {children}
+  <div className={[styles.Navbar, isSticky ? styles['Navbar--sticky'] : ''].join(' ')}>
+    <Logo color={isSticky ? '#ffffff' : '#122031'} />
+    <AudioPlayer url="/audio/home.mp3" />
   </div>
 );
 
