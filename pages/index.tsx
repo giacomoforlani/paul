@@ -15,10 +15,8 @@ import { useScroll } from '../core/hooks';
 
 const calculateHeroTollerance = (height: number) => (
   window.innerWidth < 500
-    ? (height * 0.80)
-    : window.innerWidth < 800
-      ? (height * 0.40)
-      : 0
+    ? (height * 0.8)
+    : (height * 0.5)
 );
 
 export default function Home() {

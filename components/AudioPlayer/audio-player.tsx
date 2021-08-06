@@ -86,6 +86,8 @@ const AudioPlayer = ({
   }, [fadeInAudio, fadeOutAudio]);
 
   useEffect(() => {
+    audio.loop = true;
+
     if (isDisabled) {
       audio.pause();
     } else if (!isPaused) {
