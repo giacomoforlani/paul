@@ -112,8 +112,6 @@ const Hero = React.forwardRef<HTMLDivElement>((_props, ref) => {
       </section>
 
       <ParallaxItem
-        limit={150}
-        speed={-0.5}
         zIndex={1}
       >
         <img

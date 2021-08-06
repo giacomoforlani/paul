@@ -10,8 +10,6 @@ import styles from './footer.module.scss';
 const Footer = () => (
   <div className={styles.Footer}>
     <ParallaxItem
-      limit={100}
-      speed={-0.5}
       zIndex={1}
     >
       <img

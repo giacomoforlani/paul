@@ -11,7 +11,6 @@
         min-width: 100vw;
         mix-blend-mode: multiply;
         width: 100vw;
-        z-index: $index--img;
 
         @include desktopLarge {
             content: url("/images/footer-4k.jpg");

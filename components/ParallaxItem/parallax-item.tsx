@@ -15,44 +15,29 @@ type ParallaxItemProps = PropsWithChildren<PropsWithClass<{
 const ParallaxItem = ({
   children,
   className,
-  limit = 200,
   position = 'relative',
-  speed = -0.5,
+  speed = 0.1,
   zIndex = 0,
   ...attributes
 }: ParallaxItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const initialScroll = useMemo(
-    () => (process.browser ? window.pageYOffset : 0),
-    [],
-  );
-
-  const initialTop = useMemo(
-    () => ref.current?.getBoundingClientRect().top ?? 0 + initialScroll,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [initialScroll, ref.current],
-  );
-
   const scroll = useScroll();
+
+  const initialTop = useMemo(() => {
+    const { top = 0 } = ref.current?.getBoundingClientRect() ?? {};
+    return top * Math.abs(speed);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref.current]);
 
   const y = useMemo(
     () => {
-      const windowHeight = (process.browser ? window.innerHeight : 0);
-      const offsetValue = initialTop >= windowHeight ? windowHeight : 0;
-      const value = (scroll + offsetValue - initialTop) * speed;
-      const canAnimate = scroll + offsetValue >= initialTop;
-      const multiplier = speed > 0 ? 1 : -1;
+      const negativeSpeed = Math.abs(speed) * -1;
+      const value = negativeSpeed * scroll;
 
-      return (
-        canAnimate
-          ? Math.abs(value) >= limit
-            ? limit * multiplier
-            : value
-          : 0
-      );
+      return value + initialTop;
     },
-    [initialTop, limit, scroll, speed],
+    [initialTop, scroll, speed],
   );
 
   return (
@@ -60,8 +45,15 @@ const ParallaxItem = ({
       animate={{ y }}
       className={className}
       ref={ref}
-      style={{ position, zIndex }}
-      transition={{ type: 'spring', stiffness: 20 }}
+      style={{
+        position,
+        zIndex,
+      }}
+      transition={{
+        duration: 0.5,
+        stiffness: 20,
+        type: 'spring',
+      }}
       {...attributes}
     >
       {children}
