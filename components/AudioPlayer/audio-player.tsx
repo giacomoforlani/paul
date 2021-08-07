@@ -16,7 +16,7 @@ const FADE_MIN = 0;
 const FADE_MAX = 1;
 const FADE_STEP = 0.025;
 const FADE_INTERVAL = 0.1;
-const LOOP_CUT = 2;
+const LOOP_CUT = 3;
 
 const clearTimer = (timer?: NodeJS.Timeout) => {
   if (timer) {
