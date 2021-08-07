@@ -4,7 +4,7 @@ const projects = [
     image: '/images/projects/eisworld-horizons.jpg',
     label: 'Motion design',
     name: 'Eisworld<br />Horizons',
-    description: 'An emotional visual journey for a company becoming a group.',
+    description: 'An adventurous visual journey telling a company story.',
     video: '505399976',
   },
   {
@@ -12,7 +12,7 @@ const projects = [
     image: '/images/projects/l-annee-trailer.jpg',
     label: 'Motion design',
     name: 'L\'Année<br />Trailer',
-    description: 'A conceptual trailer for L’Année, a french movie La Haine hommage.',
+    description: 'A conceptual trailer for L’Année, a hommage to the French movie “La Haine”.',
     video: '526057531',
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     image: '/images/projects/project-loading.jpg',
     label: 'Motion design',
     name: 'Project<br />Loading',
-    description: 'A puzzle skill-based game with minimalist and polished design.',
+    description: 'A skill-based puzzle game with a minimalist, polished design.',
     video: '524531147',
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     image: '/images/projects/mopar-ant.jpg',
     label: 'Motion design',
     name: 'Mopar Ant',
-    description: 'An explainer video for an innovative IT FCA product.',
+    description: 'An instructional video for an innovative IT FCA product.',
     video: '574440605',
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     image: '/images/projects/agudio-flyingbelt.jpg',
     label: 'Motion design',
     name: 'Agudio FlyingBelt',
-    description: 'A motion story for a leading brand of material ropeways.',
+    description: 'A motion story for a leading ropeways brand for material transportation.',
     video: '524505851',
   },
   {
@@ -52,7 +52,7 @@ const projects = [
     image: '/images/projects/36-days-of-type-07.jpg',
     label: 'Motion design',
     name: '36 Days of Type 07',
-    description: '36days invites designers, illustrators and artists to share their view on the letters and numbers from our alphabet.',
+    description: 'An colorful animated adventure into the Alphabet.',
     video: '577733461',
   },
 ];
