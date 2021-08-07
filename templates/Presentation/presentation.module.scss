@@ -10,11 +10,11 @@
         z-index: 1;
 
         @include tabletPortrait {
-            top: 30%;
+            top: 10%;
         }
 
         @include mobilePortrait {
-            top: 10%;
+            top: 0%;
             left: -10%;
         }
     }
