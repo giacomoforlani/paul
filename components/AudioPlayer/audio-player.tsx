@@ -12,14 +12,23 @@ interface AudioProps {
   url: string;
 }
 
-const MIN_VALUE = 0;
-const MAX_VALUE = 1;
-const STEP_VALUE = 0.025;
-const INTERVAL_VALUE = 100;
+const FADE_MIN = 0;
+const FADE_MAX = 1;
+const FADE_STEP = 0.025;
+const FADE_INTERVAL = 0.1;
+const LOOP_CUT = 2;
+
+const clearTimer = (timer?: NodeJS.Timeout) => {
+  if (timer) {
+    clearTimeout(timer);
+    clearInterval(timer);
+  }
+};
 
 const AudioPlayer = ({
   url,
 }: AudioProps) => {
+  const checkTimer = useRef<NodeJS.Timeout>();
   const increaseTimer = useRef<NodeJS.Timeout>();
   const decreaseTimer = useRef<NodeJS.Timeout>();
 
@@ -32,10 +41,10 @@ const AudioPlayer = ({
 
   const fadeInAudio = useCallback(() => {
     const increaseVolume = () => {
-      if (audio.volume < MAX_VALUE) {
-        const value = audio.volume + STEP_VALUE;
-        audio.volume = value < MAX_VALUE ? value : MAX_VALUE;
-        increaseTimer.current = setTimeout(() => increaseVolume(), INTERVAL_VALUE);
+      if (audio.volume < FADE_MAX) {
+        const value = audio.volume + FADE_STEP;
+        audio.volume = value < FADE_MAX ? value : FADE_MAX;
+        increaseTimer.current = setTimeout(() => increaseVolume(), FADE_INTERVAL * 1000);
       }
 
       if (audio.volume > 0) {
@@ -43,9 +52,7 @@ const AudioPlayer = ({
       }
     };
 
-    if (decreaseTimer.current) {
-      clearTimeout(decreaseTimer.current);
-    }
+    clearTimer(decreaseTimer.current);
 
     audio.volume = audio.volume >= 1 ? 0 : audio.volume;
     increaseVolume();
@@ -53,10 +60,10 @@ const AudioPlayer = ({
 
   const fadeOutAudio = useCallback(() => {
     const decreaseVolume = () => {
-      if (audio.volume > MIN_VALUE) {
-        const value = audio.volume - STEP_VALUE;
-        audio.volume = value > MIN_VALUE ? value : MIN_VALUE;
-        decreaseTimer.current = setTimeout(() => decreaseVolume(), INTERVAL_VALUE / 2);
+      if (audio.volume > FADE_MIN) {
+        const value = audio.volume - FADE_STEP;
+        audio.volume = value > FADE_MIN ? value : FADE_MIN;
+        decreaseTimer.current = setTimeout(() => decreaseVolume(), FADE_INTERVAL * 1000 / 2);
       }
 
       if (audio.volume <= 0) {
@@ -64,9 +71,7 @@ const AudioPlayer = ({
       }
     };
 
-    if (increaseTimer.current) {
-      clearTimeout(increaseTimer.current);
-    }
+    clearTimer(increaseTimer.current);
 
     decreaseVolume();
   }, [audio]);
@@ -94,6 +99,18 @@ const AudioPlayer = ({
       audio.play();
     }
   }, [audio, isDisabled, isPaused]);
+
+  useEffect(() => {
+    if (!isPaused) {
+      checkTimer.current = setInterval(() => {
+        audio.currentTime = 0;
+      }, (audio.duration - LOOP_CUT) * 1000);
+    } else {
+      clearTimer(checkTimer.current);
+    }
+
+    return () => clearTimer(checkTimer.current);
+  }, [audio, isPaused]);
 
   return (
     <div className={styles.AudioPlayer}>
