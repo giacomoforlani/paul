@@ -28,7 +28,7 @@
 
     * {
         color: $color--blue-dark;
-        stroke: $color--blue-dark;
+        stroke: $color--blue-dark !important;
     }
 
     &--sticky {
@@ -38,7 +38,7 @@
 
         * {
             color: $color--white;
-            stroke: $color--white;
+            stroke: $color--white !important;
         }
     }
 

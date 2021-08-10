@@ -81,6 +81,11 @@
         }
     }
 
+    &__Sign {
+        float: right;
+        margin-top: 2rem;
+    }
+
     &__Cta {
         grid-column: 2 / 3;
         justify-self: flex-start;

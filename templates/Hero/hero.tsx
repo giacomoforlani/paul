@@ -57,14 +57,8 @@ const Hero = () => {
             <br />
             and direct motion
             {' '}
-            <span>
-              with emotions.
-              <img
-                className={styles.Hero__Sign}
-                src="/images/sign.svg"
-                alt="sign"
-              />
-            </span>
+            <br />
+            with emotions.
           </Text>
 
           <div

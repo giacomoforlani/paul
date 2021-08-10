@@ -51,8 +51,8 @@ const Presentation = () => (
         data-aos-duration="1500"
         size="h4"
       >
-        My goal is to communicate
-        using beautiful design
+        My goal is to solve communication
+        problems using beautiful design
         and emotional feelings.
       </Text>
 
@@ -63,17 +63,22 @@ const Presentation = () => (
         data-aos-duration="1500"
         size="h5"
       >
-        I’m a goosebumps seeker, a true
-        gaming-lover, a cinema enthusiast
-        and an amateur actor who loves to
-        solve problems with storytelling,
-        polished design, motion and emotions.
+        I’m a goosebump seeker, true gaming-lover,
+        cinema enthusiast and amateur actor who loves
+        to polish the style and craft the best story
+        with care and attention to every detail.
         {' '}
         <br />
         <br />
-        Always dreaming of new, unexplored
-        horizons to reach, I’m ready for a
-        new journey, new stories, your stories.
+        Always dreaming of new,
+        unexplored horizons to reach,
+        I’m ready for a new journey.
+
+        <img
+          className={styles.Presentation__Sign}
+          src="/images/sign.svg"
+          alt="sign"
+        />
       </Text>
 
       <div
