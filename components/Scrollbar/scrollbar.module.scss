@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+
+.Scrollbar {
+    background-color: rgba($color--white, 0.6);
+    border-radius: 10px;
+    height: 70vh;
+    position: fixed;
+    right: 10vw;
+    top: 15vh;
+    width: 3px;
+    z-index: 10;
+
+    &__Value {
+        background-color: $color--green;
+        border-radius: 10px;
+        height: 10vh;
+        position: absolute;
+        width: 100%;
+    }
+}

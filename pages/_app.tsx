@@ -10,6 +10,7 @@ import { BodyProvider } from '../core/services';
 
 import { AudioPlayerProvider } from '../components/AudioPlayer';
 import { Loader } from '../components/Loader';
+import { Scrollbar } from '../components/Scrollbar';
 
 import '../styles/globals.scss';
 
@@ -31,6 +32,13 @@ const initAos = () => {
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const isTouchDevice = process.browser
+    && (
+      'ontouchstart' in window
+      || (navigator.maxTouchPoints > 0)
+      || (navigator.msMaxTouchPoints > 0)
+    );
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -56,6 +64,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <BodyProvider>
       <AudioPlayerProvider>
+        {!isTouchDevice && <Scrollbar />}
         <Loader loading={isLoading} />
         <Component {...pageProps} />
       </AudioPlayerProvider>
