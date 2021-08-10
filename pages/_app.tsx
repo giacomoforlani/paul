@@ -1,4 +1,6 @@
-import { gsap, CSSPlugin } from 'gsap';
+/* eslint-disable global-require */
+
+import { gsap } from 'gsap';
 import AOS from 'aos';
 import React, { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
@@ -10,10 +12,17 @@ import { Loader } from '../components/Loader';
 
 import '../styles/globals.scss';
 
-gsap.registerPlugin(CSSPlugin);
+const registerGsapPlusings = async () => {
+  const CSSPlugin = await require('gsap');
+  gsap.registerPlugin(CSSPlugin);
+};
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    registerGsapPlusings();
+  }, []);
 
   useEffect(() => {
     AOS.init({});
