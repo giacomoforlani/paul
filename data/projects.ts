@@ -55,6 +55,14 @@ const projects = [
     description: 'An colorful animated adventure into the Alphabet.',
     video: '577733461',
   },
+  {
+    id: 8,
+    image: '/images/projects/a-is-for-donkeys.jpg',
+    label: 'Motion design',
+    name: 'A is for Donkeys',
+    description: 'An alphabetic adventure for all linguistically curious.',
+    video: '585258680',
+  },
 ];
 
 export { projects };

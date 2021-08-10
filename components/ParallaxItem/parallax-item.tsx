@@ -27,7 +27,7 @@ const ParallaxItem = ({
   const initialTop = useMemo(() => {
     const { top = 0 } = ref.current?.getBoundingClientRect() ?? {};
     return top * Math.abs(speed);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref.current]);
 
   const y = useMemo(

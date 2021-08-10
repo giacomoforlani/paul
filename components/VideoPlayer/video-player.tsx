@@ -6,12 +6,11 @@ import { useCursorContext } from '../Cursor';
 
 import styles from './video-player.module.scss';
 
-type PlayerProps = PropsWithClass<{
+type PlayerProps = {
   url: string;
-}>
+};
 
 const VideoPlayer = ({
-  className,
   url,
 }: PlayerProps) => {
   const { setIsDisabled: setAudioPlayerDisabled } = useAudioPlayerContext();
@@ -41,7 +40,6 @@ const VideoPlayer = ({
       onMouseLeave={showCustomCursor}
     >
       <Vimeo
-        className={className}
         autoplay
         controls
         video={url}
