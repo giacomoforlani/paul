@@ -4,6 +4,7 @@
 .Projects {
     background-color: $color--blue-dark;
     padding-bottom: 20rem;
+    padding-top: 0;
 
     @include tabletPortrait {
         padding: 0;

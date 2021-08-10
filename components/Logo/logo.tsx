@@ -4,17 +4,20 @@ import styles from './logo.module.scss';
 
 type LogoProps = {
   color?: string;
+  onClick?: () => void;
 }
 
 const Logo = ({
   color = '#122031',
+  onClick,
 }: LogoProps) => (
   <svg
-    className={styles.Logo}
+    className={[styles.Logo, onClick ? styles['Logo--hoverable'] : ''].join(' ')}
     xmlns="http://www.w3.org/2000/svg"
     width="36.582"
     height="54.451"
     viewBox="0 0 36.582 54.451"
+    onClick={onClick}
   >
     <circle
       cx="5.018"

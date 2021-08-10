@@ -33,8 +33,8 @@ const AudioPlayer = ({
   const decreaseTimer = useRef<NodeJS.Timeout>();
 
   const { isDisabled } = useAudioPlayerContext();
-
   const [isPaused, setIsPaused] = useState(true);
+
   const audio = useMemo(() => (process.browser
     ? new Audio(url)
     : {} as HTMLAudioElement), [url]);
@@ -113,8 +113,11 @@ const AudioPlayer = ({
   }, [audio, isPaused]);
 
   return (
-    <div className={styles.AudioPlayer}>
-      <Link onClick={toggleAudio}>
+    <div
+      className={styles.AudioPlayer}
+      onClick={toggleAudio}
+    >
+      <Link>
         <Text size="h4">
           Music
           {' '}
@@ -129,7 +132,6 @@ const AudioPlayer = ({
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          className={styles.AudioPlayer__Icon}
           d={isPaused ? 'M 0 12.5 h 20' : 'M1205-2238.695h5.229l2.121-4.633,2.679,9.823,3.74-18.139,2.679,24,2.9-11.051h5.581'}
           transform={isPaused ? '' : 'translate(-1204 2252.644)'}
         />

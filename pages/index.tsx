@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useMemo, useRef, useState,
-} from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import { Footer } from '../templates/Footer';
@@ -11,52 +9,8 @@ import { Projects } from '../templates/Projects';
 import { Cursor, CursorProvider } from '../components/Cursor';
 import { Navbar } from '../components/Navbar';
 import { Noise } from '../components/Noise';
-import { useScroll } from '../core/hooks';
-
-const calculateHeroTollerance = (height: number) => (
-  window.innerWidth < 500
-    ? (height * 0.8)
-    : (height * 0.5)
-);
 
 export default function Home() {
-  const timer = useRef<NodeJS.Timeout>();
-  const scroll = useScroll();
-
-  const [heroHeight, setHeroHeight] = useState<number>(0);
-  const [heroTollerance, setHeroTollerance] = useState<number>(0);
-
-  const isHeroSurpassed = useMemo(
-    () => (typeof heroHeight === 'number'
-      && scroll >= heroHeight - heroTollerance
-    ),
-    [heroHeight, heroTollerance, scroll],
-  );
-
-  const onInitHeroRef = useCallback((ref: HTMLDivElement | null) => {
-    if (ref) {
-      const height = ref.clientHeight;
-      setHeroHeight(height);
-      setHeroTollerance(calculateHeroTollerance(height));
-    }
-  }, []);
-
-  const onWindowResize = useCallback(() => {
-    if (timer.current) {
-      clearTimeout(timer.current);
-    }
-
-    timer.current = setTimeout(
-      () => setHeroTollerance(calculateHeroTollerance(heroHeight)),
-      500,
-    );
-  }, [heroHeight]);
-
-  useEffect(() => {
-    window.addEventListener('resize', onWindowResize);
-    return () => window.removeEventListener('resize', onWindowResize);
-  }, [onWindowResize]);
-
   return (
     <CursorProvider>
       <Head>
@@ -65,9 +19,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar isSticky={isHeroSurpassed} />
+        <Navbar />
 
-        <Hero ref={onInitHeroRef} />
+        <Hero />
         <Presentation />
         <Projects />
         <Footer />

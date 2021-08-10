@@ -10,14 +10,11 @@ import { VideoPlayer } from '../../components/VideoPlayer';
 
 import styles from './hero.module.scss';
 
-const Hero = React.forwardRef<HTMLDivElement>((_props, ref) => {
+const Hero = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div
-      className={styles.Hero}
-      ref={ref}
-    >
+    <div className={styles.Hero}>
       <Sphere
         className={styles['Hero__Sphere--01']}
         size="small"
@@ -55,13 +52,13 @@ const Hero = React.forwardRef<HTMLDivElement>((_props, ref) => {
             data-aos-duration="1500"
             size="h2"
           >
-            But you can
+            I design
             {' '}
             <br />
-            call me
+            and direct motion
             {' '}
             <span>
-              Paul
+              with emotions.
               <img
                 className={styles.Hero__Sign}
                 src="/images/sign.svg"
@@ -130,6 +127,6 @@ const Hero = React.forwardRef<HTMLDivElement>((_props, ref) => {
       </Modal>
     </div>
   );
-});
+};
 
 export { Hero };

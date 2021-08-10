@@ -1,3 +1,14 @@
+@import "../../styles/mixins.scss";
+
 .Logo {
     height: 3.6rem;
+    transition: all 0.4s ease-in-out;
+
+    &--hoverable {
+        @include isHoverEnable {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
 }

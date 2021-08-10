@@ -1,3 +1,4 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .Link {
@@ -24,10 +25,12 @@
         width: 100%;
     }
 
-    &:hover {
-        &::before {
-            transform-origin: right;
-            transform: scaleX(0);
+    @include isHoverEnable {
+        &:hover {
+            &::before {
+                transform-origin: right;
+                transform: scaleX(0);
+            }
         }
     }
 }

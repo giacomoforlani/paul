@@ -1,14 +1,14 @@
 import { Variants } from 'framer-motion';
 
 const fade: Variants = {
-  fadeIn: {
+  show: {
     opacity: 1,
     transition: {
       duration: 0.2,
       ease: 'easeOut',
     },
   },
-  fadeOut: {
+  hide: {
     opacity: 0,
     transition: {
       duration: 0.2,

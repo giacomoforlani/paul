@@ -1,3 +1,4 @@
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
 .AudioPlayer {
@@ -6,7 +7,19 @@
     width: 13rem;
     justify-content: space-between;
 
-    &__Icon {
+    @include isHoverEnable {
+        &:hover {
+            svg {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    svg {
+        transition: all 0.4s ease-in-out;
+    }
+
+    path {
         fill: none;
         stroke-linecap: round;
         stroke-linejoin: round;
