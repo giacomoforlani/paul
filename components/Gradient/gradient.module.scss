@@ -1,7 +1,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-.Noise {
+.Gradient {
     height: 100vh;
     left: 0;
     mix-blend-mode: soft-light;
@@ -12,30 +12,30 @@
     z-index: $index--noise;
 
     &__Background {
-        background-image: url("/images/bg-noise-desktop.jpg");
+        background-image: url("/images/gradient-desktop.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
         width: 100%;
 
         @include desktopLarge {
-            background-image: url("/images/bg-noise-4k.jpg");
+            background-image: url("/images/gradient-4k.jpg");
         }
 
         @include tabletLandscape {
-            background-image: url("/images/bg-noise-desktop.jpg");
+            background-image: url("/images/gradient-desktop.jpg");
         }
 
         @include tabletPortrait {
-            background-image: url("/images/bg-noise-tablet.jpg");
+            background-image: url("/images/gradient-tablet.jpg");
         }
 
         @include mobileLandscape {
-            background-image: url("/images/bg-noise-desktop.jpg");
+            background-image: url("/images/gradient-desktop.jpg");
         }
 
         @include mobilePortrait {
-            background-image: url("/images/bg-noise-mobile.jpg");
+            background-image: url("/images/gradient-mobile.jpg");
         }
     }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { BodyClass, useBodyContext } from '../../core/services';
-import { Noise } from '../Noise';
+import { Gradient } from '../Gradient';
 
 import styles from './loader.module.scss';
 
@@ -34,7 +34,7 @@ const Loader = ({
         alt="Loader"
       />
 
-      <Noise className={styles.Loader__Noise} />
+      <Gradient className={styles.Loader__Noise} />
     </div>
   );
 };

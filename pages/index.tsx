@@ -8,7 +8,9 @@ import { Projects } from '../templates/Projects';
 
 import { Cursor, CursorProvider } from '../components/Cursor';
 import { Navbar } from '../components/Navbar';
-import { Noise } from '../components/Noise';
+import { Gradient } from '../components/Gradient';
+
+import styles from './index.module.scss';
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles.Main}>
         <Navbar />
 
         <Hero />
@@ -27,7 +29,7 @@ export default function Home() {
         <Footer />
 
         <Cursor />
-        <Noise />
+        <Gradient />
       </main>
     </CursorProvider>
   );
