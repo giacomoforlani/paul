@@ -54,11 +54,13 @@
         &.Hovered {
             opacity: 1;
             transition: opacity 0.4s ease-in-out;
+            will-change: opacity;
         }
 
         &:not(.Hovered) {
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
+            will-change: opacity;
         }
     }
 

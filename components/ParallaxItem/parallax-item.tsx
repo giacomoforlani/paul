@@ -1,9 +1,9 @@
 import React, {
-  PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState,
+  PropsWithChildren, useMemo, useRef,
 } from 'react';
 import { motion } from 'framer-motion';
 
-import { useResize, useScroll } from '../../core/hooks';
+import { useScroll } from '../../core/hooks';
 
 type ParallaxItemProps = PropsWithChildren<PropsWithClass<{
   limit?: number;

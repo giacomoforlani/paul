@@ -14,7 +14,19 @@
     }
 }
 
+@mixin navbarTransition {
+    transition: background-color 0.25s ease-in-out, height 0.25s ease-in-out;
+    will-change: background-color, height;
+}
+
+@mixin contentTransition {
+    transition: color 0.25s ease-in-out, stroke 0.25s ease-in-out;
+    will-change: color, stroke;
+}
+
 .Navbar {
+    @include navbarTransition;
+
     align-items: center;
     animation: slideUp 1s ease-in-out 4s;
     display: flex;
@@ -22,11 +34,12 @@
     justify-content: space-between;
     padding: 0 globalPadding();
     position: fixed;
-    transition: all 0.25s ease-in-out;
     width: 100%;
     z-index: 5;
 
     * {
+        @include contentTransition;
+
         color: $color--blue-dark;
         stroke: $color--blue-dark !important;
     }
@@ -37,6 +50,8 @@
         height: 8rem;
 
         * {
+            @include contentTransition;
+
             color: $color--white;
             stroke: $color--white !important;
         }

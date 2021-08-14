@@ -2,7 +2,8 @@
 
 .Logo {
     height: 3.6rem;
-    transition: all 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    will-change: transform;
 
     &--hoverable {
         @include isHoverEnable {

@@ -16,15 +16,18 @@
     img {
         opacity: 1;
         transition: opacity 0.5s ease-in-out;
+        will-change: opacity;
     }
 
     &__Noise {
         transition: transform 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.5s;
+        will-change: transform;
     }
 
     &.Loaded {
         transform: translateY(-100%);
         transition: transform 1s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.25s;
+        will-change: transform;
 
         .Loader__Noise {
             transform: translateY(-100%);
