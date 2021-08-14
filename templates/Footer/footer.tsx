@@ -9,15 +9,11 @@ import styles from './footer.module.scss';
 
 const Footer = () => (
   <div className={styles.Footer}>
-    <ParallaxItem
-      zIndex={1}
-    >
-      <img
-        className={styles.Footer__Waves}
-        src="/images/waves.svg"
-        alt="waves"
-      />
-    </ParallaxItem>
+    <img
+      className={styles.Footer__Waves}
+      src="/images/waves.svg"
+      alt="waves"
+    />
 
     <Sphere
       className={styles['Footer__Sphere--01']}

@@ -5,7 +5,7 @@
     position: relative;
 
     &__Sphere {
-        top: 30%;
+        top: 15%;
         right: 20%;
         z-index: 1;
 
@@ -14,7 +14,7 @@
         }
 
         @include mobilePortrait {
-            top: 0%;
+            top: -10%;
             left: -10%;
         }
     }

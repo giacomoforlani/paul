@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { motion } from 'framer-motion';
 
-import { useScroll } from '../../core/hooks';
+import { useResize, useScroll } from '../../core/hooks';
 
 type ParallaxItemProps = PropsWithChildren<PropsWithClass<{
   limit?: number;

@@ -102,15 +102,11 @@ const Hero = () => {
         </div>
       </section>
 
-      <ParallaxItem
-        zIndex={1}
-      >
-        <img
-          className={styles.Hero__Waves}
-          src="/images/waves.svg"
-          alt="waves"
-        />
-      </ParallaxItem>
+      <img
+        className={styles.Hero__Waves}
+        src="/images/waves.svg"
+        alt="waves"
+      />
 
       <Modal
         className={styles.Hero__Player}
