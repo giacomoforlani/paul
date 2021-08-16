@@ -10,8 +10,6 @@ import { Cursor, CursorProvider } from '../components/Cursor';
 import { Navbar } from '../components/Navbar';
 import { Gradient } from '../components/Gradient';
 
-import styles from './index.module.scss';
-
 export default function Home() {
   return (
     <CursorProvider>
@@ -20,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.Main}>
+      <main>
         <Navbar />
 
         <Hero />

@@ -12,7 +12,7 @@ const projects = [
     image: '/images/projects/l-annee-trailer.jpg',
     label: 'Motion design',
     name: 'L\'Année<br />Trailer',
-    description: 'A conceptual trailer for L’Année, a hommage to the French movie “La Haine”.',
+    description: 'A conceptual trailer for L’Année, a gaming hommage to the French movie “La Haine”.',
     video: '526057531',
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     image: '/images/projects/agudio-flyingbelt.jpg',
     label: 'Motion design',
     name: 'Agudio FlyingBelt',
-    description: 'A motion story for a leading ropeways brand for material transportation.',
+    description: 'A motion story for a leading ropeways brand of materials transportation.',
     video: '524505851',
   },
   {

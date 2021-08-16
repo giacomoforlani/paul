@@ -15,12 +15,12 @@
 }
 
 @mixin navbarTransition {
-    transition: background-color 0.25s ease-in-out, height 0.25s ease-in-out;
+    transition: background-color 0.4s ease-in-out, height 0.4s ease-in-out;
     will-change: background-color, height;
 }
 
 @mixin contentTransition {
-    transition: color 0.25s ease-in-out, stroke 0.25s ease-in-out;
+    transition: color 0.4s ease-in-out, stroke 0.4s ease-in-out;
     will-change: color, stroke;
 }
 
@@ -37,11 +37,12 @@
     width: 100%;
     z-index: 5;
 
-    * {
+    h4,
+    svg > * {
         @include contentTransition;
 
         color: $color--blue-dark;
-        stroke: $color--blue-dark !important;
+        stroke: $color--blue-dark;
     }
 
     &--sticky {
@@ -49,11 +50,12 @@
         background-color: rgba($color--blue-dark, 0.8);
         height: 8rem;
 
-        * {
+        h4,
+        svg > * {
             @include contentTransition;
 
             color: $color--white;
-            stroke: $color--white !important;
+            stroke: $color--white;
         }
     }
 

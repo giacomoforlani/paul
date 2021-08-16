@@ -40,8 +40,9 @@ const Presentation = () => (
           motion
           {' '}
           <br />
-          design.
+          design
         </span>
+        .
       </Text>
 
       <Text
@@ -75,6 +76,9 @@ const Presentation = () => (
         I’m ready for a new journey.
 
         <img
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="1500"
           className={styles.Presentation__Sign}
           src="/images/sign.svg"
           alt="sign"

@@ -8,6 +8,7 @@
     &__Image {
         content: url("/images/footer-desktop.jpg");
         mix-blend-mode: multiply;
+        transform: scaleX(-1);
 
         @include desktopLarge {
             content: url("/images/footer-4k.jpg");
@@ -20,7 +21,6 @@
 
         @include tabletPortrait {
             content: url("/images/footer-tablet.jpg");
-            transform: scaleX(-1);
         }
 
         @include mobilePortrait {
