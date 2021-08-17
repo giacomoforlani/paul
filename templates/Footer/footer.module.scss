@@ -42,30 +42,29 @@
 
     &__Sphere {
         &--01 {
-            right: 20%;
+            left: 5%;
             top: 50%;
 
             @include tabletPortrait {
-                top: 60%;
+                top: 75%;
             }
 
             @include mobilePortrait {
-                right: -15%;
-                top: 70%;
+                left: -15%;
             }
         }
 
         &--02 {
-            left: -10%;
-            top: 0%;
+            right: -10%;
+            top: -5%;
 
             @include tabletPortrait {
                 top: 20%;
             }
 
             @include mobilePortrait {
-                left: -50%;
-                top: 10%;
+                right: -50%;
+                top: 0%;
             }
         }
     }
