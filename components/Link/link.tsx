@@ -3,6 +3,7 @@ import React, { PropsWithChildren } from 'react';
 import style from './link.module.scss';
 
 type LinkProps = PropsWithChildren<PropsWithClass<{
+  showBorder?: boolean;
   target?: string;
   url?: string;
   onClick?: () => void;
@@ -11,6 +12,7 @@ type LinkProps = PropsWithChildren<PropsWithClass<{
 const Link = ({
   children,
   className,
+  showBorder = true,
   target,
   url,
   onClick = () => { },
@@ -21,7 +23,7 @@ const Link = ({
   return (
     <Tag
       {...attributes}
-      className={[style.Link, className].join(' ')}
+      className={[style.Link, className, showBorder ? '' : style['Link--borderless']].join(' ')}
       href={url ?? '#'}
       target={target}
       onClick={onClick}

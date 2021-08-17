@@ -32,7 +32,7 @@
         left: 0;
         position: absolute;
         top: 0;
-        transform: scale(1.001) translateY(-60%);
+        transform: translateY(-60%);
         z-index: $index--waves;
 
         @include desktopLarge {

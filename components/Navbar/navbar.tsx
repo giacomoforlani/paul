@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className={[styles.Navbar, isSticky ? styles['Navbar--sticky'] : ''].join(' ')}>
       <Logo
-        color={isSticky ? '#ffffff' : '#122031'}
+        color={isSticky ? 'white' : 'blue'}
         onClick={scrollToTop}
       />
       <AudioPlayer url="/audio/home.mp3" />

@@ -1,9 +1,19 @@
 @import "../../styles/mixins.scss";
 
 .Logo {
-    height: 3.6rem;
+    position: relative;
+    height: 6rem;
     transition: transform 0.4s ease-in-out;
     will-change: transform;
+
+    &__Img {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: opacity 0.4s ease-in-out;
+        will-change: opacity;
+    }
 
     &--hoverable {
         @include isHoverEnable {

@@ -26,6 +26,12 @@
         width: 100%;
     }
 
+    &--borderless {
+        &::before {
+            display: none;
+        }
+    }
+
     @include isHoverEnable {
         &:hover {
             &::before {

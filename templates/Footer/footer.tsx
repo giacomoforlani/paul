@@ -98,7 +98,9 @@ const Footer = () => (
           </Link>
           <span> - </span>
           <br />
-          All Rights Reserved © 2020
+          All Rights Reserved ©
+          {' '}
+          {new Date().getFullYear()}
         </Text>
       </div>
     </section>
