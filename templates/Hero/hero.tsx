@@ -55,7 +55,10 @@ const Hero = () => {
             I design
             {' '}
             <br />
-            and direct motion
+            and direct
+            {' '}
+            <br />
+            motion,
             {' '}
             <br />
             with emotions.

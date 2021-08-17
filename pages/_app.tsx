@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import AOS from 'aos';
 import React, { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
+import TagManager from 'react-gtm-module';
 
 import { BodyProvider } from '../core/services';
 
@@ -17,15 +18,31 @@ const registerGsapPlusings = async () => {
   gsap.registerPlugin(CSSPlugin);
 };
 
+const initGoogleAnalytics = () => {
+  if (process.env.NEXT_PUBLIC_GTM_ID) {
+    TagManager.initialize({
+      gtmId: process.env.NEXT_PUBLIC_GTM_ID,
+    });
+  }
+};
+
+const initAos = () => {
+  AOS.init({});
+};
+
 const App = ({ Component, pageProps }: AppProps) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    initGoogleAnalytics();
+  }, []);
 
   useEffect(() => {
     registerGsapPlusings();
   }, []);
 
   useEffect(() => {
-    AOS.init({});
+    initAos();
   }, []);
 
   useEffect(() => {
