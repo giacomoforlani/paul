@@ -17,12 +17,12 @@ const Hero = () => {
     <div className={styles.Hero}>
       <Sphere
         className={styles['Hero__Sphere--01']}
-        size="small"
+        size="sm"
       />
 
       <Sphere
         className={styles['Hero__Sphere--02']}
-        size="large"
+        size="lg"
       />
 
       <img
@@ -42,7 +42,7 @@ const Hero = () => {
             Hi,
             {' '}
             <br />
-            I&apos;m Paolo
+            I’m Paolo
           </Text>
 
           <Text

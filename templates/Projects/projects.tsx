@@ -55,7 +55,7 @@ const Projects = () => {
               <div className={styles.Card__Top}>
                 <Text
                   className={styles.Card__Label}
-                  size="h6"
+                  size="small"
                 >
                   {project.label}
                 </Text>

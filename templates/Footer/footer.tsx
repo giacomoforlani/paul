@@ -17,12 +17,12 @@ const Footer = () => (
 
     <Sphere
       className={styles['Footer__Sphere--01']}
-      size="small"
+      size="sm"
     />
 
     <Sphere
       className={styles['Footer__Sphere--02']}
-      size="large"
+      size="lg"
     />
 
     <img
@@ -86,7 +86,7 @@ const Footer = () => (
 
         <Text
           className={styles.Footer__Rights}
-          size="h5"
+          size="h6"
         >
           Developed by
           {' '}

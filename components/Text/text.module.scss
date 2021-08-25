@@ -34,6 +34,13 @@
 
     &--h6 {
         font-family: $font--secondary;
+        font-size: $size--xs;
+        font-weight: 300;
+        line-height: 2.2rem;
+    }
+
+    &--small {
+        font-family: $font--secondary;
         font-size: $size--xxs;
         letter-spacing: 0.3rem;
         line-height: 2.2rem;

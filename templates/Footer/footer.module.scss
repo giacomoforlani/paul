@@ -7,7 +7,9 @@
 
     &__Image {
         content: url("/images/footer-desktop.jpg");
+        min-width: 100vw;
         mix-blend-mode: multiply;
+        position: relative;
         transform: scaleX(-1);
 
         @include desktopLarge {
@@ -25,6 +27,7 @@
 
         @include mobilePortrait {
             content: url("/images/footer-mobile.jpg");
+            top: 20rem;
         }
     }
 
@@ -128,7 +131,7 @@
         }
 
         @include tabletPortrait {
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
         }
     }
 
@@ -140,8 +143,8 @@
             display: none;
         }
 
-        @include tabletPortrait {
-            text-align: center;
+        @include mobilePortrait {
+            align-self: unset;
 
             a {
                 margin-bottom: 1rem;

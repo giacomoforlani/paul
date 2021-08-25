@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button } from '../../components/Button';
+import { Link } from '../../components/Link';
 import { Sphere } from '../../components/Sphere';
 import { Text } from '../../components/Text';
 
@@ -10,7 +11,7 @@ const Presentation = () => (
   <div className={styles.Presentation}>
     <Sphere
       className={styles.Presentation__Sphere}
-      size="small"
+      size="sm"
       zIndex={1}
     />
 
@@ -92,12 +93,21 @@ const Presentation = () => (
         data-aos-duration="1500"
       >
         <Button
+          className={styles.Presentation__Cta__Desktop}
           kind="secondary"
           target="_blank"
           url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"
         >
           My portfolio
         </Button>
+
+        <Link
+          className={styles.Presentation__Cta__Mobile}
+          target="_blank"
+          url="/documents/Paolo_Data-Portfolio_2020-Video-Social.pdf"
+        >
+          Download my portfolio
+        </Link>
       </div>
     </section>
   </div>
