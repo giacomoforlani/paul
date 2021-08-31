@@ -84,7 +84,11 @@ section {
   width: 100%;
 
   @include tabletPortrait {
-    padding: 0 5rem;
+    padding: 0 8rem;
+  }
+
+  @include mobilePortrait {
+    padding: 0 4rem;
   }
 }
 

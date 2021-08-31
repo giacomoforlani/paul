@@ -1,10 +1,6 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables";
 
-@mixin withTransition {
-    transition: all 0.4s ease-in-out;
-}
-
 .figure {
     display: inline-block;
     height: 100%;
@@ -15,7 +11,13 @@
 }
 
 .Button {
-    @include withTransition;
+    transition: all 0.4s ease-in-out;
+
+    *,
+    *::before,
+    *::after {
+        transition: all 0.4s ease-in-out;
+    }
 
     align-items: center;
     border-radius: 5rem;
@@ -40,12 +42,16 @@
         &:hover {
             transform: scale(1.1) !important;
 
-            .Button__Triangle {
+            .Button__ArrowRight {
                 transform: translateX(0.2rem);
             }
 
             .Button__Circle {
                 transform: scale(0.85);
+            }
+
+            .Button__ArrowTop {
+                transform: translateY(-0.3rem);
             }
         }
     }
@@ -55,8 +61,6 @@
         color: $color--white;
 
         &::after {
-            @include withTransition;
-
             background-image: linear-gradient(to left, $color--cyan, $color--pink);
             border-radius: 5rem;
             content: "";
@@ -87,8 +91,12 @@
                 background-color: $color--green;
                 color: $color--white;
 
+                > * {
+                    color: $color--white;
+                }
+
                 .Button {
-                    &__Triangle {
+                    &__ArrowRight {
                         &::before,
                         &::after {
                             background-color: $color--white;
@@ -98,6 +106,13 @@
                     &__Circle {
                         &::before {
                             border-color: $color--white;
+                        }
+                    }
+
+                    &__ArrowTop {
+                        &::before,
+                        &::after {
+                            background-color: $color--white;
                         }
                     }
                 }
@@ -113,13 +128,10 @@
         width: 5rem;
     }
 
-    &__Triangle {
-        @include withTransition;
+    &__ArrowRight {
         @extend .figure;
 
         &::before {
-            @include withTransition;
-
             background-color: $color--white;
             content: "";
             height: 2px;
@@ -131,8 +143,6 @@
         }
 
         &::after {
-            @include withTransition;
-
             background-color: $color--white;
             content: "";
             height: 2px;
@@ -145,12 +155,9 @@
     }
 
     &__Circle {
-        @include withTransition;
         @extend .figure;
 
         &::before {
-            @include withTransition;
-
             border-radius: 50%;
             border: 2px solid $color--white;
             content: "";
@@ -162,7 +169,33 @@
         }
     }
 
-    &--secondary &__Triangle {
+    &__ArrowTop {
+        @extend .figure;
+
+        &::before {
+            background-color: $color--white;
+            content: "";
+            height: 2px;
+            left: 1rem;
+            position: absolute;
+            top: 1.2rem;
+            transform: rotate(120deg);
+            width: 2.8rem;
+        }
+
+        &::after {
+            background-color: $color--white;
+            content: "";
+            height: 2px;
+            left: 2.3rem;
+            position: absolute;
+            top: 1.2rem;
+            transform: rotate(-120deg);
+            width: 2.8rem;
+        }
+    }
+
+    &--secondary &__ArrowRight {
         &::before {
             background-color: $color--green;
         }
@@ -175,6 +208,16 @@
     &--secondary &__Circle {
         &::before {
             border-color: $color--green;
+        }
+    }
+
+    &--secondary &__ArrowTop {
+        &::before {
+            background-color: $color--green;
+        }
+
+        &::after {
+            background-color: $color--green;
         }
     }
 }
