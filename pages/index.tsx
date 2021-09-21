@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <CursorProvider>
       <Head>
-        <title>Hi, I&apos;m Paolo</title>
+        <title>Paolo Data - Art Direction and Motion Design</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

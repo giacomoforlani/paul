@@ -58,8 +58,4 @@
             stroke: $color--white;
         }
     }
-
-    @include mobilePortrait {
-        padding: 0 2rem;
-    }
 }

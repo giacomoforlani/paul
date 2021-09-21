@@ -5,7 +5,7 @@ import { ParallaxItem } from '../ParallaxItem';
 import styles from './sphere.module.scss';
 
 type SphereProps = PropsWithClass<{
-  size: 'small' | 'large';
+  size: 'sm' | 'lg';
   zIndex?: number;
 }>;
 

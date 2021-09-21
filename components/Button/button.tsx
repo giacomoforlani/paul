@@ -4,6 +4,7 @@ import styles from './button.module.scss';
 
 type ButtonProps = PropsWithChildren<PropsWithClass<{
   disabled?: boolean;
+  icon?: 'arrow_right_circle' | 'arrow_top';
   kind?: 'primary' | 'secondary';
   target?: string;
   url?: string;
@@ -14,6 +15,7 @@ const Button = ({
   children,
   className,
   disabled = false,
+  icon = 'arrow_right_circle',
   kind = 'primary',
   target,
   url,
@@ -25,7 +27,11 @@ const Button = ({
   return (
     <Element
       {...attributes}
-      className={[styles.Button, styles[`Button--${kind}`], className].join(' ')}
+      className={[
+        styles.Button,
+        styles[`Button--${kind}`],
+        className,
+      ].join(' ')}
       disabled={disabled}
       href={url}
       target={target}
@@ -33,10 +39,18 @@ const Button = ({
     >
       {children}
 
-      <i className={styles.Button__Icon}>
-        <i className={styles.Button__Triangle} />
-        <i className={styles.Button__Circle} />
-      </i>
+      {icon === 'arrow_right_circle' && (
+        <i className={styles.Button__Icon}>
+          <i className={styles.Button__ArrowRight} />
+          <i className={styles.Button__Circle} />
+        </i>
+      )}
+
+      {icon === 'arrow_top' && (
+        <i className={styles.Button__Icon}>
+          <i className={styles.Button__ArrowTop} />
+        </i>
+      )}
     </Element>
   );
 };
