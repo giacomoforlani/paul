@@ -65,7 +65,7 @@ const projects = [
   },
   {
     id: 9,
-    image: '/images/projects/mopar-ant.jpg',
+    image: '/images/projects/mopar-ant-copy.jpg',
     label: 'Test',
     name: 'Test',
     description: 'An instructional video for an innovative IT FCA product.',
