@@ -63,6 +63,14 @@ const projects = [
     description: 'An instructional video for an innovative IT FCA product.',
     video: '574440605',
   },
+  {
+    id: 9,
+    image: '/images/projects/mopar-ant.jpg',
+    label: 'Test',
+    name: 'Test',
+    description: 'An instructional video for an innovative IT FCA product.',
+    video: '574440605',
+  },
 ];
 
 export { projects };
